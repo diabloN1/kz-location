@@ -1,0 +1,13 @@
+{
+  "id": "mig_cohv33o0j6r1cfostvh0",
+  "parentID": "mig_coht36no1o7cr1bkdm2g",
+  "checksum": "1:19047e8681d643d7617765b18c84af526517c950fbf02639081456a5b8ea6db9",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Zbi",
+        "oldName": "tag"
+      }
+    }
+  ]
+}

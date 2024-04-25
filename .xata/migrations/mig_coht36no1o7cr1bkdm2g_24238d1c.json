@@ -1,0 +1,76 @@
+{
+  "id": "mig_coht36no1o7cr1bkdm2g",
+  "checksum": "1:24238d1c7ee0bb6e53da56b927b5aba8f6280320b1edd26d4977f625590e7b80",
+  "operations": [
+    {
+      "addTable": {
+        "table": "tag"
+      }
+    },
+    {
+      "addTable": {
+        "table": "image"
+      }
+    },
+    {
+      "addTable": {
+        "table": "tag-to-image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "gallery"
+        },
+        "table": "tag"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Image"
+        },
+        "table": "image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "file"
+        },
+        "table": "image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "link",
+          "link": {
+            "table": "image"
+          }
+        },
+        "table": "tag-to-image"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "tag",
+          "type": "link",
+          "link": {
+            "table": "tag"
+          }
+        },
+        "table": "tag-to-image"
+      }
+    }
+  ]
+}

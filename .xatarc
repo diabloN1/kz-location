@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Amine-Yc-s-workspace-dkaoiq.eu-central-1.xata.sh/db/OBS",
+  "codegen": {
+    "output": "lib/xata.ts"
+  }
+}
