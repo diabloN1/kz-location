@@ -1,9 +1,9 @@
 "use client"
 
-// pages/services.tsx
-import React from "react"
+import React, { useState } from "react"
 
-import ServiceCard from "@/components/ServiceCard"
+import { ServiceCard } from "@/components/ServiceCard"
+import { Demande } from "@/components/ServiceDemande"
 
 interface Service {
   image: string
@@ -13,11 +13,13 @@ interface Service {
 }
 
 const ServicesPage: React.FC = () => {
+  const [showDemande, setShowDemande] = useState(false)
+
   const handleButtonClick = (serviceTitle: string) => {
     console.log(`Learn more about ${serviceTitle}`)
-    // Here you can handle the button click, e.g., navigate to a detailed service page
+    setShowDemande(true) // Update the state to show the Demande component
+    console.log(`showDemande state: ${showDemande}`) // Add this line to check the state
   }
-
   const services: Service[] = [
     {
       title: "Construction",
@@ -50,12 +52,14 @@ const ServicesPage: React.FC = () => {
   ]
   return (
     <div className="flex flex-col items-center p-4">
-        <h1 className=" md:mt-10 text-7xl font-bold xl  leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
-        Services fournis</h1>
-      <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[800px] text-lg text-muted-foreground">
+      <h1 className=" md:mt-10 text-7xl font-bold xl  leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+        Services fournis
+      </h1>
+      <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[800px] text-lg text-muted-foreground ">
         Pour accéder à ces services, veuillez cliquer sur le service souhaité et
         envoyer un message décrivant vos besoins.
-      </p><br />
+      </p>
+      <br />
       <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">
         {" "}
         {/* Adjust the container width */}
@@ -71,6 +75,14 @@ const ServicesPage: React.FC = () => {
             </div>
           ))}
         </div>
+        {showDemande && (
+          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
+            <Demande onCancel={() => setShowDemande(true)} />
+            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
+              <Demande onCancel={() => setShowDemande(false)} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

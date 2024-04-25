@@ -1,19 +1,34 @@
+"use client"
 
-import React from "react"
+import { useState } from "react"
 
+import { Demande } from "./ServiceDemande"
+
+// Assuming this is the existing ServiceCardProps interface
 interface ServiceCardProps {
   image: string
   title: string
   description: string
-  onButtonClick: () => void
+  // Add the onButtonClick prop here
+  onButtonClick?: () => void
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
+export const ServiceCard: React.FC<ServiceCardProps> = ({
   image,
   title,
   description,
   onButtonClick,
 }) => {
+  const [showDemande, setShowDemande] = useState(false)
+
+  // Use the onButtonClick prop if it's provided
+  const handleButtonClick = () => {
+    if (onButtonClick) {
+      onButtonClick()
+    }
+    setShowDemande(true)
+  }
+
   return (
     <div className="flex flex-col items-center p-4 bg-black shadow-lg rounded-lg border-2 border-white">
       <img
@@ -30,6 +45,5 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         Demande
       </button>
     </div>
- )
+  )
 }
-export default ServiceCard
