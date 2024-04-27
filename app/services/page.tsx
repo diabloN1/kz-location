@@ -3,7 +3,6 @@
 import React, { useState } from "react"
 
 import { ServiceCard } from "@/components/ServiceCard"
-import { Demande } from "@/components/ServiceDemande"
 
 interface Service {
   image: string
@@ -75,14 +74,6 @@ const ServicesPage: React.FC = () => {
             </div>
           ))}
         </div>
-        {showDemande && (
-          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-            <Demande onCancel={() => setShowDemande(true)} />
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-              <Demande onCancel={() => setShowDemande(false)} />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   )
