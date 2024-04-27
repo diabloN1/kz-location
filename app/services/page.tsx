@@ -1,6 +1,6 @@
 import React from "react"
 
-import { HoverEffect } from "@/components/ui/card-hover-effect"
+import { HoverEffect } from "@/components/ui/ProductCard"
 
 export default function page() {
   const projects = [
@@ -9,6 +9,7 @@ export default function page() {
       link: "/construction",
       img: "/service1.png",
     },
+
     {
       title: "Travaux Divers",
       link: "/travauxdivers",

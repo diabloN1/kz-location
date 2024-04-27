@@ -3,8 +3,8 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
+import { buttonVariants } from "@/components/ui/button"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
 
