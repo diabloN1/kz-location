@@ -58,6 +58,7 @@ const ServicesPage: React.FC = () => {
         Pour accéder à ces services, veuillez cliquer sur le service souhaité et
         envoyer un message décrivant vos besoins.
       </p>
+    
       <br />
       <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">
         {" "}
