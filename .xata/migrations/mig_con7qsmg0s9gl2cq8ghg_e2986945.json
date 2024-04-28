@@ -1,0 +1,19 @@
+{
+  "id": "mig_con7qsmg0s9gl2cq8ghg",
+  "parentID": "mig_con7fcmpasvupdpr4bog",
+  "checksum": "1:e29869452d451d6f2ead084d95c238d0927dd92230ae7ae238f5153f1ba0552b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "categories",
+          "type": "link",
+          "link": {
+            "table": "Categories"
+          }
+        },
+        "table": "Products"
+      }
+    }
+  ]
+}

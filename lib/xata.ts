@@ -16,12 +16,15 @@ const tables = [
   {
     name: "Products",
     columns: [
-      { name: "name", type: "string" },
-      { name: "Description", type: "string" },
+      { name: "product", type: "string" },
+      { name: "description", type: "string" },
       { name: "price", type: "float" },
-      { name: "img", type: "file[]" },
+      { name: "img", type: "file[]", "file[]": { defaultPublicAccess: true } },
+      { name: "categorie", type: "string" },
+      { name: "discount", type: "float" },
     ],
   },
+  { name: "Categories", columns: [{ name: "name", type: "string" }] },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -33,9 +36,13 @@ export type TagRecord = Tag & XataRecord;
 export type Products = InferredTypes["Products"];
 export type ProductsRecord = Products & XataRecord;
 
+export type Categories = InferredTypes["Categories"];
+export type CategoriesRecord = Categories & XataRecord;
+
 export type DatabaseSchema = {
   tag: TagRecord;
   Products: ProductsRecord;
+  Categories: CategoriesRecord;
 };
 
 const DatabaseClient = buildClient();

@@ -81,7 +81,8 @@ export function DialogDemo({ onCancel }: DemandeProps) {
             <Button variant="ghost" onClick={onCancel}>
               Cancel
             </Button>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" >Submit</Button>
+            
           </DialogFooter>
         </form>
       </DialogContent>

@@ -17,6 +17,8 @@ export const HoverEffectCard = ({
     id: string
     price: any
     img: any
+    categorie: any
+    discount: any
   }[]
   search: string
   className?: string
@@ -32,7 +34,7 @@ export const HoverEffectCard = ({
       )}
     >
       {items.filter((item) =>{
-        return search.toLowerCase() === "" ? item : item.product.toLowerCase().includes(search.toLowerCase())
+        return search.toLowerCase() === "" ? item : item.product.toLowerCase().includes(search.toLowerCase()) || item.description.toLowerCase().includes(search.toLowerCase()) || item.categorie.toLowerCase().includes(search.toLowerCase())
       }).map((item, idx) => (
         <Link
           href="https://www.google.com"
@@ -63,7 +65,7 @@ export const HoverEffectCard = ({
             <div className="">
               <CardTitle>{item.product}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
-              <CardDescription className="text-right font-bold">{item.price} MAD</CardDescription>
+              <CardDescription className="text-right">{item.discount==null?<span className="font-bold">{item.price} MAD</span>:<><span className="line-through">{item.price} MAD</span><span className="font-bold"> {item.price-((item.price*item.discount)/100)} MAD</span></>}</CardDescription>
             </div>
           </Card>
         </Link>
