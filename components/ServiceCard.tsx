@@ -31,16 +31,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     // Add your submit logic here
   }
   return (
-    <div className="flex flex-col items-center p-4 bg-black shadow-lg rounded-lg border-2 border-white">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-48 object-cover mb-4 rounded-lg"
-      />
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400 mb-4">{description}</p>
-
+     <div className="flex flex-col md:flex-row items-center">
+      <img src={image} alt={title} className="w-full md:w-1/2" />
+      <div className="md:ml-4">
+        <h2 className="text-xl font-bold">{title}</h2>
+        <br />
+        <p className="mt-2">{description}</p>
+        <br />
       <DialogDemo onCancel={handleCancel} onSubmit={handleSubmit} />
+      </div>
     </div>
   )
 }

@@ -53,6 +53,7 @@ export function DialogDemo({ onCancel }: DemandeProps) {
               placeholder="j'ai besoin de..."
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
+              required
             />
           </div>
           <div className="grid gap-2">
