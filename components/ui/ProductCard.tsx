@@ -6,8 +6,9 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
-export const HoverEffect = ({
+export const HoverEffectCard = ({
   items,
+  search,
   className,
 }: {
   items: {
@@ -17,6 +18,7 @@ export const HoverEffect = ({
     price: any
     img: any
   }[]
+  search: string
   className?: string
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -29,7 +31,9 @@ export const HoverEffect = ({
         className
       )}
     >
-      {items.map((item, idx) => (
+      {items.filter((item) =>{
+        return search.toLowerCase() === "" ? item : item.product.toLowerCase().includes(search.toLowerCase())
+      }).map((item, idx) => (
         <Link
           href="https://www.google.com"
           key={item?.id}
