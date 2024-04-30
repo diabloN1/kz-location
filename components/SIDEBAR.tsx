@@ -2,22 +2,13 @@ import React, { useState } from "react"
 
 import { ServiceCard } from "@/components/ServiceCard"
 
-interface Service {
-  image: string
-  title: string
-  description: string
-  link: string
-}
 
 const Dashboard: React.FC = () => {
   const [selectedService, setSelectedService] = useState("")
 
-  const handleButtonClick = (serviceTitle: string) => {
-    console.log(`Learn more about ${serviceTitle}`)
-    setSelectedService(serviceTitle)
-  }
-  const services: Service[] = [
+  const services = [
     {
+      id: 1,
       title: "Construction",
       link: "/construction",
       image: "/service1.png",
@@ -25,6 +16,7 @@ const Dashboard: React.FC = () => {
         "We offer comprehensive construction services, including building new structures and renovating existing ones. Our team is experienced and committed to delivering high-quality results on time and within budget.",
     },
     {
+      id: 2,
       title: "Travaux Divers",
       link: "/travauxdivers",
       image: "/service2.png",
@@ -32,6 +24,7 @@ const Dashboard: React.FC = () => {
         "Our diversified services cover a wide range of tasks, from landscaping and gardening to event planning and logistics. We pride ourselves on our versatility and ability to adapt to any project's needs.",
     },
     {
+      id: 3,
       title: "Negoce",
       link: "/negoce",
       image: "/service3.jpg",
@@ -39,6 +32,7 @@ const Dashboard: React.FC = () => {
         "We specialize in sourcing and negotiating the best deals for a wide variety of goods and services. Our expertise in the market allows us to provide our clients with the best value and quality.",
     },
     {
+      id: 4,
       title: "Exportation-Importation",
       link: "/exportationimportation",
       image: "/service4.png",
@@ -73,8 +67,9 @@ const Dashboard: React.FC = () => {
             x-chunk="dashboard-04-chunk-0"
           >
             {services.map((service) => (
+              <div key={service.id}>
               <a
-                key={service.title}
+                key={service.id}
                 onClick={() => scrollToService(service.title)}
                 className={`${
                   service.title === selectedService
@@ -84,10 +79,12 @@ const Dashboard: React.FC = () => {
               >
                 {service.title}
               </a>
+              </div>
             ))}
           </nav>
           <div className="grid grid-cols-1 gap-4">
             {services.map((service) => (
+              <div key={service.id}>
               <div
                 key={service.title}
                 id={service.title}
@@ -101,8 +98,9 @@ const Dashboard: React.FC = () => {
                   image={service.image}
                   title={service.title}
                   description={service.description}
-                  onButtonClick={() => handleButtonClick(service.title)}
+                  id={service.id}
                 />
+              </div>
               </div>
             ))}
           </div>

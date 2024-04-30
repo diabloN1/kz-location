@@ -1,10 +1,13 @@
 "use client"
 
 import Link from "next/link"
+import useSWR from "swr"
 
 import { siteConfig } from "@/config/site"
+import fetcher from "@/lib/fetcher"
+import { HoverEffectCard } from "@/components/ui/ProductCard"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
-import { buttonVariants } from "@/components/ui/button"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
 
@@ -18,31 +21,36 @@ export default function IndexPage() {
       title: "Contruction",
       description:
         "Nous spécialisons dans la construction de projets, de résidentiels à commerciaux, en assurant qualité et efficacité.",
-      link: "https://stripe.com",
+      link: "/services",
       img: "/service1.png",
     },
     {
       title: "Travaux Divers",
       description:
         "Nous offrons une gamme diversifiée de services de construction et de rénovation pour répondre à vos besoins spécifiques.",
-      link: "https://netflix.com",
+      link: "/services",
       img: "/service2.png",
     },
     {
       title: "Negoce",
       description:
         "Fournissant des solutions stratégiques d'affaires pour vous aider à croître, y compris des conseils, du marketing et des services financiers.",
-      link: "https://google.com",
+      link: "/services",
       img: "/service3.jpg",
     },
     {
       title: "Exportation-Importation",
       description:
         "Assistant dans le commerce international, offrant un guide expert sur l'exportation et l'importation de biens et de services.",
-      link: "https://meta.com",
+      link: "/services",
       img: "/service4.png",
     },
   ]
+
+  const { data, error } = useSWR("/api/xataClient", fetcher)
+  console.log(data)
+  if (error) return <div>Failed to load products or categories</div>
+  if (!data) return <div>Loading...</div>
   return (
     <>
       <section className="flex mt-10 ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
@@ -123,7 +131,13 @@ export default function IndexPage() {
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
-          <HoverEffect items={projects} />
+          <HoverEffectCard items={data.slice(0, 4)} search={""} />
+          <Link
+            className={buttonVariants({ variant: "outline" })}
+            href="/products"
+          >
+            More {">"}
+          </Link>
         </div>
       </section>
     </>

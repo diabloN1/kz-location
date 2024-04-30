@@ -56,14 +56,13 @@ export default function page() {
           </button> */}
           <Sheet>
             <SheetTrigger className="pt-10 mr-[160px]">
-              <Button variant="secondary">Filter</Button>
+              <Button variant="outline">Categories</Button>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetTitle>Categories</SheetTitle>
                 <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
+                  Choisir la catégorie pour afficher les produits
                   <br />
                   <p className="text-bold mb-5 mt-10">Choix par categorie</p>
                   <Select onValueChange={(e: string) => setsearch(e)}>
@@ -76,9 +75,6 @@ export default function page() {
                           <div key={cat.id}>
                             <SelectItem value={cat.name}>
                               {cat.name}
-                              {/* <a onClick={() => setsearch(cat.name)}>
-                          {cat.name}
-                        </a> */}
                             </SelectItem>
                             <br />
                           </div>

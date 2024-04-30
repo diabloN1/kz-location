@@ -1,10 +1,7 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-
-import Dashboard from "@/components/SIDEBAR"
-import { SonnerDemo } from "@/components/Created"
-import { Toaster } from "@/components/ui/sonner"
+import Dashboard from "@/components/SIDEBAR";
+import React from "react"
 
 export default function ServicesPage() {
   return (
@@ -14,13 +11,14 @@ export default function ServicesPage() {
           Services fournis
         </h1>
         <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[600px] text-lg text-muted-foreground">
-          Veuillez cliquer sur le service souhaité et envoyer un message
-          décrivant vos besoins.
+          Veuillez cliquer sur le service souhaité et
+          envoyer un message décrivant vos besoins.
         </p>
       </div>
-
+    
       <br />
       <Dashboard />
     </div>
   )
 }
+

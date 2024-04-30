@@ -25,6 +25,17 @@ const tables = [
     ],
   },
   { name: "Categories", columns: [{ name: "name", type: "string" }] },
+  {
+    name: "Demande_S",
+    columns: [
+      { name: "name", type: "string", defaultValue: "" },
+      { name: "serviceType", type: "string" },
+      { name: "subject", type: "string" },
+      { name: "email", type: "email" },
+      { name: "num", type: "string" },
+      { name: "Description", type: "string" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -39,10 +50,14 @@ export type ProductsRecord = Products & XataRecord;
 export type Categories = InferredTypes["Categories"];
 export type CategoriesRecord = Categories & XataRecord;
 
+export type DemandeS = InferredTypes["Demande_S"];
+export type DemandeSRecord = DemandeS & XataRecord;
+
 export type DatabaseSchema = {
   tag: TagRecord;
   Products: ProductsRecord;
   Categories: CategoriesRecord;
+  Demande_S: DemandeSRecord;
 };
 
 const DatabaseClient = buildClient();
