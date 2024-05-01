@@ -11,9 +11,9 @@ const CompanyPage = () => {
           Qui sommes-nous?
         </h1>
       </header>
-      <br /> <br /> <br />
+      <br /> <br /> <br /> 
       <main className="flex flex-col md:flex-row items-start md:items-center">
-        <div className="flex-1 ml-40 w-1/3">
+        <div className="flex-1 ml-40 w-2/3">
           <h2 className="text-5xl font-semibold mb-10 text-orange-500">
             Notre Entreprise
           </h2>
@@ -26,18 +26,18 @@ const CompanyPage = () => {
         </div>
         <img
           loading="lazy"
-          src="https://placekitten.com/200/300"
+          src="/image-13@2x.png"
           alt="A cute kitten"
-          className=" md:w-auto md:ml-6 mr-40 w-2/3"
+          className="md:w-auto md:ml-6 mr-40 w-2/3 max-w-xs"
         />
       </main>
       <br /> <br />
       <main className="flex flex-col md:flex-row items-start md:items-center">
         <img
           loading="lazy"
-          src="https://placekitten.com/200/300"
+          src="https://www.organisator.ch/wp-content/uploads/2019/02/Zielkonflikte-im-Unternehmen-Einigkeit-durch-Mehrdeutigkeit_Organisator.jpg"
           alt="A cute kitten"
-          className="md:w-auto md:mr-6 ml-40 w-1/3"
+          className="md:w-auto md:mr-6 ml-40 w-1/3 max-w-s"
         />
         <div className="flex-1 mr-40 w-2/3">
           <h2 className="text-5xl font-semibold mb-10 text-orange-500">
@@ -57,6 +57,7 @@ const CompanyPage = () => {
           </p>
         </div>
       </main>
+      <br /> <br />
       <main className="flex flex-col md:flex-row items-start md:items-center">
         <div className="flex-1 ml-40 w-1/3">
           <h2 className="text-5xl font-semibold mb-10 text-orange-500">

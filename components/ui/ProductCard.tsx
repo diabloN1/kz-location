@@ -37,7 +37,6 @@ export const HoverEffectCard = ({
           return search.toLowerCase() === ""
             ? item
             : item.product.toLowerCase().includes(search.toLowerCase()) ||
-                item.description.toLowerCase().includes(search.toLowerCase()) ||
                 item.categorie.toLowerCase().includes(search.toLowerCase())
         })
         .map((item, idx) => (
@@ -66,10 +65,14 @@ export const HoverEffectCard = ({
               )}
             </AnimatePresence>
             <Card>
-              <img src={item.img[0].url} alt="" className="rounded w-full" />
+              <img
+                src={item.img[0].url}
+                alt=""
+                className="rounded w-full  h-72 object-cover"
+              />
               <div className="">
                 <CardTitle>{item.product}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
+
                 <CardDescription className="text-right">
                   {item.discount == null ? (
                     <span className="font-bold">{item.price} MAD</span>
