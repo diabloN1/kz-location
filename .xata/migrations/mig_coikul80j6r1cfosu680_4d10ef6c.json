@@ -1,0 +1,14 @@
+{
+  "id": "mig_coikul80j6r1cfosu680",
+  "parentID": "mig_coi09avo1o7cr1bkdn50",
+  "checksum": "1:4d10ef6c8d8a11e460815d6e95aa2d389f556d92c03fa2f16e8198f5ef69682e",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "description",
+        "oldName": "Description",
+        "table": "Products"
+      }
+    }
+  ]
+}

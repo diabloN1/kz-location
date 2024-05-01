@@ -1,0 +1,17 @@
+{
+  "id": "mig_consh9mp77arfjijsjsg",
+  "parentID": "mig_consg9071d8f54r6ts7g",
+  "checksum": "1:adae1fab061a56b3aefdc9c211656e3da4f6956407a07ef6ac5715de30fcbc61",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "defaultValue": ""
+        },
+        "table": "Demande_S"
+      }
+    }
+  ]
+}

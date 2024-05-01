@@ -6,20 +6,18 @@ import { useState } from "react";
 
 import { DialogDemo } from "./ServiceDemande";
 
-
 interface ServiceCardProps {
+  id: number
   image: string
   title: string
   description: string
-
-  onButtonClick?: () => void
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
+  id,
   image,
   title,
   description,
-  onButtonClick,
 }) => {
   const [showDemande, setShowDemande] = useState(false)
 
@@ -38,7 +36,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <br />
         <p className="mt-2">{description}</p>
         <br />
-      <DialogDemo onCancel={handleCancel} onSubmit={handleSubmit} />
+      <DialogDemo onCancel={handleCancel} onSubmit={handleSubmit} id={id}/>
       </div>
     </div>
   )
