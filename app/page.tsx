@@ -66,17 +66,13 @@ export default function IndexPage() {
           <TextGenerateEffect words={label} />
           <div className="flex gap-4 mt-10">
             <Link
-              href={siteConfig.links.docs}
-              target="_blank"
-              rel="noreferrer"
+              href="/products"
               className={buttonVariants()}
             >
-              Products {">"}
+              Produits {">"}
             </Link>
             <Link
-              target="_blank"
-              rel="noreferrer"
-              href={siteConfig.links.github}
+              href="/services"
               className={buttonVariants({ variant: "outline" })}
             >
               Services {">"}

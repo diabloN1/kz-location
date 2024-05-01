@@ -51,16 +51,12 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
     try {
       const response = await axios.post("/api/xataPostService", addServiceR)
       console.log("Product created:", response.data)
-      // Update state or perform other actions as needed
     } catch (error) {
       console.error("Error creating product:", error)
-      // Handle errors as needed
     }
 
     onCancel()
   }
-
-  //post service
 
   return (
     <Dialog>
