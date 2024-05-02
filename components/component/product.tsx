@@ -104,9 +104,13 @@ export function Product({ id }: { id: any }) {
               <div className="mr-2">
                 <ShoppingCartIcon />
               </div>
+              <div className="mr-2">
+                <ShoppingCartIcon />
+              </div>
               Buy Now
             </Button>
             <Link
+              className="inline-flex h-10 items-center justify-center rounded-md border border-primary text-primary bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
               className="inline-flex h-10 items-center justify-center rounded-md border border-primary text-primary bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
               href="#"
             >
@@ -119,6 +123,25 @@ export function Product({ id }: { id: any }) {
   )
 }
 
+function ShoppingCartIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="8" cy="21" r="1" />
+      <circle cx="19" cy="21" r="1" />
+      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+    </svg>
+  )
+}
 function ShoppingCartIcon() {
   return (
     <svg
