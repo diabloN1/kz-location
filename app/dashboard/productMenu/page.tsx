@@ -5,6 +5,7 @@ import useSWR from "swr"
 
 import fetcher from "@/lib/fetcher"
 import { Button } from "@/components/ui/button"
+import RotatingDotsLoader from "@/components/ui/loading"
 //import side bar to add product shadcn
 import {
   Sheet,
@@ -29,7 +30,12 @@ function Products() {
   const { data, error } = useSWR("/api/xataClient", fetcher)
 
   if (error) return <div>Failed to load products</div>
-  if (!data) return <div>Loading...</div>
+  if (!data)
+    return (
+      <div>
+        <RotatingDotsLoader />
+      </div>
+    )
 
   return (
     <div className="xl: m-10">
@@ -68,7 +74,9 @@ function Products() {
               <TableRow key={product.id}>
                 <TableCell>{product.name}</TableCell>
                 <TableCell>{product.description}</TableCell>
-                <TableCell className="text-right">{product.price} MAD</TableCell>
+                <TableCell className="text-right">
+                  {product.price} MAD
+                </TableCell>
               </TableRow>
             )
           )}

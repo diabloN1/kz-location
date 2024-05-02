@@ -10,11 +10,10 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+
 export function SiteHeader() {
   const { user, error, isLoading } = useUser()
-  useEffect(() => {
-    console.log(user)
-  }, [user])
+
   if (isLoading)
     return (
       <div>
@@ -24,7 +23,7 @@ export function SiteHeader() {
             <div className="flex flex-1 items-center justify-end space-x-4">
               <nav className="flex items-center space-x-1">
                 <Link
-                  href={siteConfig.links.github}
+                  href="https://wa.me/212708162668/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -34,8 +33,8 @@ export function SiteHeader() {
                       variant: "ghost",
                     })}
                   >
-                    <Icons.gitHub className="h-5 w-5" />
-                    <span className="sr-only">GitHub</span>
+                    <Icons.whatsapp />
+                    <span className="sr-only">whatsapp</span>
                   </div>
                 </Link>
                 <Link
@@ -69,7 +68,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
             <Link
-              href={siteConfig.links.github}
+              href="https://wa.me/212708162668/"
               target="_blank"
               rel="noreferrer"
             >
@@ -79,8 +78,8 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
-                <Icons.gitHub className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+                <Icons.whatsapp />
+                <span className="sr-only">whatsapp</span>
               </div>
             </Link>
             <Link
@@ -118,22 +117,6 @@ export function SiteHeader() {
                 </Link>
               )}
             </div>
-            {/* {user?<Link
-              href="/api/auth/login"
-              target="_blank"
-              rel="noreferrer"
-              className={buttonVariants()}
-            >
-              Se connecter{" >"}
-            </Link>:
-            <Link
-              href="/api/auth/logout"
-              target="_blank"
-              rel="noreferrer"
-              className={buttonVariants()}
-            >
-              Logout{" >"}
-            </Link>} */}
             {user && user.picture && (
               <div>
                 <img

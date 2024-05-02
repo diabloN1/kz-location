@@ -41,7 +41,7 @@ export const HoverEffectCard = ({
         })
         .map((item, idx) => (
           <Link
-            href="https://www.google.com"
+            href={"/products/" + item?.id}
             key={item?.id}
             className="relative group  block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}

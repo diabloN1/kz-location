@@ -16,56 +16,41 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select"
-import { Textarea } from "./ui/textarea"
-
 interface DemandeProps {
-  onCancel: () => void
-  onSubmit: () => void
-  id: number
+  id: any
+  name: string
 }
 
-export function DialogDemo({ onCancel, id }: DemandeProps) {
+export function DialogDemo({ id, name }: DemandeProps) {
   const [open, setOpen] = useState(false)
 
   const { user } = useUser()
   user ? console.log(user) : console.log("no user")
 
-  const [subject, setSubject] = useState("")
+  const [nameP, setNameP] = useState("")
   const [num, setNum] = useState("")
-  const [description, setDescription] = useState("")
   const [nom, setNom] = useState("")
   const [email, setEmail] = useState("")
-  const [serviceType, setserviceType] = useState("")
-  const [addServiceR, setaddServiceR] = useState({})
+  const [addProductR, setaddProductR] = useState({})
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    setaddServiceR({
-      serviceType: serviceType,
-      name: nom,
-      email: email,
-      subject: subject,
-      Description: description,
+    setaddProductR({
+      nameP: nameP,
+      idP: id,
+      mail: email,
+      fullName: nom,
       num: num,
     })
     setOpen(false)
     try {
-      const response = await axios.post("/api/xataPostService", addServiceR)
+      const response = await axios.post("/api/xataPostProduct", addProductR)
       console.log("Product created:", response.data)
       // Update state or perform other actions as needed
     } catch (error) {
       console.error("Error creating product:", error)
       // Handle errors as needed
     }
-
-    onCancel()
   }
 
   //post service
@@ -73,8 +58,14 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-amber-900 dark:bg-orange-500 text-white font-bold py-2 px-4 rounded border-2 border-white">
-          Demander
+        <Button
+          className="bg-primary text-white hover:bg-primary/90 focus:ring-primary"
+          size="lg"
+        >
+          <div className="mr-2">
+            <ShoppingCartIcon />
+          </div>
+          Order Now
         </Button>
       </DialogTrigger>
       <DialogContent>
@@ -86,46 +77,14 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-2">
-            <Label htmlFor="type">Service choisi</Label>
-            <Select
-              onValueChange={(e: string) => setserviceType(e)}
-              defaultValue={
-                id == 1
-                  ? "construction"
-                  : id == 2
-                  ? "travauxDivers"
-                  : id == 3
-                  ? "negoce"
-                  : id == 4
-                  ? "expo-impo"
-                  : ""
-              }
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Choose a category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={"construction"}>Construction</SelectItem>
-                <SelectItem value={"travauxDivers"}>Travaux divers</SelectItem>
-                <SelectItem value={"negoce"}>Negoce</SelectItem>
-                <SelectItem value={"expo-impo"}>
-                  Exportation-importaion
-                </SelectItem>
-                <SelectItem value={"autre"}>Autre</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="subject">Subject</Label>
+            <Label htmlFor="produit">Produit</Label>
             <Input
-              id="subject"
-              placeholder="j'ai besoin de..."
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              required
+              id="produit"
+              value={nameP}
+              onChange={(e) => setNameP(e.target.value)}
+              disabled
             />
           </div>
-
           <div className="grid gap-2">
             <Label htmlFor="nom">Nom complet</Label>
             <Input
@@ -162,26 +121,36 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
               />
             )}
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="description">Description</Label>
-            <Textarea
-              id="description"
-              placeholder="Decrivez votre besoin de ce service en plus de details."
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
-          </div>
+          <div className="grid gap-2"></div>
           <DialogFooter className="justify-between space-x-2">
             <DialogClose asChild>
               <Button type="button" variant="ghost">
                 Close
               </Button>
             </DialogClose>
-            <Button type="submit">Submit</Button>
+              <Button type="submit">Submit</Button>
           </DialogFooter>
         </form>
       </DialogContent>
     </Dialog>
+  )
+}
+function ShoppingCartIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="8" cy="21" r="1" />
+      <circle cx="19" cy="21" r="1" />
+      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+    </svg>
   )
 }

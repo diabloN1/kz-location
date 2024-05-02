@@ -14,6 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import RotatingDotsLoader from "@/components/ui/loading"
 
 /**
  * Renders the dashboard page if the user is authenticated.
@@ -30,12 +31,9 @@ function page() {
   const [dashtype, setDashType] = useState("dashboard")
   const { user, error, isLoading } = useUser()
   //console.log the user data to see if it is working
-  useEffect(() => {
-    console.log(user)
-  }, [user])
+
   //Navbar buttons handler
   const menuHandler = (dashType: string) => {
-    console.log(dashType)
     if (dashType === "dashboard") {
       setDashType("dashboard")
     }
@@ -47,7 +45,7 @@ function page() {
     }
   }
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div><RotatingDotsLoader/></div>
   if (user?.name !== "amineamoune904@gmail.com") return null
   else
     return (

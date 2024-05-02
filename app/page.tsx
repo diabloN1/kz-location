@@ -3,13 +3,13 @@
 import Link from "next/link"
 import useSWR from "swr"
 
-import { siteConfig } from "@/config/site"
 import fetcher from "@/lib/fetcher"
 import { HoverEffectCard } from "@/components/ui/ProductCard"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
+import RotatingDotsLoader from "@/components/ui/loading"
 
 const label = `Découvrez Oriental Building Strategy, votre solution pour la
             construction, travaux divers, négoce et exportation/importation.
@@ -48,9 +48,13 @@ export default function IndexPage() {
   ]
 
   const { data, error } = useSWR("/api/xataClient", fetcher)
-  console.log(data)
   if (error) return <div>Failed to load products or categories</div>
-  if (!data) return <div>Loading...</div>
+  if (!data)
+    return (
+      <div>
+        <RotatingDotsLoader />
+      </div>
+    )
   return (
     <>
       <section className="flex mt-10 ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
@@ -65,10 +69,7 @@ export default function IndexPage() {
           <br />
           <TextGenerateEffect words={label} />
           <div className="flex gap-4 mt-10">
-            <Link
-              href="/products"
-              className={buttonVariants()}
-            >
+            <Link href="/products" className={buttonVariants()}>
               Produits {">"}
             </Link>
             <Link

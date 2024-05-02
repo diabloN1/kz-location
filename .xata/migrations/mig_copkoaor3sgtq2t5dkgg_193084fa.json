@@ -1,0 +1,16 @@
+{
+  "id": "mig_copkoaor3sgtq2t5dkgg",
+  "parentID": "mig_copb19lvdhlc2d9namag",
+  "checksum": "1:193084fa801db80f1a53c6052634e8dafe93f99090ec94fb9da8606757d1ff52",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "nameP",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

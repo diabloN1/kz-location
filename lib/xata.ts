@@ -17,11 +17,11 @@ const tables = [
     name: "Products",
     columns: [
       { name: "product", type: "string" },
-      { name: "description", type: "string" },
       { name: "price", type: "float" },
       { name: "img", type: "file[]", "file[]": { defaultPublicAccess: true } },
       { name: "categorie", type: "string" },
       { name: "discount", type: "float" },
+      { name: "description", type: "string" },
     ],
   },
   { name: "Categories", columns: [{ name: "name", type: "string" }] },
@@ -36,6 +36,17 @@ const tables = [
       { name: "Description", type: "string" },
     ],
   },
+  {
+    name: "Demande_P",
+    columns: [
+      { name: "nameP", type: "string" },
+      { name: "idP", type: "string" },
+      { name: "fullName", type: "string" },
+      { name: "mail", type: "email" },
+      { name: "num", type: "string" },
+    ],
+  },
+  { name: "Contact", columns: [] },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -53,11 +64,19 @@ export type CategoriesRecord = Categories & XataRecord;
 export type DemandeS = InferredTypes["Demande_S"];
 export type DemandeSRecord = DemandeS & XataRecord;
 
+export type DemandeP = InferredTypes["Demande_P"];
+export type DemandePRecord = DemandeP & XataRecord;
+
+export type Contact = InferredTypes["Contact"];
+export type ContactRecord = Contact & XataRecord;
+
 export type DatabaseSchema = {
   tag: TagRecord;
   Products: ProductsRecord;
   Categories: CategoriesRecord;
   Demande_S: DemandeSRecord;
+  Demande_P: DemandePRecord;
+  Contact: ContactRecord;
 };
 
 const DatabaseClient = buildClient();

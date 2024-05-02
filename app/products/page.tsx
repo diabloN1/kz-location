@@ -23,6 +23,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import RotatingDotsLoader from "@/components/ui/loading"
+
 
 export default function page() {
   const { data, error } = useSWR("/api/xataClient", fetcher)
@@ -32,38 +34,33 @@ export default function page() {
   )
 
   const [search, setsearch] = useState("")
-  console.log(data)
   if (error || err) return <div>Failed to load products or categories</div>
-  if (!data || !categories) return <div>Loading...</div>
+  if (!data || !categories) return <div><RotatingDotsLoader/></div>
   return (
     <div className="flex flex-col items-center">
       <header className="flex justify-between items-center w-full p-4">
-        <h1 className="text-xl font-bold xl leading-tight tracking-tighter md:text-xl xl:text-6xl sm:text-xl xs:text-xl mx-[150px] mt-4">
+        <h1 className="text-xl font-bold leading-tight tracking-tighter md:text-xl lg:text-2xl xl:text-6xl sm:text-xl xs:text-xl mx-4 md:mx-8 lg:mx-12 mt-4 lg:ml-40">
           Products
         </h1>
         <div className="flex items-center gap-4">
-          <div className="relative md: mt-10 ml-5">
+          <div className="relative md:mt-10 ml-5">
             <Search className="absolute right-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search products..."
-              className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+              placeholder="Chercher Produit..."
+              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
               onChange={(e) => setsearch(e.target.value)}
             />
           </div>
-          {/* <button className="border border-orange-500 bg-black text-white font-bold py-2 px-6 rounded hover:bg-orange-500 hover:text-black mt-5 mr-30">
-            All
-          </button> */}
           <Sheet>
-            <SheetTrigger className="pt-10 mr-[160px]">
-              <Button variant="secondary">Filter</Button>
+            <SheetTrigger className="pt-10 mr-4 md:mr-8 lg:mr-40">
+              <Button variant="outline">Categorie</Button>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetTitle>Categories</SheetTitle>
                 <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
+                  Choisir une categorie pour voir les produits
                   <br />
                   <p className="text-bold mb-5 mt-10">Choix par categorie</p>
                   <Select onValueChange={(e: string) => setsearch(e)}>
