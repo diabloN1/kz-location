@@ -1,0 +1,16 @@
+{
+  "id": "mig_coqma406l5qqkni4kvg0",
+  "parentID": "mig_coqm9qldcfnf8kfv49tg",
+  "checksum": "1:e6797944f6faff2f38770c66009700fbe596fd676e1117f0f272f7a5ba80ff57",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "string"
+        },
+        "table": "Comments"
+      }
+    }
+  ]
+}

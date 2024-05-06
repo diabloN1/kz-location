@@ -8,12 +8,6 @@ import type {
 
 const tables = [
   {
-    name: "tag",
-    columns: [
-      { name: "name", type: "string", notNull: true, defaultValue: "gallery" },
-    ],
-  },
-  {
     name: "Products",
     columns: [
       { name: "product", type: "string" },
@@ -46,14 +40,29 @@ const tables = [
       { name: "num", type: "string" },
     ],
   },
-  { name: "Contact", columns: [] },
+  {
+    name: "Contact",
+    columns: [
+      { name: "fullName", type: "string" },
+      { name: "num", type: "string" },
+      { name: "email", type: "email" },
+      { name: "message", type: "string" },
+    ],
+  },
+  {
+    name: "Reviews",
+    columns: [
+      { name: "user", type: "string" },
+      { name: "img", type: "string" },
+      { name: "comment", type: "string" },
+      { name: "product", type: "string" },
+      { name: "rate", type: "int", notNull: true, defaultValue: "5" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
-
-export type Tag = InferredTypes["tag"];
-export type TagRecord = Tag & XataRecord;
 
 export type Products = InferredTypes["Products"];
 export type ProductsRecord = Products & XataRecord;
@@ -70,13 +79,16 @@ export type DemandePRecord = DemandeP & XataRecord;
 export type Contact = InferredTypes["Contact"];
 export type ContactRecord = Contact & XataRecord;
 
+export type Reviews = InferredTypes["Reviews"];
+export type ReviewsRecord = Reviews & XataRecord;
+
 export type DatabaseSchema = {
-  tag: TagRecord;
   Products: ProductsRecord;
   Categories: CategoriesRecord;
   Demande_S: DemandeSRecord;
   Demande_P: DemandePRecord;
   Contact: ContactRecord;
+  Reviews: ReviewsRecord;
 };
 
 const DatabaseClient = buildClient();

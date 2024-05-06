@@ -1,0 +1,18 @@
+{
+  "id": "mig_coquab5dcfnf8kfv4b50",
+  "parentID": "mig_coqsuh86l5qqkni4l090",
+  "checksum": "1:2ea4d22eb4799a5c11564120a9b4d62f7ea7452c5081b417ac33c66de52cc906",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "rate",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "5"
+        },
+        "table": "Reviews"
+      }
+    }
+  ]
+}

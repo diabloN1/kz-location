@@ -1,0 +1,16 @@
+{
+  "id": "mig_coppofj3mj5b940641mg",
+  "parentID": "mig_coppo28jk5v6017cuds0",
+  "checksum": "1:99033b899b351500714e46d7d18be756b7f9de8cf506ce48cc248bc09d859d2b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "message",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    }
+  ]
+}

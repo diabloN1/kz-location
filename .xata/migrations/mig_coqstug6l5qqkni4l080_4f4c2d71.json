@@ -1,0 +1,18 @@
+{
+  "id": "mig_coqstug6l5qqkni4l080",
+  "parentID": "mig_coqma406l5qqkni4kvg0",
+  "checksum": "1:4f4c2d714296c33217be0d65d8b3d78a7b6775478b4e8eb091e70f7373add57c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Date",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "now"
+        },
+        "table": "Products"
+      }
+    }
+  ]
+}

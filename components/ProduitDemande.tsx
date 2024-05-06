@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
 
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { PhoneInput } from "./ui/phoneInput"
 
 interface DemandeProps {
   id: any
@@ -33,8 +34,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
   const [email, setEmail] = useState("")
   const [addProductR, setaddProductR] = useState({})
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault()
+  useEffect(() => {
     setaddProductR({
       nameP: nameP,
       idP: id,
@@ -42,6 +42,10 @@ export function DialogDemo({ id, name }: DemandeProps) {
       fullName: nom,
       num: num,
     })
+  }, [nameP, email, nom, num])
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
     setOpen(false)
     try {
       const response = await axios.post("/api/xataPostProduct", addProductR)
@@ -80,7 +84,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
             <Label htmlFor="produit">Produit</Label>
             <Input
               id="produit"
-              value={nameP}
+              value={name}
               onChange={(e) => setNameP(e.target.value)}
               disabled
             />
@@ -97,13 +101,12 @@ export function DialogDemo({ id, name }: DemandeProps) {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="num">Numero de telephone</Label>
-            <Input
-              id="num"
-              type="number"
-              placeholder="+212 XXXXXXXXX"
+            <PhoneInput
               value={num}
-              onChange={(e) => setNum(e.target.value)}
-              required
+              onChange={setNum}
+              defaultCountry="MA"
+              placeholder="Enter votre numero ici"
+              international
             />
           </div>
           <div className="grid gap-2">
@@ -128,7 +131,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
                 Close
               </Button>
             </DialogClose>
-              <Button type="submit">Submit</Button>
+            <Button type="submit">Submit</Button>
           </DialogFooter>
         </form>
       </DialogContent>

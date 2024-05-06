@@ -1,0 +1,13 @@
+{
+  "id": "mig_coqsuh86l5qqkni4l090",
+  "parentID": "mig_coqsu87q0eadt0kil610",
+  "checksum": "1:0db044226fae02a1efb75d64ac1eb1ea175d832385c4483ce59c09bb664c0316",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Reviews",
+        "oldName": "Comments"
+      }
+    }
+  ]
+}

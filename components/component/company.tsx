@@ -1,4 +1,5 @@
 import React from "react"
+import { TextGenerateEffect } from "../textgenerateeffect"
 
 export function Company() {
   return (
@@ -10,12 +11,14 @@ export function Company() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Qui sommes-nous ?
               </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <TextGenerateEffect
+              className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+              words="
                 Une SARL marocaine incarne l'excellence, l'innovation et le
                 service clientèle de qualité. Engagés envers la satisfaction de
                 nos clients, nous contribuons au dynamisme économique du Maroc
                 tout en représentant le savoir-faire local à l'international.
-              </p>
+                "/>
             </div>
           </div>
         </div>

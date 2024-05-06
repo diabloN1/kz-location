@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
+import { PhoneNumber } from "react-phone-number-input"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -24,6 +25,7 @@ import {
   SelectValue,
 } from "./ui/select"
 import { Textarea } from "./ui/textarea"
+import { PhoneInput } from "./ui/phoneInput"
 
 interface DemandeProps {
   onCancel: () => void
@@ -45,8 +47,7 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
   const [serviceType, setserviceType] = useState("")
   const [addServiceR, setaddServiceR] = useState({})
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault()
+  useEffect(() => {
     setaddServiceR({
       serviceType: serviceType,
       name: nom,
@@ -55,6 +56,10 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
       Description: description,
       num: num,
     })
+  }, [serviceType, nom, email, subject, description, num])
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
     setOpen(false)
     try {
       const response = await axios.post("/api/xataPostService", addServiceR)
@@ -138,13 +143,12 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="num">Numero de telephone</Label>
-            <Input
-              id="num"
-              type="number"
-              placeholder="+212 XXXXXXXXX"
+            <PhoneInput
               value={num}
-              onChange={(e) => setNum(e.target.value)}
-              required
+              onChange={setNum}
+              defaultCountry="MA"
+              placeholder="Enter votre numero ici"
+              international
             />
           </div>
           <div className="grid gap-2">

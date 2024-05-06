@@ -1,9 +1,48 @@
+"use client"
+
+import React, { useEffect, useState } from "react"
+import axios from "axios"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
+import { PhoneInput } from "../ui/phoneInput"
+
 export function ContactAiGen() {
+  const [fullName, setFullName] = useState("")
+  const [num, setNum] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [addContact, setaddContact] = useState({})
+
+  useEffect(() => {
+    setaddContact({
+      fullName: fullName,
+      num: num,
+      email: email,
+      message: message,
+    })
+  }, [fullName, num, email, message])
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
+    setaddContact({
+      fullName: fullName,
+      num: num,
+      email: email,
+      message: message,
+    })
+    try {
+      const response = await axios.post("/api/xataPostContact", addContact)
+      console.log("Product created:", response.data)
+      // Update state or perform other actions as needed
+    } catch (error) {
+      console.error("Error creating product:", error)
+      // Handle errors as needed
+    }
+  }
   return (
     <div className=" min-h-[100dvh] flex flex-col">
       <main className="flex-1 py-12 md:py-24 lg:py-32">
@@ -65,13 +104,27 @@ export function ContactAiGen() {
               <h2 className="text-2xl font-bold mb-4 animate-fadeIn text-amber-900 dark:text-orange-500">
                 Prenez contact avec nous
               </h2>
-              <form className="space-y-4 animate-fadeIn">
+              <form
+                className="space-y-4 animate-fadeIn"
+                onSubmit={handleSubmit}
+              >
                 <div className="space-y-2">
                   <Label htmlFor="name">Nom Complet</Label>
                   <Input
                     className="animate-pulse"
                     id="name"
                     placeholder="Enter your name"
+                    onChange={(e) => setFullName(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Numero de telephone</Label>
+                  <PhoneInput
+                    value={num}
+                    onChange={setNum}
+                    defaultCountry="MA"
+                    placeholder="Enter votre numero ici"
+                    international
                   />
                 </div>
                 <div className="space-y-2">
@@ -81,14 +134,16 @@ export function ContactAiGen() {
                     id="email"
                     placeholder="Enter your email"
                     type="email"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
-                    className="min-h-[380px] animate-pulse"
+                    className="min-h-[250px] animate-pulse"
                     id="message"
                     placeholder="Enter your message"
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <Button className="w-full" type="submit">
@@ -140,7 +195,6 @@ function MapPinIcon() {
     </svg>
   )
 }
-
 
 function PhoneIcon() {
   return (

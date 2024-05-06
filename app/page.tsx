@@ -7,9 +7,9 @@ import fetcher from "@/lib/fetcher"
 import { HoverEffectCard } from "@/components/ui/ProductCard"
 import { buttonVariants } from "@/components/ui/button"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
+import RotatingDotsLoader from "@/components/ui/loading"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
-import RotatingDotsLoader from "@/components/ui/loading"
 
 const label = `Découvrez Oriental Building Strategy, votre solution pour la
             construction, travaux divers, négoce et exportation/importation.
@@ -82,18 +82,18 @@ export default function IndexPage() {
         </div>
         <div className="w-1/2 relative flex-col pb-40  xl:ml-60 mt-[-110px] hidden lg:flex">
           <img
-            className="absolute left-0 h-[450px] "
+            className="absolute left-0 h-[450px] animate-bounce"
             loading="lazy"
             alt=""
             src="/unsplash3mamj1zksza@2x.png"
           />
           <img
-            className="absolute left-0 h-[420px]"
+            className="absolute left-0 h-[420px] animate-bounce"
             alt=""
             src="/unsplash3mamj1zksza-1@2x.png"
           />
           <img
-            className="absolute left-0 h-[380px]"
+            className="absolute left-0 h-[380px] animate-bounce"
             alt=""
             src="/image-13@2x.png"
           />
@@ -105,10 +105,13 @@ export default function IndexPage() {
             Nos Services
           </h1>
           <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[800px] text-lg text-muted-foreground">
-            <br />À Oriental Building Strategy, nous nous enorgueillissons de
+            <br />
+            <TextGenerateEffect
+              words="À Oriental Building Strategy, nous nous enorgueillissons de
             proposer une gamme complète d'articles conçus pour répondre à vos
             besoins en matière de construction, de commerce, d'affaires et
-            d'exportation-importation.
+            d'exportation-importation."
+            />
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
