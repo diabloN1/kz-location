@@ -1,11 +1,12 @@
 "use client"
 import { Product } from "@/components/component/product";
+import { Reviewsmodel } from "@/components/component/reviews model";
 
 
 
 export default function page({ params }: { params: { productId: string } }) {
   return <div>
-            <Product id={params.productId}/>
+            <Reviewsmodel idItem={params.productId} />
         </div>
 }
 

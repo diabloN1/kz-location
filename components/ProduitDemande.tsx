@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
+import toast, { toastConfig } from "react-simple-toasts"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -15,7 +16,11 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
 import { PhoneInput } from "./ui/phoneInput"
+import "react-simple-toasts/dist/theme/dark.css"
+
+toastConfig({ theme: "dark" })
 
 interface DemandeProps {
   id: any
@@ -63,8 +68,9 @@ export function DialogDemo({ id, name }: DemandeProps) {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button
-          className="bg-primary text-white hover:bg-primary/90 focus:ring-primary"
+          className="hover:bg-primary/90 focus:ring-primary "
           size="lg"
+          variant="default"
         >
           <div className="mr-2">
             <ShoppingCartIcon />
@@ -131,7 +137,17 @@ export function DialogDemo({ id, name }: DemandeProps) {
                 Close
               </Button>
             </DialogClose>
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+              onClick={() =>
+                toast("Hello, World!", {
+                  position: "bottom-right",
+                  theme: "dark-edge",
+                })
+              }
+            >
+              Submit
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>

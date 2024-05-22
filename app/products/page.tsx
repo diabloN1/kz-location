@@ -68,18 +68,18 @@ export default function page() {
                       <SelectValue placeholder="Choose a category" />
                     </SelectTrigger>
                     <SelectContent>
-                      {categories.map((cat: any) => {
+                      {categories?categories.map((categorie: any) => {
                         return (
-                          <div key={cat.id}>
-                            <SelectItem value={cat.name}>
-                              {cat.name}
+                          <div key={categorie.id}>
+                            <SelectItem value={categorie.name}>
+                              {categorie.name}
                               {/* <a onClick={() => setsearch(cat.name)}>
                           {cat.name}
                         </a> */}
                             </SelectItem>
                           </div>
                         )
-                      })}
+                      }):null}
                     </SelectContent>
                   </Select>
                 </SheetDescription>

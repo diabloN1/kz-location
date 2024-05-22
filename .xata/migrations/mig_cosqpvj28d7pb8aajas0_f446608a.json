@@ -1,0 +1,13 @@
+{
+  "id": "mig_cosqpvj28d7pb8aajas0",
+  "parentID": "mig_cosq9d9ndrs6fjd62j80",
+  "checksum": "1:f446608ac1074abb034a3e652558ce86db504295b6f94dee9d53b4dd6de8bfd3",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "mail",
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

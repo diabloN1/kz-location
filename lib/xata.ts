@@ -25,9 +25,9 @@ const tables = [
       { name: "name", type: "string", defaultValue: "" },
       { name: "serviceType", type: "string" },
       { name: "subject", type: "string" },
-      { name: "email", type: "email" },
       { name: "num", type: "string" },
       { name: "Description", type: "string" },
+      { name: "email", type: "string" },
     ],
   },
   {
@@ -36,8 +36,8 @@ const tables = [
       { name: "nameP", type: "string" },
       { name: "idP", type: "string" },
       { name: "fullName", type: "string" },
-      { name: "mail", type: "email" },
       { name: "num", type: "string" },
+      { name: "mail", type: "string" },
     ],
   },
   {

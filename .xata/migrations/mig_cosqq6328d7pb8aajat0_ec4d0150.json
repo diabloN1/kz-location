@@ -1,0 +1,16 @@
+{
+  "id": "mig_cosqq6328d7pb8aajat0",
+  "parentID": "mig_cosqpvj28d7pb8aajas0",
+  "checksum": "1:ec4d0150b349a3458b3d741360cb72f5ec2b25f12756ba109dc0673bdceb58e1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "mail",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     // Parse the request body to get the product details
     const { serviceType, name, email, subject, Description, num } = await req.json()
 
+    
     const record = await xata.db.Demande_S.create({
       serviceType: serviceType,
       name: name,

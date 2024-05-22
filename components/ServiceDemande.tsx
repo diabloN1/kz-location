@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+import { PhoneInput } from "./ui/phoneInput"
 import {
   Select,
   SelectContent,
@@ -25,7 +26,9 @@ import {
   SelectValue,
 } from "./ui/select"
 import { Textarea } from "./ui/textarea"
-import { PhoneInput } from "./ui/phoneInput"
+import { toast } from "sonner"
+import { Toast } from "@radix-ui/react-toast"
+import { Toaster } from "./ui/toaster"
 
 interface DemandeProps {
   onCancel: () => void
@@ -182,7 +185,11 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
                 Close
               </Button>
             </DialogClose>
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+            >
+              Submit
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>
