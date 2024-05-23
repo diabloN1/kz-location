@@ -10,6 +10,8 @@ import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
+import { Toaster} from "sonner"
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -47,10 +49,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="relative flex min-h-screen flex-col">
                 <SiteHeader />
                 <br />
-                <ResponsiveNav />
                 <div className="flex-1">{children}</div>
               </div>
               <TailwindIndicator />
+              <Toaster richColors closeButton/>
             </ThemeProvider>
           </body>
         </html>

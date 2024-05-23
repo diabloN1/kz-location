@@ -6,6 +6,7 @@ import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
 import useSWR from "swr"
 
+
 import fetcher from "@/lib/fetcher"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -73,6 +74,51 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
       console.error("Error creating review:", error)
       // Handle errors as needed
     }
+  }
+  const dateReview = (timestamp: string) => {
+    // Convert the timestamp string to a Date object
+    const date = new Date(timestamp)
+
+    // Get the current time
+    const now = new Date()
+
+    // Calculate the difference in milliseconds
+    const diffMillis = now.getTime() - date.getTime()
+
+    // Calculate hours, minutes, seconds, days, and weeks
+    const hours = Math.floor(diffMillis / (1000 * 60 * 60))
+    const minutes = Math.floor((diffMillis % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor(
+      ((diffMillis % (1000 * 60 * 60)) % (1000 * 60)) / 1000
+    )
+    const days = Math.floor(diffMillis / (1000 * 60 * 60 * 24))
+    const weeks = Math.floor(days / 7)
+    const months = Math.floor(days / 30) // Approximation, actual calculation would require more complex logic
+    const years = Math.floor(days / 365) // Approximation
+
+    // Format the output
+    let elapsedTime = ""
+    if (years > 0) elapsedTime = `${weeks}w ago`
+    if (years == 0) {
+      if (months > 0) elapsedTime = `${months}w ago`
+    }
+    if (months == 0) {
+      if (weeks > 0) elapsedTime = `${weeks}w ago`
+    }
+    if (weeks == 0) {
+      if (days > 0) elapsedTime = `${days}d ago`
+    }
+    if (days == 0) {
+      if (hours > 0) elapsedTime = `${hours}h ago`
+    }
+    if (hours == 0) {
+      if (minutes > 0) elapsedTime = `${minutes}m ago`
+    }
+    if (minutes == 0) {
+      if (seconds > 0) elapsedTime = `${seconds}s ago`
+    }
+
+    return <div>{elapsedTime}</div>
   }
 
   useEffect(() => {
@@ -207,7 +253,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                       <div className="flex gap-4">
                         <Avatar className="w-10 h-10 border">
                           <AvatarImage alt="" src={review.img} />
-                          <AvatarFallback>U</AvatarFallback>
+                          <AvatarFallback>X</AvatarFallback>
                         </Avatar>
                         <div className="grid gap-2">
                           <div className="flex items-center gap-4">
@@ -229,7 +275,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                               />
                             </div>
                             <span className="text-sm text-gray-500 dark:text-gray-400">
-                              1 week ago
+                              {dateReview(review.xata.createdAt)}
                             </span>
                           </div>
                           <div className="flex items-center gap-2">

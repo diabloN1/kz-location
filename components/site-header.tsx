@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import Link from "next/link"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { useTheme } from "next-themes"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
@@ -10,16 +11,33 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+import { ResponsiveNav } from "./component/resposive-nav"
 
 export function SiteHeader() {
   const { user, error, isLoading } = useUser()
+  const { theme } = useTheme()
 
   if (isLoading)
     return (
       <div>
         <header className="bg-background sticky top-0 z-40 w-full border-b">
           <div className="container flex h-30 items-center space-x-4 sm:justify-between sm:space-x-0">
-            <MainNav items={siteConfig.mainNav} />
+            {/* <MainNav items={siteConfig.mainNav} /> */}
+            <Link href="/" className="flex items-center space-x-2">
+              <img
+                src={
+                  theme === "light"
+                    ? "https://i.imgur.com/87aoLXf.png"
+                    : "https://i.imgur.com/O9IGafj.png"
+                }
+                alt="Logo"
+                width={100}
+                height={100}
+              />
+            </Link>
+            <div className="hidden lg:block ">
+              <ResponsiveNav />
+            </div>
             <div className="flex flex-1 items-center justify-end space-x-4">
               <nav className="flex items-center space-x-1">
                 <Link
@@ -37,22 +55,10 @@ export function SiteHeader() {
                     <span className="sr-only">whatsapp</span>
                   </div>
                 </Link>
-                <Link
-                  href={siteConfig.links.twitter}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div
-                    className={buttonVariants({
-                      size: "icon",
-                      variant: "ghost",
-                    })}
-                  >
-                    <Icons.twitter className="h-5 w-5 fill-current" />
-                    <span className="sr-only">Twitter</span>
-                  </div>
-                </Link>
                 <ThemeToggle />
+                <div className="block lg:hidden ">
+                  <ResponsiveNav />
+                </div>
               </nav>
             </div>
           </div>
@@ -64,7 +70,22 @@ export function SiteHeader() {
   return (
     <header className="bg-background sticky top-0 z-40 w-full border-b">
       <div className="container flex h-30 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <MainNav items={siteConfig.mainNav} />
+        {/* <MainNav items={siteConfig.mainNav} /> */}
+        <Link href="/" className="flex items-center space-x-2">
+          <img
+            src={
+              theme === "light"
+                ? "https://i.imgur.com/87aoLXf.png"
+                : "https://i.imgur.com/O9IGafj.png"
+            }
+            alt="Logo"
+            width={100}
+            height={100}
+          />
+        </Link>
+        <div className="hidden lg:block ">
+          <ResponsiveNav />
+        </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
             <Link
@@ -80,21 +101,6 @@ export function SiteHeader() {
               >
                 <Icons.whatsapp />
                 <span className="sr-only">whatsapp</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.twitter className="h-5 w-5 fill-current" />
-                <span className="sr-only">Twitter</span>
               </div>
             </Link>
             <ThemeToggle />
@@ -113,7 +119,7 @@ export function SiteHeader() {
                 </Link>
               ) : (
                 <Link href="/api/auth/login" className={buttonVariants()}>
-                  Se connecter
+                  Connexion
                 </Link>
               )}
             </div>
@@ -127,6 +133,9 @@ export function SiteHeader() {
                 <h2>{user.email}</h2>
               </div>
             )}
+            <div className="block lg:hidden mx-[-100px]">
+              <ResponsiveNav />
+            </div>
           </nav>
         </div>
       </div>

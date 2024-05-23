@@ -61,13 +61,13 @@ const Dashboard: React.FC = () => {
             Services
           </h1>
         </div>
-        <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-6 lg:grid-cols-[250px_1fr]">
           <nav
             className="grid gap-4 text-sm text-muted-foreground"
             x-chunk="dashboard-04-chunk-0"
           >
             {services.map((service) => (
-              <div key={service.id}>
+              <div key={service.id} className="hidden lg:block">
               <a
                 key={service.id}
                 onClick={() => scrollToService(service.title)}

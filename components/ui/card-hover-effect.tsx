@@ -53,7 +53,9 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <img src={item.img} alt="" className="rounded w-full" />
+            <div className="m-[100px]">
+              <img src={item.img} alt="" className="w-full" />
+            </div>
             <div className="">
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>

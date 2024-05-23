@@ -16,7 +16,7 @@ const label = `Découvrez Oriental Building Strategy, votre solution pour la
             Nous vous offrons des solutions innovantes et durables.`
 
 export default function IndexPage() {
-  const projects = [
+  const services = [
     {
       title: "Contruction",
       description:
@@ -115,7 +115,7 @@ export default function IndexPage() {
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
-          <HoverEffect items={projects} />
+          <HoverEffect items={services} />
         </div>
       </section>
       <section className="mt-[440px] mb-40 ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 md:py-10">

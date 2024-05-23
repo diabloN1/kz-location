@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
-import toast, { toastConfig } from "react-simple-toasts"
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -19,8 +19,6 @@ import { Label } from "@/components/ui/label"
 
 import { PhoneInput } from "./ui/phoneInput"
 import "react-simple-toasts/dist/theme/dark.css"
-
-toastConfig({ theme: "dark" })
 
 interface DemandeProps {
   id: any
@@ -140,9 +138,9 @@ export function DialogDemo({ id, name }: DemandeProps) {
             <Button
               type="submit"
               onClick={() =>
-                toast("Hello, World!", {
-                  position: "bottom-right",
-                  theme: "dark-edge",
+                
+                toast.message("Operation effectuée avec succes", {
+                  description: "On va vous contacter dans les prochaines 24h",
                 })
               }
             >
