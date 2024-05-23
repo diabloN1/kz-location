@@ -138,7 +138,18 @@ export function DialogDemo({ id, name }: DemandeProps) {
             <Button
               type="submit"
               onClick={() =>
+
+
+
+
+
                 
+                // Toast is here
+
+
+
+
+
                 toast.message("Operation effectuée avec succes", {
                   description: "On va vous contacter dans les prochaines 24h",
                 })

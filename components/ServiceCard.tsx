@@ -30,8 +30,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   }
   return (
      <div className="flex flex-col md:flex-row items-center">
-      <img src={image} alt={title} className="w-full md:w-1/2" />
-      <div className="md:ml-4">
+      <img src={image} alt={title} className="mb-2 w-full rounded md:w-1/2" />
+      <div className="mb-2 md:ml-4 md:mb-0">
         <h2 className="text-xl font-bold">{title}</h2>
         <br />
         <p className="mt-2">{description}</p>
