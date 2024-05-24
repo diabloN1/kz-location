@@ -4,8 +4,9 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import axios from "axios"
+import { useTheme } from "next-themes"
+import { Toaster } from "sonner"
 import useSWR from "swr"
-
 
 import fetcher from "@/lib/fetcher"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -25,6 +26,9 @@ import { Card, CardContent } from "../ui/card"
 import RotatingDotsLoader from "../ui/loading"
 
 export function Reviewsmodel({ idItem }: { idItem: any }) {
+  //get theme dark or light
+  const { theme } = useTheme()
+
   const [id, setId] = useState(idItem || window.location.pathname.split("/")[2])
   console.log(idItem || window.location.pathname.split("/")[2])
   //start count
@@ -391,6 +395,31 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
               </Link>
             </div>
           </div>
+          {theme === "light" ? (
+            <Toaster
+              richColors
+              closeButton
+              toastOptions={{
+                style: {
+                  background: "white",
+                  color: "black",
+                },
+                className: "class",
+              }}
+            />
+          ) : (
+            <Toaster
+              richColors
+              closeButton
+              toastOptions={{
+                style: {
+                  background: "black",
+                  color: "white",
+                },
+                className: "class",
+              }}
+            />
+          )}
         </section>
       </>
     )

@@ -148,9 +148,9 @@ export function DialogDemo({ id, name }: DemandeProps) {
 
 
 
+                
 
-
-                toast.message("Operation effectuée avec succes", {
+                toast.success("Operation effectuée avec succes", {
                   description: "On va vous contacter dans les prochaines 24h",
                 })
               }
