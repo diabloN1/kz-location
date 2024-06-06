@@ -48,7 +48,7 @@ export default function page() {
             <Input
               type="text"
               placeholder="Chercher Produit..."
-              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-400"
               onChange={(e) => setsearch(e.target.value)}
             />
           </div>

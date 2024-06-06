@@ -34,7 +34,7 @@ export function Company() {
               width="550"
             />
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-amber-900 dark:text-orange-500">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-amber-900 dark:text-orange-400">
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -58,7 +58,7 @@ export function Company() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-amber-900 dark:bg-orange-500">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-amber-900 dark:bg-orange-400">
                 Nos objectifs
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
@@ -72,7 +72,7 @@ export function Company() {
               </p>
             </div>
             <div className="space-y-2">
-              <div className="inline-block rounded-lg  px-3 py-1 text-sm bg-amber-900 dark:bg-orange-500">
+              <div className="inline-block rounded-lg  px-3 py-1 text-sm bg-amber-900 dark:bg-orange-400">
                 Notre équipe
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
@@ -90,7 +90,7 @@ export function Company() {
       </section>
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-6xl font-bold mb-6 md:text-3xl lg:text-4xl text-amber-900 dark:text-orange-500">
+          <h2 className="text-6xl font-bold mb-6 md:text-3xl lg:text-4xl text-amber-900 dark:text-orange-400">
             Nos principes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
