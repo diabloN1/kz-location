@@ -106,6 +106,8 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
                   ? "negoce"
                   : id == 4
                   ? "expo-impo"
+                  : id == 5
+                  ? "developpement"
                   : ""
               }
             >
@@ -116,9 +118,8 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
                 <SelectItem value={"construction"}>Construction</SelectItem>
                 <SelectItem value={"travauxDivers"}>Travaux divers</SelectItem>
                 <SelectItem value={"negoce"}>Negoce</SelectItem>
-                <SelectItem value={"expo-impo"}>
-                  Exportation-importaion
-                </SelectItem>
+                <SelectItem value={"expo-impo"}> Exportation-importaion </SelectItem>
+                <SelectItem value={"developpement"}>Developpement</SelectItem>
                 <SelectItem value={"autre"}>Autre</SelectItem>
               </SelectContent>
             </Select>

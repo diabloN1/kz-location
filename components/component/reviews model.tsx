@@ -365,7 +365,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
           </div>
         </div>
         {/* footer bellow */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-amber-900 dark:bg-black">
           <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
             <div className="space-y-3">
               {/* here start the footer section */}

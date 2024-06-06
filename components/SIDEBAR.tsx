@@ -1,6 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import { ServiceCard } from "@/components/ServiceCard"
+
+
+import { ServiceCard } from "@/components/ServiceCard";
+
+
+
 
 
 const Dashboard: React.FC = () => {
@@ -13,7 +18,7 @@ const Dashboard: React.FC = () => {
       link: "/construction",
       image: "/service1.png",
       description:
-        "We offer comprehensive construction services, including building new structures and renovating existing ones. Our team is experienced and committed to delivering high-quality results on time and within budget.",
+        "Nous offrons des services de construction complets, y compris la construction de nouvelles structures et la rénovation des structures existantes. Notre équipe est expérimentée et s'engage à fournir des résultats de haute qualité dans les délais et le budget impartis.",
     },
     {
       id: 2,
@@ -21,7 +26,7 @@ const Dashboard: React.FC = () => {
       link: "/travauxdivers",
       image: "/service2.png",
       description:
-        "Our diversified services cover a wide range of tasks, from landscaping and gardening to event planning and logistics. We pride ourselves on our versatility and ability to adapt to any project's needs.",
+        "Nos services diversifiés couvrent un large éventail de tâches, allant de l'aménagement paysager et du jardinage à la planification d'événements et à la logistique. Nous sommes fiers de notre polyvalence et de notre capacité à nous adapter aux besoins de chaque projet.",
     },
     {
       id: 3,
@@ -29,7 +34,7 @@ const Dashboard: React.FC = () => {
       link: "/negoce",
       image: "/service3.jpg",
       description:
-        "We specialize in sourcing and negotiating the best deals for a wide variety of goods and services. Our expertise in the market allows us to provide our clients with the best value and quality.",
+        "Nous sommes spécialisés dans la recherche et la négociation des meilleures offres pour une grande variété de biens et de services. Notre expertise sur le marché nous permet de fournir à nos clients la meilleure valeur et qualité.",
     },
     {
       id: 4,
@@ -37,7 +42,15 @@ const Dashboard: React.FC = () => {
       link: "/exportationimportation",
       image: "/service4.png",
       description:
-        "We handle all aspects of exportation and importation, from logistics and customs clearance to transportation and warehousing. Our team ensures smooth and efficient operations for your international trade needs.",
+        "Nous gérons tous les aspects de l'exportation et de l'importation, de la logistique et du dédouanement au transport et à l'entreposage. Notre équipe garantit des opérations fluides et efficaces pour vos besoins en commerce international.",
+    },
+    {
+      id: 5,
+      title: "Developpement",
+      link: "/developpement",
+      image: "/service4.png",
+      description:
+        "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
     },
   ]
   const scrollToService = (serviceTitle: string) => {

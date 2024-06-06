@@ -100,7 +100,7 @@ export function ContactAiGen() {
                 ></iframe>
               </div>
             </div>
-            <div className="bg-gray-100 dark:bg-black rounded-lg p-6 md:p-8 animate-fadeInUp">
+            <div className="bg-amber-100 dark:bg-black rounded-lg p-6 md:p-8 animate-fadeInUp">
               <h2 className="text-2xl font-bold mb-4 animate-fadeIn text-amber-900 dark:text-orange-500">
                 Prenez contact avec nous
               </h2>
