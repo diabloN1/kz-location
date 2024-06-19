@@ -60,11 +60,9 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
     })
   }, [newComment, id])
 
-  const handleDelReview = async (id: any) => {
+  const handleDelReview = async (revId: any) => {
     try {
-      const response = await axios.delete("/api/xataDelRev", {
-        data: { id },
-      })
+      const response = await axios.delete("/api/xataDelRev", revId)
       console.log(response.data)
     } catch (error) {
       console.error("Error deleting review:", error)
