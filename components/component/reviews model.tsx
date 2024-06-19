@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { Cross2Icon } from "@radix-ui/react-icons"
 import axios from "axios"
 import { useTheme } from "next-themes"
 import { Toaster } from "sonner"
@@ -46,13 +47,6 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
     fetcher
   )
   const product = data?.find((item: any) => item.id === id)
-  //set each product reviews individualy
-  // const [productReviews, setProductReviews] = useState([])
-  // useEffect(() => {
-  //   const pr =reviewsData?.filter((review: any) => id === review.product)
-  //   setProductReviews(pr)
-  //   console.log(pr)
-  // }, [reviewsData])
   const [newComment, setComment] = useState("")
   const [newReview, setNewReview] = useState({})
 
@@ -65,6 +59,17 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
       rate: starCount,
     })
   }, [newComment, id])
+
+  const handleDelReview = async (id: any) => {
+    try {
+      const response = await axios.delete("/api/xataDelRev", {
+        data: { id },
+      })
+      console.log(response.data)
+    } catch (error) {
+      console.error("Error deleting review:", error)
+    }
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -289,6 +294,20 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                             {review.comment}
                           </p>
                         </div>
+
+                        {/* delete button for a comment */}
+                        {user?.name === review.user ? (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="xl: ml-auto"
+                            onClick={() => {
+                              handleDelReview(review.id)
+                            }}
+                          >
+                            <Cross2Icon className="h-4 w-4" />
+                          </Button>
+                        ) : null}
                       </div>
                     </div>
                   )

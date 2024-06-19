@@ -1,4 +1,5 @@
 import React from "react"
+
 import { TextGenerateEffect } from "../textgenerateeffect"
 
 export function Company() {
@@ -12,13 +13,14 @@ export function Company() {
                 Qui sommes-nous ?
               </h2>
               <TextGenerateEffect
-              className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
-              words="
+                className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+                words="
                 Une SARL marocaine incarne l'excellence, l'innovation et le
                 service clientèle de qualité. Engagés envers la satisfaction de
                 nos clients, nous contribuons au dynamisme économique du Maroc
                 tout en représentant le savoir-faire local à l'international.
-                "/>
+                "
+              />
             </div>
           </div>
         </div>
@@ -30,7 +32,7 @@ export function Company() {
               alt="Notre entreprise"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="/placeholder.svg"
+              src="https://www.lafrancequiose.fr/wp-content/uploads/2021/12/presentation-d-entreprise.jpg"
               width="550"
             />
             <div className="space-y-2">

@@ -45,13 +45,13 @@ export default function IndexPage() {
       link: "/services",
       img: "/service4.png",
     },
-    {
-      title: "Developpement",
-      link: "/developpement",
-      image: "/service4.png",
-      description:
-        "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
-    },
+    // {
+    //   title: "Developpement",
+    //   link: "/developpement",
+    //   image: "/service4.png",
+    //   description:
+    //     "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
+    // },
   ]
 
   const { data, error } = useSWR("/api/xataClient", fetcher)

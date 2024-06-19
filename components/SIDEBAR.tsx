@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-
-
-import { ServiceCard } from "@/components/ServiceCard";
-
-
-
-
+import { ServiceCard } from "@/components/ServiceCard"
 
 const Dashboard: React.FC = () => {
   const [selectedService, setSelectedService] = useState("")
@@ -44,14 +38,14 @@ const Dashboard: React.FC = () => {
       description:
         "Nous gérons tous les aspects de l'exportation et de l'importation, de la logistique et du dédouanement au transport et à l'entreposage. Notre équipe garantit des opérations fluides et efficaces pour vos besoins en commerce international.",
     },
-    {
-      id: 5,
-      title: "Developpement",
-      link: "/developpement",
-      image: "/service4.png",
-      description:
-        "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
-    },
+    // {
+    //   id: 5,
+    //   title: "Developpement",
+    //   link: "/developpement",
+    //   image: "/service4.png",
+    //   description:
+    //     "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
+    // },
   ]
   const scrollToService = (serviceTitle: string) => {
     const element = document.getElementById(serviceTitle)
@@ -81,39 +75,39 @@ const Dashboard: React.FC = () => {
           >
             {services.map((service) => (
               <div key={service.id} className="hidden lg:block">
-              <a
-                key={service.id}
-                onClick={() => scrollToService(service.title)}
-                className={`${
-                  service.title === selectedService
-                    ? "font-semibold text-primary"
-                    : ""
-                }`}
-              >
-                {service.title}
-              </a>
+                <a
+                  key={service.id}
+                  onClick={() => scrollToService(service.title)}
+                  className={`${
+                    service.title === selectedService
+                      ? "font-semibold text-primary"
+                      : ""
+                  }`}
+                >
+                  {service.title}
+                </a>
               </div>
             ))}
           </nav>
           <div className="grid grid-cols-1 gap-4">
             {services.map((service) => (
               <div key={service.id}>
-              <div
-                key={service.title}
-                id={service.title}
-                className={`w-full ${
-                  selectedService && service.title !== selectedService
-                    ? "blur-sm"
-                    : ""
-                }`}
-              >
-                <ServiceCard
-                  image={service.image}
-                  title={service.title}
-                  description={service.description}
-                  id={service.id}
-                />
-              </div>
+                <div
+                  key={service.title}
+                  id={service.title}
+                  className={`w-full ${
+                    selectedService && service.title !== selectedService
+                      ? "blur-sm"
+                      : ""
+                  }`}
+                >
+                  <ServiceCard
+                    image={service.image}
+                    title={service.title}
+                    description={service.description}
+                    id={service.id}
+                  />
+                </div>
               </div>
             ))}
           </div>
