@@ -21,8 +21,8 @@ export function MainNav({ items }: MainNavProps) {
         <img
           src={
             theme === "light"
-              ? "https://i.imgur.com/87aoLXf.png"
-              : "https://i.imgur.com/O9IGafj.png"
+              ? "https://i.ibb.co/qDhjYrR/light.webp"
+              : "https://i.ibb.co/sbRPkVW/dark.webp"
           }
           alt="Logo"
           width={100}
