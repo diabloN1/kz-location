@@ -73,7 +73,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
           <div className="mr-2">
             <ShoppingCartIcon />
           </div>
-          Order Now
+          Commandez maintenant
         </Button>
       </DialogTrigger>
       <DialogContent>
@@ -136,26 +136,8 @@ export function DialogDemo({ id, name }: DemandeProps) {
               </Button>
             </DialogClose>
             <Button
-              type="submit"
-              onClick={() =>
-
-
-
-
-
-                
-                // Toast is here
-
-
-
-                
-
-                toast.success("Operation effectuée avec succes", {
-                  description: "On va vous contacter dans les prochaines 24h",
-                })
-              }
-            >
-              Submit
+              type="submit">
+              Envoyer
             </Button>
           </DialogFooter>
         </form>

@@ -6,7 +6,7 @@ import { useUser } from "@auth0/nextjs-auth0/client"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import axios from "axios"
 import { useTheme } from "next-themes"
-import { Toaster } from "sonner"
+import { Toaster, toast } from "sonner"
 import useSWR from "swr"
 
 import fetcher from "@/lib/fetcher"
@@ -245,11 +245,16 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
               </div>
               <DialogDemo id={id} name={product.product} />
             </div>
-            <hr />
 
             {/* reviews section */}
             <div className="grid gap-4">
-              <h2 className="font-bold text-xl">Reviews</h2>
+              {reviewsData?.filter((review: any) => review.product == id)
+                .length ? (
+                <>
+                  <hr />
+                  <h2 className="font-bold text-xl">Commentaires</h2>
+                </>
+              ) : null}
               {reviewsData
                 ?.filter((review: any) => review.product == id)
                 .map((review: any) => {
@@ -314,11 +319,11 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
 
               {/* make a review */}
               <div className="grid gap-4">
-                <h2 className="font-bold text-xl">Leave a Review</h2>
+                <h2 className="font-bold text-xl">Laisser un commentaire</h2>
                 <form className="grid gap-4" onSubmit={(e) => handleSubmit(e)}>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">
-                      Rate this product
+                      Évaluez ce produit
                     </span>
                     <br />
                     <div className="flex items-center gap-0.5">
@@ -365,16 +370,18 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                     </div>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="comment">Your Review</Label>
+                    <Label htmlFor="comment">Ajouter votre avis</Label>
                     <Textarea
                       id="comment"
-                      placeholder="Share your thoughts about this product..."
+                      placeholder="Partagez votre avis sur ce produit..."
                       onChange={(e) => setComment(e.target.value)}
                       value={newComment}
                     />
                   </div>
-                  <Button type="submit" variant={"outline"}>
-                    Submit Review
+                  <Button
+                    type="submit"
+                    variant={"outline"} >
+                    Poster-le
                   </Button>
                 </form>
               </div>
@@ -400,25 +407,6 @@ function StarIcon(props: any) {
       strokeLinejoin="round"
     >
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  )
-}
-function ShoppingCartIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="8" cy="21" r="1" />
-      <circle cx="19" cy="21" r="1" />
-      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
     </svg>
   )
 }
