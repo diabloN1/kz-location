@@ -56,6 +56,24 @@ export function SiteHeader() {
                     <span className="sr-only">whatsapp</span>
                   </div>
                 </Link>
+                <Link
+                  href="mailto:orientalbuildingstrategy@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div
+                    className={buttonVariants({
+                      size: "icon",
+                      variant: "ghost",
+                    })}
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png"
+                      className="h-[15px]"
+                    />
+                    <span className="sr-only">Mail</span>
+                  </div>
+                </Link>
                 <ThemeToggle />
                 <div className="block lg:hidden ">
                   <ResponsiveNav />
@@ -115,8 +133,11 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
-                <Mail />
-                <span className="sr-only">whatsapp</span>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png"
+                  className="h-[15px]"
+                />
+                <span className="sr-only">Mail</span>
               </div>
             </Link>
             <ThemeToggle />
