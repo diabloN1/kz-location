@@ -69,7 +69,7 @@ export function ContactAiGen() {
                       0708014286
                     </p>
                   </div>
-                </div>              
+                </div>
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
                     <MailIcon />
@@ -78,7 +78,9 @@ export function ContactAiGen() {
                     <h3 className="font-medium animate-fadeIn">Email</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       {" "}
-                      orientalbuildingstrategy@gmail.com{" "}
+                      <a href="mailto:orientalbuildingstrategy@gmail.com">
+                        orientalbuildingstrategy@gmail.com
+                      </a>{" "}
                     </p>
                   </div>
                 </div>
@@ -157,7 +159,6 @@ export function ContactAiGen() {
     </div>
   )
 }
-
 
 function MailIcon() {
   return (

@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import Link from "next/link"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { Mail } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { siteConfig } from "@/config/site"
@@ -100,6 +101,21 @@ export function SiteHeader() {
                 })}
               >
                 <Icons.whatsapp />
+                <span className="sr-only">whatsapp</span>
+              </div>
+            </Link>
+            <Link
+              href="mailto:orientalbuildingstrategy@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className={buttonVariants({
+                  size: "icon",
+                  variant: "ghost",
+                })}
+              >
+                <Mail />
                 <span className="sr-only">whatsapp</span>
               </div>
             </Link>
