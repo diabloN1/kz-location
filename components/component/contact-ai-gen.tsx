@@ -53,7 +53,7 @@ export function ContactAiGen() {
                 Contactez Nous
               </h1>
               <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
-                Get in touch with us for more information about our services.
+                Pour en savoir plus, contactez-nous.
               </p>
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-start gap-4">
@@ -69,18 +69,7 @@ export function ContactAiGen() {
                       0708014286
                     </p>
                   </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
-                    <MapPinIcon />
-                  </div>
-                  <div>
-                    <h3 className="font-medium animate-fadeIn">Adresse</h3>
-                    <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
-                      244 Q.I SIDI GHANEM BUREAU A GAUCHE ETAGE 1 MARRAKECH{" "}
-                    </p>
-                  </div>
-                </div>
+                </div>              
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
                     <MailIcon />
@@ -90,6 +79,17 @@ export function ContactAiGen() {
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       {" "}
                       orientalbuildingstrategy@gmail.com{" "}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
+                    <MapPinIcon />
+                  </div>
+                  <div>
+                    <h3 className="font-medium animate-fadeIn">Adresse</h3>
+                    <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
+                      244 Q.I SIDI GHANEM BUREAU A GAUCHE ETAGE 1 MARRAKECH{" "}
                     </p>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export function ContactAiGen() {
                   <Input
                     className="animate-pulse"
                     id="name"
-                    placeholder="Enter your name"
+                    placeholder="Enter votre nom"
                     onChange={(e) => setFullName(e.target.value)}
                   />
                 </div>
@@ -132,7 +132,7 @@ export function ContactAiGen() {
                   <Input
                     className="animate-pulse"
                     id="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter votre email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -142,12 +142,12 @@ export function ContactAiGen() {
                   <Textarea
                     className="min-h-[250px] animate-pulse"
                     id="message"
-                    placeholder="Enter your message"
+                    placeholder="Enter votre message"
                     onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <Button className="w-full" type="submit">
-                  Send Message
+                  Enovoyer Message
                 </Button>
               </form>
             </div>
@@ -157,6 +157,7 @@ export function ContactAiGen() {
     </div>
   )
 }
+
 
 function MailIcon() {
   return (

@@ -381,63 +381,6 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
             </div>
           </div>
         </div>
-        {/* footer bellow */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-amber-900 dark:bg-black">
-          <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
-            <div className="space-y-3">
-              {/* here start the footer section */}
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Experience the magic of the WhimsiMug
-              </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Elevate your daily routine with the WhimsiMug, a captivating
-                blend of form and function.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button
-                className="bg-primary text-white hover:bg-primary/90 focus:ring-primary"
-                size="lg"
-              >
-                <div className="mr-2">
-                  <ShoppingCartIcon />
-                </div>
-                Buy Now
-              </Button>
-              <Link
-                className="inline-flex h-10 items-center justify-center rounded-md border border-primary text-primary bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                href="#"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-          {theme === "light" ? (
-            <Toaster
-              richColors
-              closeButton
-              toastOptions={{
-                style: {
-                  background: "white",
-                  color: "black",
-                },
-                className: "class",
-              }}
-            />
-          ) : (
-            <Toaster
-              richColors
-              closeButton
-              toastOptions={{
-                style: {
-                  background: "black",
-                  color: "white",
-                },
-                className: "class",
-              }}
-            />
-          )}
-        </section>
       </>
     )
 }
