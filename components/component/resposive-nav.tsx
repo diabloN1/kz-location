@@ -46,7 +46,7 @@ export function ResponsiveNav() {
               Services
             </Link>
             <Link
-              href="/productsS"
+              href="/products"
               className="flex w-full items-center py-2 text-lg font-semibold"
             >
               Products

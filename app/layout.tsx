@@ -10,6 +10,7 @@ import { ResponsiveNav } from "@/components/component/resposive-nav"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/component/footerapp"
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               <TailwindIndicator />
             </ThemeProvider>
+            <Footer />
           </body>
         </html>
       </UserProvider>
