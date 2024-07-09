@@ -87,7 +87,7 @@ export default function IndexPage() {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 relative flex-col pb-40  xl:ml-60 mt-[-110px] hidden lg:flex">
+        <div className="w-1/2 relative mr-20 flex-col pb-40  xl:ml-60 mt-[-110px] hidden lg:flex">
           <img
             className="absolute left-0 h-[450px] animate-bounce"
             loading="lazy"
@@ -107,18 +107,12 @@ export default function IndexPage() {
         </div>
       </section>
       <section className="mt-40 mb-60 ml-10 lg:ml-20 xl:ml-40 xl:mb-10 items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="lg:flex pb-10">
-          <h1 className="w-[100%] lg:w-1/3 mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+        <div className="flex flex-col md:flex-row pb-10">
+          <h1 className="w-full md:w-1/3 ml-10 mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Services
           </h1>
-          <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[800px] text-lg text-muted-foreground">
-            <br />
-            <TextGenerateEffect
-              words="À Oriental Building Strategy, nous nous enorgueillissons de
-            proposer une gamme complète d'articles conçus pour répondre à vos
-            besoins en matière de construction, de commerce, d'affaires et
-            d'exportation-importation."
-            />
+          <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
+            Découvrez nos services complets dans la construction, le négoce, l'import/export et les travaux divers. Nous offrons des solutions fiables adaptées à vos besoins spécifiques.
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
@@ -126,15 +120,12 @@ export default function IndexPage() {
         </div>
       </section>
       <section className="mt-[440px] mb-40 ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="lg:flex pb-10">
-          <h1 className="w-[100%] lg:w-1/3 mt-[1450px] md:mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+        <div className="flex flex-col md:flex-row pb-10">
+          <h1 className="w-full md:w-1/3 ml-10 mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Articles
           </h1>
-          <p className="w-[100%] lg:w-2/3 text-left mt-10 xs:w-[100%] lg:max-w-[800px] text-lg text-muted-foreground">
-            <br />À Oriental Building Strategy, nous nous enorgueillissons de
-            proposer une gamme complète d'articles conçus pour répondre à vos
-            besoins en matière de construction, de commerce, d'affaires et
-            d'exportation-importation.
+          <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
+            Découvrez notre gamme de produits pratiques conçus pour faciliter votre quotidien. Trouvez la solution qui vous convient.
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
