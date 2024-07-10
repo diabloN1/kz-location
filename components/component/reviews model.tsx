@@ -1,12 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Link from "next/link"
 import { useUser } from "@auth0/nextjs-auth0/client"
-import { Cross2Icon } from "@radix-ui/react-icons"
+import { Cross2Icon, ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
-import { useTheme } from "next-themes"
-import { Toaster, toast } from "sonner"
+import toast, { Toaster } from "react-hot-toast"
 import useSWR from "swr"
 
 import fetcher from "@/lib/fetcher"
@@ -19,7 +17,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
 import { DialogDemo } from "../ProduitDemande"
@@ -27,9 +24,6 @@ import { Card, CardContent } from "../ui/card"
 import RotatingDotsLoader from "../ui/loading"
 
 export function Reviewsmodel({ idItem }: { idItem: any }) {
-  //get theme dark or light
-  const { theme } = useTheme()
-
   const [id, setId] = useState(idItem || window.location.pathname.split("/")[2])
   console.log(idItem || window.location.pathname.split("/")[2])
   //start count
@@ -39,16 +33,31 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
   //user info auth0
   const { user } = useUser()
 
+  const notify = () =>
+    toast.success("Your review has been added successfully.", {
+      style: {
+        border: "1px solid #713200",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#fb923c",
+        secondary: "#FFFAEE",
+      },
+    })
+
   //get products
   const { data, error } = useSWR("/api/xataClient", fetcher)
   //get and post reviews
-  const { data: reviewsData, error: err } = useSWR(
-    "/api/xataClientReviews",
-    fetcher
-  )
+  const {
+    data: reviewsData,
+    mutate,
+    error: err,
+  } = useSWR("/api/xataClientReviews", fetcher)
   const product = data?.find((item: any) => item.id === id)
   const [newComment, setComment] = useState("")
   const [newReview, setNewReview] = useState({})
+
+  const [isLoadingReview, setIsLoadingReview] = useState(false)
 
   useEffect(() => {
     setNewReview({
@@ -62,7 +71,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
 
   const handleDelReview = async (revId: any) => {
     try {
-      const response = await axios.delete("/api/xataDelRev", revId)
+      const response = await axios.post("/api/xataDelRev", revId)
       console.log(response.data)
     } catch (error) {
       console.error("Error deleting review:", error)
@@ -71,15 +80,20 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
+    setIsLoadingReview(true)
     try {
       const response = await axios.post("/api/xataPostReview", newReview)
       console.log("Review created:", response.data)
       setComment("")
       setStarCount(1)
+      mutate([...(reviewsData || []), response.data], false)
       // Update state or perform other actions as needed
     } catch (error) {
       console.error("Error creating review:", error)
       // Handle errors as needed
+    } finally {
+      setIsLoadingReview(false) // Set loading state to false after the comment is added or an error occurs
+      notify()
     }
   }
   const dateReview = (timestamp: string) => {
@@ -299,7 +313,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                         </div>
 
                         {/* delete button for a comment */}
-                        {user?.name === review.user ? (
+                        {/* {user?.name === review.user ? (
                           <Button
                             variant="ghost"
                             size="icon"
@@ -310,7 +324,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                           >
                             <Cross2Icon className="h-4 w-4" />
                           </Button>
-                        ) : null}
+                        ) : null} */}
                       </div>
                     </div>
                   )
@@ -370,7 +384,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                     </div>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="comment">Ajouter votre avis</Label>
+                    {/* <Label htmlFor="comment">Ajouter votre avis</Label> */}
                     <Textarea
                       id="comment"
                       placeholder="Partagez votre avis sur ce produit..."
@@ -378,16 +392,29 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                       value={newComment}
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    variant={"outline"} >
+                  {isLoadingReview ? (
+                    <Button variant={"outline"} disabled>
+                      <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                      Please wait
+                    </Button>
+                  ) : (
+                    <Button type="submit" variant={"outline"}>
+                      Poster-le
+                    </Button>
+                  )}
+                  {/* <Button type="submit" variant={"outline"}>
                     Poster-le
                   </Button>
+                  <Button variant={"outline"} disabled>
+                    <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                  </Button> */}
                 </form>
               </div>
             </div>
           </div>
         </div>
+        <Toaster position="bottom-right" reverseOrder={false} />
       </>
     )
 }

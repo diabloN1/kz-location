@@ -49,7 +49,11 @@ export function DialogDemo({ id, name }: DemandeProps) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    setOpen(false)
+    
+    setTimeout(() => {
+      setOpen(false);
+    }, 5000); // 5000 milliseconds = 5 seconds
+
     try {
       const response = await axios.post("/api/xataPostProduct", addProductR)
       console.log("Product created:", response.data)

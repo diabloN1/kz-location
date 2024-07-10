@@ -142,7 +142,16 @@ export function SiteHeader() {
             </Link>
             <ThemeToggle />
             {user?.name === "amineamoune904@gmail.com" && (
-              <Link href="/dashboard" className={buttonVariants()}>
+              <Link
+                href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
+                className={buttonVariants({ variant: "outline" })}
+                target="_blank"
+              >
+                <img
+                  src="https://xata.io/icon.svg?9d7a66ec4c0ad6b1"
+                  width={20}
+                  className="mr-1"
+                />
                 Dashboard
               </Link>
             )}

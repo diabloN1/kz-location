@@ -62,7 +62,7 @@ export default function IndexPage() {
         <RotatingDotsLoader />
       </div>
     )
-  return (
+  return ( 
     <>
       <section className="flex mt-10 ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex w-[100%] lg:w-2/3  flex-col">

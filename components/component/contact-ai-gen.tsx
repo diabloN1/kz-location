@@ -1,7 +1,10 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { use, useEffect, useState } from "react"
+import { ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
+import { useTheme } from "next-themes"
+import toast, { Toaster } from "react-hot-toast"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,6 +19,9 @@ export function ContactAiGen() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [addContact, setaddContact] = useState({})
+  const [isLoading, setIsloading] = useState(false)
+
+  const { theme } = useTheme()
 
   useEffect(() => {
     setaddContact({
@@ -26,8 +32,27 @@ export function ContactAiGen() {
     })
   }, [fullName, num, email, message])
 
+  {
+    theme === "light"
+      ? "https://i.ibb.co/qDhjYrR/light.webp"
+      : "https://i.ibb.co/sbRPkVW/dark.webp"
+  }
+
+  const notify = () =>
+    toast.success("Your message has been sent successfully.", {
+      style: {
+        border: "1px solid #713200",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#fb923c",
+        secondary: "#FFFAEE",
+      },
+    })
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
+    setIsloading(true)
     setaddContact({
       fullName: fullName,
       num: num,
@@ -41,6 +66,13 @@ export function ContactAiGen() {
     } catch (error) {
       console.error("Error creating product:", error)
       // Handle errors as needed
+    } finally {
+      setIsloading(false) // Set loading state to false after the comment is added or an error occurs
+      setFullName("")
+      setNum("")
+      setEmail("")
+      setMessage("")
+      notify()
     }
   }
   return (
@@ -116,7 +148,9 @@ export function ContactAiGen() {
                     className="animate-pulse"
                     id="name"
                     placeholder="Enter votre nom"
+                    value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -127,6 +161,7 @@ export function ContactAiGen() {
                     defaultCountry="MA"
                     placeholder="Enter votre numero ici"
                     international
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -137,6 +172,8 @@ export function ContactAiGen() {
                     placeholder="Enter votre email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -145,13 +182,24 @@ export function ContactAiGen() {
                     className="min-h-[250px] animate-pulse"
                     id="message"
                     placeholder="Enter votre message"
+                    value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    required
                   />
                 </div>
-                <Button className="w-full" type="submit">
-                  Enovoyer Message
-                </Button>
+                {isLoading ? (
+                  <Button className="w-full" disabled>
+                    <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                    Please wait
+                  </Button>
+                ) : (
+                  <Button className="w-full" type="submit">
+                    Enovoyer Message
+                  </Button>
+                )}
               </form>
+              {/* <Toaster /> */}
+              <Toaster position="bottom-right" reverseOrder={false} />
             </div>
           </div>
         </div>
