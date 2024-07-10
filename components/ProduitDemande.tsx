@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
-import { toast } from "sonner"
+import toast, { Toaster } from "react-hot-toast"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -27,6 +28,7 @@ interface DemandeProps {
 
 export function DialogDemo({ id, name }: DemandeProps) {
   const [open, setOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const { user } = useUser()
   user ? console.log(user) : console.log("no user")
@@ -36,6 +38,19 @@ export function DialogDemo({ id, name }: DemandeProps) {
   const [nom, setNom] = useState("")
   const [email, setEmail] = useState("")
   const [addProductR, setaddProductR] = useState({})
+
+  const notify = () =>
+    toast.success("Nous allons vous contacter dans les prochaines 24h.", {
+      style: {
+        border: "1px solid #713200",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#fb923c",
+        secondary: "#FFFAEE",
+      },
+      duration: 6000,
+    })
 
   useEffect(() => {
     setaddProductR({
@@ -49,10 +64,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    
-    setTimeout(() => {
-      setOpen(false);
-    }, 5000); // 5000 milliseconds = 5 seconds
+    setIsLoading(true)
 
     try {
       const response = await axios.post("/api/xataPostProduct", addProductR)
@@ -61,6 +73,12 @@ export function DialogDemo({ id, name }: DemandeProps) {
     } catch (error) {
       console.error("Error creating product:", error)
       // Handle errors as needed
+    } finally {
+      setIsLoading(false)
+      notify()
+      setTimeout(() => {
+        setOpen(false)
+      }, 1000) // 5000 milliseconds = 5 seconds
     }
   }
 
@@ -139,13 +157,18 @@ export function DialogDemo({ id, name }: DemandeProps) {
                 Close
               </Button>
             </DialogClose>
-            <Button
-              type="submit">
-              Envoyer
-            </Button>
+            {isLoading ? (
+              <Button disabled>
+                <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                Please wait
+              </Button>
+            ) : (
+              <Button type="submit">Envoyer</Button>
+            )}
           </DialogFooter>
         </form>
       </DialogContent>
+      <Toaster position="bottom-right" reverseOrder={false} />
     </Dialog>
   )
 }
