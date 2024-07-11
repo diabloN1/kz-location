@@ -139,7 +139,7 @@ export default function IndexPage() {
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
-          <HoverEffect items={services} />
+          <HoverEffect items={services.slice(0, 4)} />
         </div>
       </section>
       <section className="mt-[430px] mb-[1500px] md:mb-[600px] lg:mb-[200px] ml-3 md:ml-2 sm:ml-10 lg:ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 sm:pt-[500px] md:pt-6 md:py-10 ">

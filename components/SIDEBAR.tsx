@@ -38,14 +38,14 @@ const Dashboard: React.FC = () => {
       description:
         "Nous gérons tous les aspects de l'exportation et de l'importation, de la logistique et du dédouanement au transport et à l'entreposage. Notre équipe garantit des opérations fluides et efficaces pour vos besoins en commerce international.",
     },
-    // {
-    //   id: 5,
-    //   title: "Developpement",
-    //   link: "/developpement",
-    //   image: "/service4.png",
-    //   description:
-    //     "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
-    // },
+    {
+      id: 5,
+      title: "Developpement",
+      link: "/developpement",
+      image: "/service5.png",
+      description:
+        "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
+    },
   ]
   const scrollToService = (serviceTitle: string) => {
     const element = document.getElementById(serviceTitle)
