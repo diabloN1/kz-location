@@ -142,7 +142,9 @@ export function SiteHeader() {
                     <span className="sr-only">Mail</span>
                   </div>
                 </Link>
-                <ThemeToggle />
+                <div className="hidden md:block mx-[-100px]">
+                  <ThemeToggle />
+                </div>
               </>
             )}
             {/* Dashoboard xata */}
@@ -179,16 +181,18 @@ export function SiteHeader() {
                 </Link>
               )}
             </div>
-            {user && user.picture && (
-              <div>
-                <img
-                  src={user.picture || ""}
-                  alt={user.name || ""}
-                  className="rounded-full w-[50px] ml-2"
-                />
-                <h2>{user.email}</h2>
-              </div>
-            )}
+            <div className="hidden md:block mx-[-100px]">
+              {user && user.picture && (
+                <div>
+                  <img
+                    src={user.picture || ""}
+                    alt={user.name || ""}
+                    className="rounded-full w-[50px] ml-2"
+                  />
+                  <h2>{user.email}</h2>
+                </div>
+              )}
+            </div>
             <div className="block lg:hidden mx-[-100px]">
               <ResponsiveNav />
             </div>
