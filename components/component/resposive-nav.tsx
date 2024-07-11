@@ -2,16 +2,20 @@
 
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { useUser } from "@auth0/nextjs-auth0/client"
 
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { MainNav } from "@/components/main-nav"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function ResponsiveNav() {
+  const { user, error, isLoading } = useUser()
   return (
     <header className="flex h-20 shrink-0 items-center px-4 md:px-6">
       <Sheet>
@@ -57,6 +61,23 @@ export function ResponsiveNav() {
             >
               Contact
             </Link>
+          </div>
+          <div className="fixed bottom-4 left-4">
+            {user?.name === "amineamoune904@gmail.com" && (
+              <Link
+                href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
+                className={buttonVariants({ variant: "outline" })}
+                target="_blank"
+              >
+                <img
+                  src="https://xata.io/icon.svg?9d7a66ec4c0ad6b1"
+                  width={20}
+                  className="mr-1"
+                />
+                Dashboard
+              </Link>
+            )}
+            <ThemeToggle />
           </div>
         </SheetContent>
       </Sheet>

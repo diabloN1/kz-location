@@ -107,54 +107,64 @@ export function SiteHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Link
-              href="https://wa.me/212708162668/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.whatsapp />
-                <span className="sr-only">whatsapp</span>
-              </div>
-            </Link>
-            <Link
-              href="mailto:orientalbuildingstrategy@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
-              >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png"
-                  className="h-[15px]"
-                />
-                <span className="sr-only">Mail</span>
-              </div>
-            </Link>
-            <ThemeToggle />
-            {user?.name === "amineamoune904@gmail.com" && (
-              <Link
-                href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
-                className={buttonVariants({ variant: "outline" })}
-                target="_blank"
-              >
-                <img
-                  src="https://xata.io/icon.svg?9d7a66ec4c0ad6b1"
-                  width={20}
-                  className="mr-1"
-                />
-                Dashboard
-              </Link>
+            {user?.name === "amineamoune904@gmail.com" ? null : (
+              <>
+                <Link
+                  href="https://wa.me/212708162668/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div
+                    className={buttonVariants({
+                      size: "icon",
+                      variant: "ghost",
+                    })}
+                  >
+                    <Icons.whatsapp />
+                    <span className="sr-only">whatsapp</span>
+                  </div>
+                </Link>
+                <Link
+                  href="mailto:orientalbuildingstrategy@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div
+                    className={buttonVariants({
+                      size: "icon",
+                      variant: "ghost",
+                    })}
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png"
+                      className="h-[15px]"
+                    />
+                    <span className="sr-only">Mail</span>
+                  </div>
+                </Link>
+                <ThemeToggle />
+              </>
             )}
+            {/* Dashoboard xata */}
+            {/* pc vers */}
+            <div className="hidden md:block">
+              {user?.name === "amineamoune904@gmail.com" && (
+                <Link
+                  href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
+                  className={buttonVariants({ variant: "outline" })}
+                  target="_blank"
+                >
+                  <img
+                    src="https://xata.io/icon.svg?9d7a66ec4c0ad6b1"
+                    width={20}
+                    className="mr-1"
+                  />
+                  Dashboard
+                </Link>
+              )}
+            </div>
+            {/* Dashoboard xata End*/}
+
             <div className="ml-5 mr-5">
               {user ? (
                 <Link
