@@ -126,8 +126,9 @@ export default function IndexPage() {
           />
         </div>
       </section>
+      <br /> <br /><br />
       <section className="mt-30 mb-[1200px] md:mb-[500px] lg:mb-[-400px] ml-3 lg:ml-10 xl:ml-40 xl:mb-10 items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="flex flex-col md:flex-row pb-10">
+        <div className="flex flex-col md:flex-row pb-10 ml-8 md:ml-4">
           <h1 className="w-full md:w-1/3 ml-3 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Services
           </h1>
@@ -142,8 +143,8 @@ export default function IndexPage() {
         </div>
       </section>
       <section className="mt-[430px] mb-[1500px] md:mb-[600px] lg:mb-[200px] ml-3 md:ml-2 sm:ml-10 lg:ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 sm:pt-[500px] md:pt-6 md:py-10 ">
-        <div className="flex flex-col md:flex-row pb-10">
-          <h1 className="w-full sm:mt:[1000px] md:w-1/3 ml-3 sm:ml-10 lg:ml-1 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+        <div className="flex flex-col md:flex-row pb-10 ml-8 md:ml-4">
+          <h1 className="w-full sm:mt:[1000px] md:w-1/3 ml-6 sm:ml-10 lg:ml-1 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Articles
           </h1>
           <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
