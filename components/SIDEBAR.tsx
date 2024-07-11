@@ -47,24 +47,26 @@ const Dashboard: React.FC = () => {
         "Nous développons des solutions innovantes pour répondre aux besoins spécifiques de nos clients. Notre équipe crée des produits, améliore des services et intègre des technologies avancées, garantissant des résultats de qualité dans les délais et budgets impartis.",
     },
   ]
-  const scrollToService = (serviceTitle: string) => {
-    const element = document.getElementById(serviceTitle)
+
+  const scrollToElement = (elementId: any) => {
+    const element = document.getElementById(elementId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setSelectedService(serviceTitle)
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight - 100
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
     }
   }
-  const resetSelectedService = () => {
-    setSelectedService("")
-  }
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-6xl gap-2">
-          <h1
-            className="hidden lg:block text-3xl font-semibold cursor-pointer"
-            onClick={resetSelectedService}
-          >
+          <h1 className="hidden lg:block text-3xl font-semibold cursor-pointer">
             Services
           </h1>
         </div>
@@ -73,28 +75,67 @@ const Dashboard: React.FC = () => {
             className="grid gap-4 text-sm text-muted-foreground"
             x-chunk="dashboard-04-chunk-0"
           >
-            {services.map((service) => (
-              <div key={service.id} className="hidden lg:block">
-                <a
-                  key={service.id}
-                  onClick={() => scrollToService(service.title)}
-                  className={`${
-                    service.title === selectedService
-                      ? "font-semibold text-primary"
-                      : ""
-                  }`}
-                >
-                  {service.title}
-                </a>
-              </div>
-            ))}
+            <div className="hidden lg:block">
+              <a
+                href="#Construction"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToElement("Construction")
+                }}
+              >
+                Contruction
+              </a>
+            </div>
+            <div className="hidden lg:block">
+              <a
+                href="#Travaux Divers"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToElement("Travaux Divers")
+                }}
+              >
+                Travaux Divers
+              </a>
+            </div>
+            <div className="hidden lg:block">
+              <a
+                href="#Negoce"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToElement("Negoce")
+                }}
+              >
+                Negoce
+              </a>
+            </div>
+            <div className="hidden lg:block">
+              <a
+                href="#Exportation-Importation"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToElement("Exportation-Importation")
+                }}
+              >
+                Exportation-Importation
+              </a>
+            </div>
+            <div className="hidden lg:block">
+              <a
+                href="#Developpement"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToElement("Developpement")
+                }}
+              >
+                Developpement
+              </a>
+            </div>
           </nav>
           <div className="grid grid-cols-1 gap-4">
             {services.map((service) => (
-              <div key={service.id}>
+              <div key={service.id} id={service.title}>
                 <div
                   key={service.title}
-                  id={service.title}
                   className={`w-full ${
                     selectedService && service.title !== selectedService
                       ? "blur-sm"
