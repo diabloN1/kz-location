@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
+import { ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
-import { PhoneNumber } from "react-phone-number-input"
+import toast, { Toaster } from "react-hot-toast"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -26,9 +27,6 @@ import {
   SelectValue,
 } from "./ui/select"
 import { Textarea } from "./ui/textarea"
-import { toast } from "sonner"
-import { Toast } from "@radix-ui/react-toast"
-import { Toaster } from "./ui/toaster"
 
 interface DemandeProps {
   onCancel: () => void
@@ -50,6 +48,21 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
   const [serviceType, setserviceType] = useState("")
   const [addServiceR, setaddServiceR] = useState({})
 
+  const [isLoading, setIsLoading] = useState(false)
+
+  const notify = () =>
+    toast.success("Nous allons vous contacter dans les prochaines 24h.", {
+      style: {
+        border: "1px solid #713200",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#fb923c",
+        secondary: "#FFFAEE",
+      },
+      duration: 6000,
+    })
+
   useEffect(() => {
     setaddServiceR({
       serviceType: serviceType,
@@ -63,7 +76,7 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    setOpen(false)
+    setIsLoading(true)
     try {
       const response = await axios.post("/api/xataPostService", addServiceR)
       console.log("Product created:", response.data)
@@ -71,6 +84,12 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
     } catch (error) {
       console.error("Error creating product:", error)
       // Handle errors as needed
+    } finally {
+      notify()
+      setIsLoading(false)
+      setTimeout(() => {
+        setOpen(false)
+      }, 1000)
     }
 
     onCancel()
@@ -118,7 +137,10 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
                 <SelectItem value={"construction"}>Construction</SelectItem>
                 <SelectItem value={"travauxDivers"}>Travaux divers</SelectItem>
                 <SelectItem value={"negoce"}>Negoce</SelectItem>
-                <SelectItem value={"expo-impo"}> Exportation-importaion </SelectItem>
+                <SelectItem value={"expo-impo"}>
+                  {" "}
+                  Exportation-importaion{" "}
+                </SelectItem>
                 <SelectItem value={"developpement"}>Developpement</SelectItem>
                 <SelectItem value={"autre"}>Autre</SelectItem>
               </SelectContent>
@@ -186,14 +208,18 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
                 Close
               </Button>
             </DialogClose>
-            <Button
-              type="submit"
-            >
-              Submit
-            </Button>
+            {isLoading ? (
+              <Button disabled>
+                <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                Please wait
+              </Button>
+            ) : (
+              <Button type="submit">Envoyer</Button>
+            )}
           </DialogFooter>
         </form>
       </DialogContent>
+      <Toaster position="bottom-right" reverseOrder={false} />
     </Dialog>
   )
 }
