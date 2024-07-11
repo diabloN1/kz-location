@@ -48,7 +48,7 @@ export default function page() {
             <Input
               type="text"
               placeholder="Chercher Produit..."
-              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-400"
+              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
               onChange={(e) => setsearch(e.target.value)}
             />
           </div>
@@ -65,7 +65,7 @@ export default function page() {
                   <p className="text-bold mb-5 mt-10">Choix par categorie</p>
                   <Select onValueChange={(e: string) => setsearch(e)}>
                     <SelectTrigger className="w-[320px]">
-                      <SelectValue placeholder="Choose a category" />
+                      <SelectValue placeholder="Choosir une categorie" />
                     </SelectTrigger>
                     <SelectContent>
                       {categories?categories.map((categorie: any) => {

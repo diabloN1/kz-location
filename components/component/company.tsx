@@ -40,17 +40,13 @@ export function Company() {
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Notre entreprise SARL s'engage à prospérer économiquement en
-                offrant des produits / services de qualité qui répondent aux
-                besoins et aux attentes de nos clients. Nous aspirons à
-                favoriser la croissance de notre entreprise tout en maintenant
-                un environnement de travail positif pour notre personnel. Nous
-                accordons une importance primordiale au respect des normes
-                légales et éthiques, ce qui garantit notre crédibilité et notre
-                légitimité sur le marché. Notre objectif ultime est de devenir
-                un acteur de premier plan dans notre secteur d'activité tout en
-                contribuant au développement durable de notre communauté et de
-                notre économie.
+                Notre SARL vise à prospérer en offrant des produits et services
+                de qualité répondant aux attentes de nos clients. Nous
+                favorisons la croissance de l'entreprise tout en maintenant un
+                environnement de travail positif. Le respect des normes légales
+                et éthiques est essentiel pour notre crédibilité. Notre objectif
+                est de devenir un leader de notre secteur tout en contribuant au
+                développement durable de notre communauté et de notre économie.
               </p>
             </div>
           </div>
