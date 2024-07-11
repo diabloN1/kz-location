@@ -62,11 +62,31 @@ export default function IndexPage() {
         <RotatingDotsLoader />
       </div>
     )
-  return ( 
+  return (
     <>
-      <section className="flex mt-10 ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
+      <section>
+        <div className="m-20 mt-[25px] sm:hidden">
+          <img
+            className="absolute ml-4 left-0 h-[300px] animate-bounce"
+            loading="lazy"
+            alt=""
+            src="/unsplash3mamj1zksza@2x.png"
+          />
+          <img
+            className="absolute ml-4 left-0 h-[280px] animate-bounce"
+            alt=""
+            src="/unsplash3mamj1zksza-1@2x.png"
+          />
+          <img
+            className="absolute ml-4 left-0 h-[254px] animate-bounce"
+            alt=""
+            src="/image-13@2x.png"
+          />
+        </div>
+      </section>
+      <section className="flex mt-[350px] sm:mt-10 ml-2 sm:ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex w-[100%] lg:w-2/3  flex-col">
-          <h1 className=" mt-10 text-9xl font-bold leading-tight tracking-tighter md:text-7xl sm:text-4xl xs:text-2xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-tighter sm:mt-10 md:text-7xl sm:text-4xl">
             Oriental{" "}
             <span className=" text-amber-900 dark:text-orange-400  ">
               Building
@@ -106,32 +126,35 @@ export default function IndexPage() {
           />
         </div>
       </section>
-      <section className="mt-40 mb-60 ml-10 lg:ml-20 xl:ml-40 xl:mb-10 items-center gap-6 pb-8 pt-6 md:py-10">
+      <section className="mt-30 mb-[1200px] md:mb-[500px] lg:mb-[-400px] ml-3 lg:ml-10 xl:ml-40 xl:mb-10 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex flex-col md:flex-row pb-10">
-          <h1 className="w-full md:w-1/3 ml-10 mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+          <h1 className="w-full md:w-1/3 ml-3 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Services
           </h1>
           <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
-            Découvrez nos services complets dans la construction, le négoce, l'import/export et les travaux divers. Nous offrons des solutions fiables adaptées à vos besoins spécifiques.
+            Découvrez nos services complets dans la construction, le négoce,
+            l'import/export et les travaux divers. Nous offrons des solutions
+            fiables adaptées à vos besoins spécifiques.
           </p>
         </div>
         <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
           <HoverEffect items={services} />
         </div>
       </section>
-      <section className="mt-[440px] mb-40 ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 md:py-10">
+      <section className="mt-[430px] mb-[1500px] md:mb-[600px] lg:mb-[200px] ml-3 md:ml-2 sm:ml-10 lg:ml-10 xl:ml-40 xl:mt-10 items-center gap-6 pb-8 pt-6 sm:pt-[500px] md:pt-6 md:py-10 ">
         <div className="flex flex-col md:flex-row pb-10">
-          <h1 className="w-full md:w-1/3 ml-10 mt-10 text-7xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
+          <h1 className="w-full sm:mt:[1000px] md:w-1/3 ml-3 sm:ml-10 lg:ml-1 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">
             Nos Articles
           </h1>
           <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
-            Découvrez notre gamme de produits pratiques conçus pour faciliter votre quotidien. Trouvez la solution qui vous convient.
+            Découvrez notre gamme de produits pratiques conçus pour faciliter
+            votre quotidien. Trouvez la solution qui vous convient.
           </p>
         </div>
-        <div className="grid justify-center pr-10 lg:pr-40 h-[450px]">
+        <div className="pr-10 lg:pr-40 h-[450px]">
           <HoverEffectCard items={data.slice(0, 4)} search={""} />
           <Link
-            className={buttonVariants({ variant: "outline" })}
+            className={`${buttonVariants({ variant: "outline" })} w-full`}
             href="/products"
           >
             More {">"}
