@@ -26,9 +26,8 @@ export function Product({ id }: { id: any }) {
   return (
     <>
       <section>
-        <Reviewsmodel id={id} />
+        <Reviewsmodel idItem={id} />
       </section>
-    
     </>
   )
 }
