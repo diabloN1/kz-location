@@ -48,6 +48,19 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
   const [serviceType, setserviceType] = useState("")
   const [addServiceR, setaddServiceR] = useState({})
 
+  useEffect(() => {
+    if (id == 1) {
+      setserviceType("Construction")
+    } else if (id == 2) {
+      setserviceType("Travaux Divers")
+    } else if (id == 3) {
+      setserviceType("Negoce")
+    } else if (id == 4) {
+      setserviceType("Import-Export")
+    } else {
+      setserviceType("Developpement")
+    }
+  }, [])
   const [isLoading, setIsLoading] = useState(false)
 
   const notify = () =>
@@ -85,6 +98,11 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
       console.error("Error creating product:", error)
       // Handle errors as needed
     } finally {
+      setNom("")
+      setEmail("")
+      setSubject("")
+      setDescription("")
+      setNum("")
       notify()
       setIsLoading(false)
       setTimeout(() => {
@@ -116,32 +134,33 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
             <Label htmlFor="type">Service choisi</Label>
             <Select
               onValueChange={(e: string) => setserviceType(e)}
-              defaultValue={
-                id == 1
-                  ? "construction"
-                  : id == 2
-                  ? "travauxDivers"
-                  : id == 3
-                  ? "negoce"
-                  : id == 4
-                  ? "expo-impo"
-                  : id == 5
-                  ? "developpement"
-                  : ""
-              }
+              defaultValue={serviceType}
+              // value={
+              //   id == 1
+              //     ? "construction"
+              //     : id == 2
+              //     ? "travauxDivers"
+              //     : id == 3
+              //     ? "negoce"
+              //     : id == 4
+              //     ? "expo-impo"
+              //     : id == 5
+              //     ? "developpement"
+              //     : ""
+              // }
             >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Choose a category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={"construction"}>Construction</SelectItem>
-                <SelectItem value={"travauxDivers"}>Travaux divers</SelectItem>
-                <SelectItem value={"negoce"}>Negoce</SelectItem>
-                <SelectItem value={"expo-impo"}>
+                <SelectItem value={"Construction"}>Construction</SelectItem>
+                <SelectItem value={"Travaux Divers"}>Travaux divers</SelectItem>
+                <SelectItem value={"Negoce"}>Negoce</SelectItem>
+                <SelectItem value={"Import-Export"}>
                   {" "}
                   Exportation-importaion{" "}
                 </SelectItem>
-                <SelectItem value={"developpement"}>Developpement</SelectItem>
+                <SelectItem value={"Developpement"}>Developpement</SelectItem>
                 <SelectItem value={"autre"}>Autre</SelectItem>
               </SelectContent>
             </Select>

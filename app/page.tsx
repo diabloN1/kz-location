@@ -65,7 +65,7 @@ export default function IndexPage() {
   return (
     <>
       <section>
-        <div className="m-20 mt-[25px] sm:hidden">
+        <div className="m-20 mt-[25px] mx-auto sm:hidden">
           <img
             className="absolute ml-4 left-0 h-[300px] animate-bounce"
             loading="lazy"
@@ -126,7 +126,8 @@ export default function IndexPage() {
           />
         </div>
       </section>
-      <br /> <br /><br />
+      <br /> <br />
+      <br />
       <section className="mt-30 mb-[1200px] md:mb-[500px] lg:mb-[-400px] ml-3 lg:ml-10 xl:ml-40 xl:mb-10 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex flex-col md:flex-row pb-10 ml-8 md:ml-4">
           <h1 className="w-full md:w-1/3 ml-3 mt-10 text-2xl font-bold leading-tight tracking-tighter md:text-5xl xl:text-6xl sm:text-2xl xs:text-xl">

@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "",
+  name: "Oriental Building Strategy",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Oriental Building Strategy is a construction company based in Morocco. We are a team of professionals with an high quality experience in the construction, negoce, import-export industries.",
   mainNav: [
     {
       title: "Home",
@@ -27,8 +27,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    
   },
 }

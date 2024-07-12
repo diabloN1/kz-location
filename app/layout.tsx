@@ -6,11 +6,11 @@ import { Toaster } from "sonner"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import Footer from "@/components/component/footerapp"
 import { ResponsiveNav } from "@/components/component/resposive-nav"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import Footer from "@/components/component/footerapp"
 
 export const metadata: Metadata = {
   title: {
