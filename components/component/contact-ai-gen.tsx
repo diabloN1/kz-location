@@ -80,15 +80,6 @@ export function ContactAiGen() {
     }
   }
 
-  const [isFormValid, setIsFormValid] = useState(false);
-  const checkFormValidity = () => {
-    const isValid = fullName.trim() !== "" && num.length === 15
-    setIsFormValid(isValid)
-  }
-  useEffect(() => {
-    checkFormValidity()
-  }, [fullName, num])
-
   return (
     <div className=" min-h-[100dvh] flex flex-col">
       <main className="flex-1 py-12 md:py-24 lg:py-32">
