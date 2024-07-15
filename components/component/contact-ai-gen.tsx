@@ -82,12 +82,12 @@ export function ContactAiGen() {
   const [isFormValid, setIsFormValid] = useState(false)
   const checkFormValidity = () => {
     const isValid =
-      fullName.trim() !== "" && email.trim() !== "" && num.length >= 13
+      fullName.trim() !== "" && message.trim() !== "" && num.length >= 13
     setIsFormValid(isValid)
   }
   useEffect(() => {
     checkFormValidity()
-  }, [fullName, num, email])
+  }, [fullName, num, message])
 
   return (
     <div className=" min-h-[100dvh] flex flex-col">
