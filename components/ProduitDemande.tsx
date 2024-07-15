@@ -89,12 +89,12 @@ export function DialogDemo({ id, name }: DemandeProps) {
   //check validity of form to make submit button clickable
   const [isFormValid, setIsFormValid] = useState(false)
   const checkFormValidity = () => {
-    const isValid = name.trim() !== "" && nom.trim() !== "" && num.length === 15
+    const isValid = nom.trim() !== "" && nom.trim() !== "" && num.length === 15
     setIsFormValid(isValid)
   }
   useEffect(() => {
     checkFormValidity()
-  }, [name, nom, num])
+  }, [nom, nom, num])
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
