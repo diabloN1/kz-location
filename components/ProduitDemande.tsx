@@ -86,6 +86,15 @@ export function DialogDemo({ id, name }: DemandeProps) {
   }
 
   //post service
+  //check validity of form to make submit button clickable
+  const [isFormValid, setIsFormValid] = useState(false)
+  const checkFormValidity = () => {
+    const isValid = name.trim() !== "" && nom.trim() !== "" && num.length === 15
+    setIsFormValid(isValid)
+  }
+  useEffect(() => {
+    checkFormValidity()
+  }, [name, nom, num])
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -166,7 +175,9 @@ export function DialogDemo({ id, name }: DemandeProps) {
                 Please wait
               </Button>
             ) : (
-              <Button type="submit">Envoyer</Button>
+              <Button type="submit" disabled={!isFormValid}>
+                Envoyer
+              </Button>
             )}
           </DialogFooter>
         </form>
