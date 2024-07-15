@@ -29,14 +29,14 @@ export default function Footer() {
               className="text-sm hover:underline sm:text-base"
               prefetch={false}
             >
-              Home
+              Accueil
             </Link>
             <Link
               href="/company"
               className="text-sm hover:underline sm:text-base"
               prefetch={false}
             >
-              Company
+              Entreprise
             </Link>
             {/* <Link
               href="/services"
@@ -50,7 +50,7 @@ export default function Footer() {
               className="text-sm hover:underline sm:text-base"
               prefetch={false}
             >
-              Products
+              Produits
             </Link>
             <Link
               href="/contact"

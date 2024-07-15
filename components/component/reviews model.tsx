@@ -34,17 +34,20 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
   const { user } = useUser()
 
   const notify = () =>
-    toast.success("Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.", {
-      style: {
-        border: "1px solid #713200",
-        color: "#713200",
-      },
-      iconTheme: {
-        primary: "#fb923c",
-        secondary: "#FFFAEE",
-      },
-      duration: 60000,
-    })
+    toast.success(
+      "Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.",
+      {
+        style: {
+          border: "1px solid #713200",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#fb923c",
+          secondary: "#FFFAEE",
+        },
+        duration: 60000,
+      }
+    )
 
   //get products
   const { data, error } = useSWR("/api/xataClient", fetcher)
@@ -161,7 +164,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
       <>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-12 items-start max-w-6xl px-4 mx-auto py-6">
           <div className="grid gap-4 md:gap-10 items-start">
-            <Carousel className="w-full max-w-md mx-auto">
+            <Carousel className="w-[80%] max-w-md mx-auto">
               <CarouselContent>
                 {product.img?.length > 0 ? (
                   Array.from({ length: product.img.length }).map((_, index) => (
