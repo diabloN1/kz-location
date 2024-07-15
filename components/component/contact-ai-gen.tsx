@@ -206,7 +206,11 @@ export function ContactAiGen() {
                     Please wait
                   </Button>
                 ) : (
-                  <Button className="w-full" type="submit">
+                  <Button
+                    className="w-full"
+                    type="submit"
+                    disabled={!isFormValid}
+                  >
                     Enovoyer Message
                   </Button>
                 )}
