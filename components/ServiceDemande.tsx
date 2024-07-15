@@ -238,7 +238,7 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
           </DialogFooter>
         </form>
       </DialogContent>
-      <Toaster position="bottom-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
     </Dialog>
   )
 }

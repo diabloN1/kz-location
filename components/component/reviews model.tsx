@@ -34,7 +34,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
   const { user } = useUser()
 
   const notify = () =>
-    toast.success("Your review has been added successfully.", {
+    toast.success("Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.", {
       style: {
         border: "1px solid #713200",
         color: "#713200",
@@ -43,6 +43,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
         primary: "#fb923c",
         secondary: "#FFFAEE",
       },
+      duration: 60000,
     })
 
   //get products
@@ -68,15 +69,6 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
       rate: starCount,
     })
   }, [newComment, id])
-
-  const handleDelReview = async (revId: any) => {
-    try {
-      const response = await axios.post("/api/xataDelRev", revId)
-      console.log(response.data)
-    } catch (error) {
-      console.error("Error deleting review:", error)
-    }
-  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -414,7 +406,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
             </div>
           </div>
         </div>
-        <Toaster position="bottom-right" reverseOrder={false} />
+        <Toaster position="top-center" reverseOrder={false} />
       </>
     )
 }

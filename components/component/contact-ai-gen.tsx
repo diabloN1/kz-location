@@ -198,7 +198,7 @@ export function ContactAiGen() {
                 )}
               </form>
               {/* <Toaster /> */}
-              <Toaster position="bottom-right" reverseOrder={false} />
+              <Toaster position="top-center" reverseOrder={false} />
             </div>
           </div>
         </div>
