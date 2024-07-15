@@ -94,7 +94,6 @@ export function DialogDemo({ id, name }: DemandeProps) {
   }
   useEffect(() => {
     checkFormValidity()
-    console.log(nom, num, num.length)
   }, [nom, num])
 
   return (
