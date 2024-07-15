@@ -38,13 +38,13 @@ export default function Footer() {
             >
               Company
             </Link>
-            <Link
+            {/* <Link
               href="/services"
               className="text-sm hover:underline sm:text-base"
               prefetch={false}
             >
               Services
-            </Link>
+            </Link> */}
             <Link
               href="/products"
               className="text-sm hover:underline sm:text-base"

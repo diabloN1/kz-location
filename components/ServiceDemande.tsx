@@ -64,17 +64,20 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
   const [isLoading, setIsLoading] = useState(false)
 
   const notify = () =>
-    toast.success("Nous allons vous contacter dans les prochaines 24h.", {
-      style: {
-        border: "1px solid #713200",
-        color: "#713200",
-      },
-      iconTheme: {
-        primary: "#fb923c",
-        secondary: "#FFFAEE",
-      },
-      duration: 6000,
-    })
+    toast.success(
+      "Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.",
+      {
+        style: {
+          border: "1px solid #713200",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#fb923c",
+          secondary: "#FFFAEE",
+        },
+        duration: 60000,
+      }
+    )
 
   useEffect(() => {
     setaddServiceR({
@@ -194,6 +197,7 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
               defaultCountry="MA"
               placeholder="Enter votre numero ici"
               international
+              required
             />
           </div>
           <div className="grid gap-2">

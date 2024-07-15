@@ -39,16 +39,20 @@ export function ContactAiGen() {
   }
 
   const notify = () =>
-    toast.success("Your message has been sent successfully.", {
-      style: {
-        border: "1px solid #713200",
-        color: "#713200",
-      },
-      iconTheme: {
-        primary: "#fb923c",
-        secondary: "#FFFAEE",
-      },
-    })
+    toast.success(
+      "Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.",
+      {
+        style: {
+          border: "1px solid #713200",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#fb923c",
+          secondary: "#FFFAEE",
+        },
+        duration: 60000,
+      }
+    )
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
