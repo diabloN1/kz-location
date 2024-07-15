@@ -60,7 +60,7 @@ export function DialogDemo({ onCancel, id }: DemandeProps) {
     } else {
       setserviceType("Developpement")
     }
-  }, [])
+  }, [id])
   const [isLoading, setIsLoading] = useState(false)
 
   const notify = () =>

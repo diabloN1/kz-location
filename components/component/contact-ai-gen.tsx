@@ -173,7 +173,6 @@ export function ContactAiGen() {
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
-                    required
                   />
                 </div>
                 <div className="space-y-2">

@@ -35,25 +35,25 @@ export function ResponsiveNav() {
               href="/"
               className="flex w-full items-center py-2 text-lg font-semibold"
             >
-              Home
+              Accueil
             </Link>
             <Link
               href="/company"
               className="flex w-full items-center py-2 text-lg font-semibold"
             >
-              Company
+              Entreprise
             </Link>
-            <Link
+            {/* <Link
               href="/services"
               className="flex w-full items-center py-2 text-lg font-semibold"
             >
               Services
-            </Link>
+            </Link> */}
             <Link
               href="/products"
               className="flex w-full items-center py-2 text-lg font-semibold"
             >
-              Products
+              Produits
             </Link>
             <Link
               href="/contact"
@@ -92,7 +92,7 @@ export function ResponsiveNav() {
               href="/"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
-              Home
+              Accueil
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
@@ -100,23 +100,23 @@ export function ResponsiveNav() {
               href="/company"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
-              Company
+              Entreprise
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
-            <Link
+            {/* <Link
               href="/services"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Services
-            </Link>
+            </Link> */}
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
             <Link
               href="/products"
               className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
-              Products
+              Produits
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink asChild>
