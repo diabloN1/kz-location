@@ -11,9 +11,9 @@ import RotatingDotsLoader from "@/components/ui/loading"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
 
-const label = `Découvrez Oriental Building Strategy, votre solution pour la
-            construction, travaux divers, négoce et exportation/importation.
-            Nous vous offrons des solutions innovantes et durables.`
+const label = `Bienvenue chez notre SARL. Nous nous engageons à offrir des produits
+            de qualité tout en contribuant au développement durable de notre
+            communauté.`
 
 export default function IndexPage() {
   const services = [
@@ -149,9 +149,8 @@ export default function IndexPage() {
             Nos Articles
           </h1>
           <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
-            Bienvenue chez notre SARL. Nous nous engageons à offrir des produits
-            de qualité tout en contribuant au développement durable de notre
-            communauté.
+            Découvrez notre gamme de produits pratiques conçus pour faciliter
+            votre quotidien. Trouvez la solution qui vous convient.
           </p>
         </div>
         <div className="pr-10 lg:pr-40 h-[450px]">
