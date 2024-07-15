@@ -99,12 +99,12 @@ export default function IndexPage() {
             <Link href="/products" className={buttonVariants()}>
               Produits {">"}
             </Link>
-            {/* <Link
-              href="/services"
+            <Link
+              href="/contact"
               className={buttonVariants({ variant: "outline" })}
             >
-              Services {">"}
-            </Link> */}
+              Contactez-Nous {">"}
+            </Link>
           </div>
         </div>
         <div className="w-1/2 relative mr-20 flex-col pb-40  xl:ml-60 mt-[-110px] hidden lg:flex">
@@ -149,8 +149,9 @@ export default function IndexPage() {
             Nos Articles
           </h1>
           <p className="w-full md:w-2/3 text-left mt-10 max-w-[600px] text-lg text-muted-foreground">
-            Découvrez notre gamme de produits pratiques conçus pour faciliter
-            votre quotidien. Trouvez la solution qui vous convient.
+            Bienvenue chez notre SARL. Nous nous engageons à offrir des produits
+            de qualité tout en contribuant au développement durable de notre
+            communauté.
           </p>
         </div>
         <div className="pr-10 lg:pr-40 h-[450px]">

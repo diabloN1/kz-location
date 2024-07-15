@@ -1,5 +1,6 @@
 "use client"
 
+import react, { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useUser } from "@auth0/nextjs-auth0/client"
@@ -16,9 +17,11 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function ResponsiveNav() {
   const { user, error, isLoading } = useUser()
+  const [open, setOpen] = useState(false)
+
   return (
     <header className="flex h-20 shrink-0 items-center px-4 md:px-6">
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button className="lg:hidden" size="icon" variant="outline">
             <MenuIcon />
@@ -34,12 +37,14 @@ export function ResponsiveNav() {
             <Link
               href="/"
               className="flex w-full items-center py-2 text-lg font-semibold"
+              onClick={() => setOpen(false)}
             >
               Accueil
             </Link>
             <Link
               href="/company"
               className="flex w-full items-center py-2 text-lg font-semibold"
+              onClick={() => setOpen(false)}
             >
               Entreprise
             </Link>
@@ -52,12 +57,14 @@ export function ResponsiveNav() {
             <Link
               href="/products"
               className="flex w-full items-center py-2 text-lg font-semibold"
+              onClick={() => setOpen(false)}
             >
               Produits
             </Link>
             <Link
               href="/contact"
               className="flex w-full items-center py-2 text-lg font-semibold"
+              onClick={() => setOpen(false)}
             >
               Contact
             </Link>
@@ -68,6 +75,7 @@ export function ResponsiveNav() {
                 href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
                 className={buttonVariants({ variant: "outline" })}
                 target="_blank"
+                onClick={() => setOpen(false)}
               >
                 <img
                   src="https://xata.io/icon.svg?9d7a66ec4c0ad6b1"
