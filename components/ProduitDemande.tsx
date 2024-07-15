@@ -89,12 +89,13 @@ export function DialogDemo({ id, name }: DemandeProps) {
   //check validity of form to make submit button clickable
   const [isFormValid, setIsFormValid] = useState(false)
   const checkFormValidity = () => {
-    const isValid = nom.trim() !== "" && nom.trim() !== "" && num.length === 15
+    const isValid = nom.trim() !== "" && num.length === 15
     setIsFormValid(isValid)
   }
   useEffect(() => {
     checkFormValidity()
-  }, [nom, nom, num])
+    console.log(nom, num, num.length)
+  }, [nom, num])
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -149,7 +150,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="email">Adresse mail</Label>
+            <Label htmlFor="email">Adresse mail (optionnel)</Label>
             {user && user.nickname ? (
               <Input id="email" type="email" value={user.nickname} disabled />
             ) : (
