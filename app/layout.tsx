@@ -36,14 +36,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <UserProvider>
+      <h1>503 - Undermantainence</h1>
+      {/* <UserProvider>
         <html lang="en" suppressHydrationWarning>
           <head />
           <body
             className={cn(
               "min-h-screen bg-gray-100 dark:bg-background font-sans antialiased",
               fontSans.variable
-            )}
+            )}|
           >
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="relative flex min-h-screen flex-col">
@@ -56,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Footer />
           </body>
         </html>
-      </UserProvider>
+      </UserProvider> */}
     </>
   )
 }

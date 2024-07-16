@@ -70,7 +70,8 @@ export function ResponsiveNav() {
             </Link>
           </div>
           <div className="fixed bottom-4 left-4">
-            {user?.name === "amineamoune904@gmail.com" && (
+            {(user?.name === "amineamoune904@gmail.com" ||
+              user?.name === "orientalbuildingstrategy@gmail.com") && (
               <Link
                 href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
                 className={buttonVariants({ variant: "outline" })}

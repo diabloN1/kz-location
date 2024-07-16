@@ -179,7 +179,7 @@ export function ContactAiGen() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">Email (facultatif)</Label>
                   <Input
                     className="animate-pulse"
                     id="email"

@@ -107,7 +107,7 @@ export function SiteHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            {user?.name === "amineamoune904@gmail.com" ? null : (
+            {user?.name === "amineamoune904@gmail.com" || user?.name === "orientalbuildingstrategy@gmail.com"? null : (
               <>
                 <Link
                   href="https://wa.me/212708162668/"
@@ -150,7 +150,7 @@ export function SiteHeader() {
             {/* Dashoboard xata */}
             {/* pc vers */}
             <div className="hidden md:block">
-              {user?.name === "amineamoune904@gmail.com" && (
+              {(user?.name === "amineamoune904@gmail.com"|| user?.name === "orientalbuildingstrategy@gmail.com") && (
                 <Link
                   href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
                   className={buttonVariants({ variant: "outline" })}
