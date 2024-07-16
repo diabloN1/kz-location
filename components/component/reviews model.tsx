@@ -34,20 +34,17 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
   const { user } = useUser()
 
   const notify = () =>
-    toast.success(
-      "Merci pour votre confiance ! \n Nous prendrons contact avec vous dans les 24 heures à venir.",
-      {
-        style: {
-          border: "1px solid #713200",
-          color: "#713200",
-        },
-        iconTheme: {
-          primary: "#fb923c",
-          secondary: "#FFFAEE",
-        },
-        duration: 60000,
-      }
-    )
+    toast.success("Merci pour votre commentaire !", {
+      style: {
+        border: "1px solid #713200",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#fb923c",
+        secondary: "#FFFAEE",
+      },
+      duration: 60000,
+    })
 
   //get products
   const { data, error } = useSWR("/api/xataClient", fetcher)
