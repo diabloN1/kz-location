@@ -35,31 +35,28 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div>
-      <h1>503 - Maintenence</h1>
-    </div>
-    // <>
-    //   <UserProvider>
-    //     <html lang="en" suppressHydrationWarning>
-    //       <head />
-    //       <body
-    //         className={cn(
-    //           "min-h-screen bg-gray-100 dark:bg-background font-sans antialiased",
-    //           fontSans.variable
-    //         )}
-    //       >
-    //         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-    //           <div className="relative flex min-h-screen flex-col">
-    //             <SiteHeader />
-    //             <br />
-    //             <div className="flex-1">{children}</div>
-    //           </div>
-    //           <TailwindIndicator />
-    //         </ThemeProvider>
-    //         <Footer />
-    //       </body>
-    //     </html>
-    //   </UserProvider>
-    // </>
+    <>
+      <UserProvider>
+        <html lang="en" suppressHydrationWarning>
+          <head />
+          <body
+            className={cn(
+              "min-h-screen bg-gray-100 dark:bg-background font-sans antialiased",
+              fontSans.variable
+            )}
+          >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <div className="relative flex min-h-screen flex-col">
+                <SiteHeader />
+                <br />
+                <div className="flex-1">{children}</div>
+              </div>
+              <TailwindIndicator />
+            </ThemeProvider>
+            <Footer />
+          </body>
+        </html>
+      </UserProvider>
+    </>
   )
 }
