@@ -74,11 +74,13 @@ export default function IndexPage() {
           />
           <img
             className="absolute ml-4 left-0 h-[280px] animate-bounce"
+            loading="lazy"
             alt=""
             src="/unsplash3mamj1zksza-1@2x.png"
           />
           <img
             className="absolute ml-4 left-0 h-[254px] animate-bounce"
+            loading="lazy"
             alt=""
             src="/image-13@2x.png"
           />
