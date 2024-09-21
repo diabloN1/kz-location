@@ -25,6 +25,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+export const dynamic = 'force-dynamic';
+
 export default function page() {
   const { data, error } = useSWR("/api/xataClient", fetcher)
   const { data: categories, error: err } = useSWR(
