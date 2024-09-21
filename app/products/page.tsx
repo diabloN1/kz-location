@@ -28,11 +28,18 @@ import {
 export const dynamic = 'force-dynamic';
 
 export default function page() {
-  const { data, error } = useSWR("/api/xataClient", fetcher)
+  const { data, error } = useSWR("/api/xataClient", fetcher, {
+      refreshInterval: 5000, // Refresh every 10 seconds
+      revalidateOnFocus: true,
+  });
   const { data: categories, error: err } = useSWR(
     "/api/xataClientCategories",
-    fetcher
-  )
+    fetcher,
+    {
+      refreshInterval: 5000, // Refresh every 10 seconds
+      revalidateOnFocus: true,
+    }
+  );
 
   const [search, setsearch] = useState("")
   if (error || err) return <div>Failed to load products or categories</div>
