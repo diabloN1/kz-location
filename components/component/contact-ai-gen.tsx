@@ -130,7 +130,7 @@ export function ContactAiGen() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png" className="h-[15px]"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png" alt="gmail" className="h-[15px]"/>
                   </div>
                   <div>
                     <h3 className="font-medium animate-fadeIn">Email</h3>
