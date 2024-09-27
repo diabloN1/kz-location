@@ -24,6 +24,7 @@ export const Icons = {
     <img
       src="https://download.logo.wine/logo/WhatsApp/WhatsApp-Logo.wine.png"
       className="w-[50px]"
+      alt="whatsapp icon"
     />
   ),
 }

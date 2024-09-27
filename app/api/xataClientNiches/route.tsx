@@ -3,6 +3,8 @@
 import { getXataClient } from '@/lib/xata';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const xata = getXataClient();
   try {
