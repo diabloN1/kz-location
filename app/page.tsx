@@ -156,7 +156,7 @@ export default function IndexPage() {
           </p>
         </div>
         <div className="pr-10 lg:pr-40 h-[450px]">
-          <HoverEffectCard items={data.slice(0, 4)} search={""} />
+          <HoverEffectCard items={data.slice(0, 4)} search={""} min="" max="" />
           <Link
             className={`${buttonVariants({ variant: "outline" })} w-full`}
             href="/products"
