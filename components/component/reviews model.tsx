@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useUser } from "@auth0/nextjs-auth0/client"
 import { Cross2Icon, ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
@@ -22,6 +22,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { DialogDemo } from "../ProduitDemande"
 import { Card, CardContent } from "../ui/card"
 import RotatingDotsLoader from "../ui/loading"
+
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Slider } from "@/components/ui/slider"
+import { ZoomIn, ZoomOut } from "lucide-react"
 
 export function Reviewsmodel({ idItem }: { idItem: any }) {
   const [id, setId] = useState(idItem || window.location.pathname.split("/")[2])
@@ -149,6 +153,25 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
     }
   }, [reviewsData])
 
+
+  // ------------------- Here are the section for zomming a pic ------------------- 
+  const [open, setOpen] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(1)
+  const imageRef = useRef<HTMLImageElement>(null)
+
+  const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.5, 1))
+  const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.1, 0.5))
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (imageRef.current) {
+      const { left, top, width, height } = imageRef.current.getBoundingClientRect()
+      const x = (e.clientX - left) / width
+      const y = (e.clientY - top) / height
+      imageRef.current.style.transformOrigin = `${x * 100}% ${y * 100}%`
+    }
+  }
+  // -------------------------------------------------------------------------------
+
   if (error || err) return <div>Failed to load products or categories</div>
   else if (!data || !reviewsData)
     return (
@@ -165,7 +188,8 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
               <CarouselContent>
                 {product.img?.length > 0 ? (
                   Array.from({ length: product.img.length }).map((_, index) => (
-                    <CarouselItem key={index}>
+                  <>
+                   <CarouselItem key={index}>
                       <div className="p-1">
                         <Card>
                           <CardContent className="flex aspect-square items-center justify-center p-1">
@@ -175,12 +199,44 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                                 src={product.img[index].url}
                                 width={800}
                                 height={800}
+                                onClick={()=>setOpen(true)}
                               />
                             </span>
                           </CardContent>
                         </Card>
                       </div>
                     </CarouselItem>
+                    {/* Zomming image code */}
+                    <Dialog open={open} onOpenChange={setOpen}>
+                    <DialogContent className="max-w-3xl w-full h-[80vh] flex flex-col p-0">
+                      <div className="flex-grow overflow-hidden" onMouseMove={handleMouseMove}>
+                        <img
+                          ref={imageRef}
+                          src={product.img[index].url}
+                          alt={product.img[index].name}
+                          className="w-full h-full object-contain transition-transform duration-100 ease-linear"
+                          style={{ transform: `scale(${zoomLevel})` }}
+                        />
+                      </div>
+                      <div className="flex items-center justify-center space-x-4 p-4 bg-background">
+                        <Button variant="outline" size="icon" onClick={handleZoomOut}>
+                          <ZoomOut className="h-4 w-4" />
+                        </Button>
+                        <Slider
+                          className="w-64"
+                          min={0.8}
+                          max={2.5}
+                          step={0.1}
+                          value={[zoomLevel]}
+                          onValueChange={(value) => setZoomLevel(value[0])}
+                        />
+                        <Button variant="outline" size="icon" onClick={handleZoomIn}>
+                          <ZoomIn className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                  </>
                   ))
                 ) : (
                   <CarouselItem>

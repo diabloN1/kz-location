@@ -24,6 +24,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { ResetIcon, GearIcon } from "@radix-ui/react-icons"
 
 export const dynamic = 'force-dynamic';
 
@@ -32,7 +33,16 @@ export default function page() {
       refreshInterval: 5000, // Refresh every 10 seconds
       revalidateOnFocus: true,
   });
-  const { data: categories, error: err } = useSWR(
+  const { data: niches, error: errNiches } = useSWR(
+    "/api/xataClientNiches",
+    fetcher,
+    {
+      refreshInterval: 5000, // Refresh every 10 seconds
+      revalidateOnFocus: true,
+    }
+  );
+  
+  const { data: categories, error: errCategories } = useSWR(
     "/api/xataClientCategories",
     fetcher,
     {
@@ -42,7 +52,17 @@ export default function page() {
   );
 
   const [search, setsearch] = useState("")
-  if (error || err) return <div>Failed to load products or categories</div>
+  const [niche, setniche] = useState("")
+  const [min, setMin] = useState("")
+  const [max, setMax] = useState("")
+
+  const setCategorie = (e:any) => {
+    setsearch(e)
+    setniche(e)
+
+  } 
+
+  if (error || errNiches || errCategories ) return <div>Failed to load products or categories</div>
   if (!data || !categories)
     return (
       <div>
@@ -68,29 +88,27 @@ export default function page() {
 
           <Sheet>
             <SheetTrigger className="pt-10 mr-6 md:mr-8 lg:mr-40">
-              <Button variant="outline">Categorie</Button>
+              <Button variant="outline"><GearIcon className="mr-2"/>Filtre</Button>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>Categories</SheetTitle>
+                <SheetTitle>Filtrer les produits</SheetTitle>
                 <SheetDescription>
                   Choisir une categorie pour voir les produits
                   <br />
-                  <p className="text-bold mb-5 mt-10">Choix par categorie</p>
-                  <Select onValueChange={(e: string) => setsearch(e)}>
+                  {/* --------------Niches select (categories)-------------- */}
+                  <p className="text-bold mb-5 mt-10">Choix par niche</p>
+                  <Select onValueChange={(e: string) => setCategorie(e)}>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Choosir une categorie" />
+                      <SelectValue placeholder="Choosir une niche" />
                     </SelectTrigger>
                     <SelectContent>
-                      {categories
-                        ? categories.map((categorie: any) => {
+                      {niches
+                        ? niches.map((niche: any) => {
                             return (
-                              <div key={categorie.id}>
-                                <SelectItem value={categorie.name}>
-                                  {categorie.name}
-                                  {/* <a onClick={() => setsearch(cat.name)}>
-                          {cat.name}
-                        </a> */}
+                              <div key={niche.id}>
+                                <SelectItem value={niche.name}>
+                                  {niche.name}
                                 </SelectItem>
                               </div>
                             )
@@ -98,6 +116,69 @@ export default function page() {
                         : null}
                     </SelectContent>
                   </Select>
+                  {/* --------------Sous-cat select-------------- */}
+                  <p className="text-bold mb-5 mt-10">Choix par categorie</p>
+                  <Select onValueChange={(e: string) => setsearch(e)}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Choosir une categorie" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {categories && niche == ""
+                        ? 
+                        categories.map((categorie: any) => {
+                            return (
+                              <div key={categorie.id}>
+                                <SelectItem value={categorie.name}>
+                                  {categorie.name}
+                                </SelectItem>
+                              </div>
+                            )
+                          })
+                        : null}
+                        {categories && niche != ""
+                        ? 
+                        categories
+                        .filter((categorie: any)=>{return categorie.niche.toLowerCase().includes(niche.toLowerCase())})
+                        .map((categorie: any) => {
+                            return (
+                              <div key={categorie.id}>
+                                <SelectItem value={categorie.name}>
+                                  {categorie.name}
+                                </SelectItem>
+                              </div>
+                            )
+                          })
+                        : null}
+                    </SelectContent>
+                  </Select>
+                  {/* --------------Price-range-------------- */}
+                  {
+                  search != ""
+                    ?
+                    <>
+                      <p className="text-bold mb-5 mt-10">Fourchette de prix</p>
+                      <Input
+                        type="text"
+                        placeholder="min"
+                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+                        onChange={(e) => setMin(e.target.value)}
+                      />
+                      <center>---</center>
+                      <Input
+                        type="text"
+                        placeholder="max"
+                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+                        onChange={(e) => setMax(e.target.value)}
+                      />
+                  </>
+                    :
+                    null
+                  }
+
+                  {/* --------------Reset-filters-------------- */}
+                  <div className="fixed bottom-4 right-4">
+                    <Button onClick={()=>location.reload()} variant="destructive"><ResetIcon className="mr-2"/>réinitialiser</Button>
+                  </div>
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>
@@ -113,7 +194,7 @@ export default function page() {
         />
       </div>
       <main className="mt-2 ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10 mr-10 xl:mr-40">
-        <HoverEffectCard items={data} search={search} />
+        <HoverEffectCard items={data} search={search} min={min} max={max} />
       </main>
     </div>
   )

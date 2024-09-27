@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils"
 export const HoverEffectCard = ({
   items,
   search,
+  min,
+  max,
   className,
 }: {
   items: {
@@ -18,10 +20,13 @@ export const HoverEffectCard = ({
     price: any
     img: any
     categorie: any
+    niche: any
     discount: any
   }[]
   search: string
   className?: string
+  min : any
+  max : any
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
@@ -36,9 +41,18 @@ export const HoverEffectCard = ({
         .filter((item) => {
           return search.toLowerCase() === ""
             ? item
-            : item.product.toLowerCase().includes(search.toLowerCase()) ||
+            : (
+                item.product.toLowerCase().includes(search.toLowerCase()) ||
                 item.categorie.toLowerCase().includes(search.toLowerCase()) ||
-                item.description.toLowerCase().includes(search.toLowerCase())
+                item.description.toLowerCase().includes(search.toLowerCase()) ||
+                item.niche.toLowerCase().includes(search.toLowerCase())
+              ) 
+              && 
+              (
+                (min == "" && max == "") ||
+                (parseInt(min) <= parseInt(item.price) && parseInt(item.price) <= parseInt(max)) ||
+                (parseInt(min) <= parseInt(item.price) && max == "")
+              )
         })
         .map((item, idx) => (
           <Link

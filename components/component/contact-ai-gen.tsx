@@ -104,21 +104,33 @@ export function ContactAiGen() {
               <div className="space-y-4 animate-fadeIn">
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
-                    <PhoneIcon />
+                    <img src="https://www.freeiconspng.com/thumbs/whatsapp-icon/whatsapp-icon-3.png" alt="phone" className="h-[20px]" />
                   </div>
                   <div>
-                    <h3 className="font-medium animate-fadeIn">Numero</h3>
+                    <h3 className="font-medium animate-fadeIn">Whatsapp</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
-                      0708162668
+                      <a
+                        href="https://wa.me/212708162668/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                          0708162668
+                      </a>
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
-                      0708014286
+                      <a
+                        href="https://wa.me/212708014286/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                          0708014286
+                      </a>
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
-                    <MailIcon />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png" className="h-[15px]"/>
                   </div>
                   <div>
                     <h3 className="font-medium animate-fadeIn">Email</h3>
@@ -132,7 +144,7 @@ export function ContactAiGen() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="h-6 w-6 text-gray-500 dark:text-gray-400 mt-1 animate-bounce">
-                    <MapPinIcon />
+                  <img src="https://cdn-icons-png.flaticon.com/512/1865/1865269.png" className="h-[20px]"/>
                   </div>
                   <div>
                     <h3 className="font-medium animate-fadeIn">Adresse</h3>
@@ -225,25 +237,6 @@ export function ContactAiGen() {
   )
 }
 
-function MailIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  )
-}
-
 function MapPinIcon() {
   return (
     <svg
@@ -259,24 +252,6 @@ function MapPinIcon() {
     >
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
       <circle cx="12" cy="10" r="3" />
-    </svg>
-  )
-}
-
-function PhoneIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   )
 }

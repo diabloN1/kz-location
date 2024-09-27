@@ -88,7 +88,7 @@ export function Company() {
       </section>
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-6xl font-bold mb-6 md:text-3xl lg:text-4xl text-amber-900 dark:text-orange-400">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-amber-900 dark:text-orange-400 mb-10">
             Nos principes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,6 +99,7 @@ export function Company() {
                 clients.
               </p>
             </div>
+            <hr/>
             <div>
               <h3 className="text-3xl font-bold mb-4">Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -106,6 +107,7 @@ export function Company() {
                 changeants de nos clients.
               </p>
             </div>
+            <hr/>
             <div>
               <h3 className="text-3xl font-bold mb-4">Durabilité</h3>
               <p className="text-gray-600 dark:text-gray-400">
