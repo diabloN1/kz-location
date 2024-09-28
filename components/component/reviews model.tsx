@@ -47,7 +47,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
         primary: "#fb923c",
         secondary: "#FFFAEE",
       },
-      duration: 60000,
+      duration: 12000,
     })
 
   //get products
@@ -159,8 +159,8 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
   const [zoomLevel, setZoomLevel] = useState(1)
   const imageRef = useRef<HTMLImageElement>(null)
 
-  const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.5, 1))
-  const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.1, 0.5))
+  const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.1, 2.5))
+  const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.1, 0.8))
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (imageRef.current) {
@@ -218,7 +218,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                           style={{ transform: `scale(${zoomLevel})` }}
                         />
                       </div>
-                      <div className="flex items-center justify-center space-x-4 p-4 bg-background">
+                      <div className="hidden sm:flex items-center justify-center space-x-4 p-4 bg-background">
                         <Button variant="outline" size="icon" onClick={handleZoomOut}>
                           <ZoomOut className="h-4 w-4" />
                         </Button>

@@ -51,7 +51,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
           primary: "#fb923c",
           secondary: "#FFFAEE",
         },
-        duration: 60000,
+        duration: 12000,
       }
     )
 

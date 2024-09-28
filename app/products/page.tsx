@@ -97,10 +97,10 @@ export default function page() {
                   Choisir une categorie pour voir les produits
                   <br />
                   {/* --------------Niches select (categories)-------------- */}
-                  <p className="text-bold mb-5 mt-10">Choix par niche</p>
+                  <p className="text-bold mb-5 mt-10">Choix par categorie</p>
                   <Select onValueChange={(e: string) => setCategorie(e)}>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Choosir une niche" />
+                      <SelectValue placeholder="Choosir une categorie" />
                     </SelectTrigger>
                     <SelectContent>
                       {niches
@@ -117,10 +117,10 @@ export default function page() {
                     </SelectContent>
                   </Select>
                   {/* --------------Sous-cat select-------------- */}
-                  <p className="text-bold mb-5 mt-10">Choix par categorie</p>
+                  <p className="text-bold mb-5 mt-10">Choix par sous-categorie</p>
                   <Select onValueChange={(e: string) => setsearch(e)}>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Choosir une categorie" />
+                      <SelectValue placeholder="Choosir une sous-categorie" />
                     </SelectTrigger>
                     <SelectContent>
                       {categories && niche == ""

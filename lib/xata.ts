@@ -16,24 +16,24 @@ const tables = [
       { name: "categorie", type: "string" },
       { name: "discount", type: "float" },
       { name: "description", type: "string" },
+      {
+        name: "niche",
+        type: "text",
+        notNull: true,
+        defaultValue: "⚠️ - Need to be filled",
+      },
     ],
   },
   {
-    name: "Categories",
+    name: "Subcategories",
     columns: [
       { name: "name", type: "string" },
-      { name: "niche", type: "text" },
-    ],
-  },
-  {
-    name: "Demande_S",
-    columns: [
-      { name: "name", type: "string", defaultValue: "" },
-      { name: "serviceType", type: "string" },
-      { name: "subject", type: "string" },
-      { name: "num", type: "string" },
-      { name: "Description", type: "string" },
-      { name: "email", type: "string" },
+      {
+        name: "niche",
+        type: "text",
+        notNull: true,
+        defaultValue: "⚠️ - Need to be filled",
+      },
     ],
   },
   {
@@ -65,7 +65,7 @@ const tables = [
       { name: "rate", type: "int", notNull: true, defaultValue: "5" },
     ],
   },
-  { name: "Niches", columns: [{ name: "name", type: "text" }] },
+  { name: "Categories", columns: [{ name: "name", type: "text" }] },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -74,11 +74,8 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type Products = InferredTypes["Products"];
 export type ProductsRecord = Products & XataRecord;
 
-export type Categories = InferredTypes["Categories"];
-export type CategoriesRecord = Categories & XataRecord;
-
-export type DemandeS = InferredTypes["Demande_S"];
-export type DemandeSRecord = DemandeS & XataRecord;
+export type Subcategories = InferredTypes["Subcategories"];
+export type SubcategoriesRecord = Subcategories & XataRecord;
 
 export type DemandeP = InferredTypes["Demande_P"];
 export type DemandePRecord = DemandeP & XataRecord;
@@ -89,17 +86,16 @@ export type ContactRecord = Contact & XataRecord;
 export type Reviews = InferredTypes["Reviews"];
 export type ReviewsRecord = Reviews & XataRecord;
 
-export type Niches = InferredTypes["Niches"];
-export type NichesRecord = Niches & XataRecord;
+export type Categories = InferredTypes["Categories"];
+export type CategoriesRecord = Categories & XataRecord;
 
 export type DatabaseSchema = {
   Products: ProductsRecord;
-  Categories: CategoriesRecord;
-  Demande_S: DemandeSRecord;
+  Subcategories: SubcategoriesRecord;
   Demande_P: DemandePRecord;
   Contact: ContactRecord;
   Reviews: ReviewsRecord;
-  Niches: NichesRecord;
+  Categories: CategoriesRecord;
 };
 
 const DatabaseClient = buildClient();
