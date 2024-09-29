@@ -1,0 +1,84 @@
+{
+  "id": "mig_crsoqo2l040k6qpsh33g",
+  "parentID": "mig_crsoqi51l5rijlbpc3q0",
+  "checksum": "1:8d675a77e6334dbf8ec3c97af4b0e3a46a69834bca4ea1441a12dc30de1b9cf8",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "string"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "img",
+          "type": "string"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xatacreatedAt",
+          "type": "string"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataupdatedAt",
+          "type": "string"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataversion",
+          "type": "int"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "string"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "comment",
+          "type": "text"
+        },
+        "table": "Reviews"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "rate",
+          "type": "int"
+        },
+        "table": "Reviews"
+      }
+    }
+  ]
+}

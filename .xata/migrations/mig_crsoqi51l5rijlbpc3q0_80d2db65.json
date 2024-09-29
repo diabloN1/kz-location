@@ -1,0 +1,102 @@
+{
+  "id": "mig_crsoqi51l5rijlbpc3q0",
+  "parentID": "mig_crsoqd2l040k6qpsh300",
+  "checksum": "1:80d2db658cbe2350b2f016c178af5bce3d11ab44ea9ffd8df4475f0e7e0b6709",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "product",
+          "type": "text"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "price",
+          "type": "int"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "img",
+          "type": "multiple"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "categorie",
+          "type": "string"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "niche",
+          "type": "string"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "discount",
+          "type": "int"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "description",
+          "type": "text"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xatacreatedAt",
+          "type": "string"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataupdatedAt",
+          "type": "string"
+        },
+        "table": "Products"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataversion",
+          "type": "int"
+        },
+        "table": "Products"
+      }
+    }
+  ]
+}

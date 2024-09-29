@@ -1,0 +1,47 @@
+{
+  "id": "mig_crsopqal040k6qpsh2t0",
+  "checksum": "1:351add5b613cb3d2cbae8be489221251dc355c0bead2b9f8e52f848d41dbd0a0",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Categories"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "Categories"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataupdatedAt",
+          "type": "datetime"
+        },
+        "table": "Categories"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataversion",
+          "type": "int"
+        },
+        "table": "Categories"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xatacreatedAt",
+          "type": "string"
+        },
+        "table": "Categories"
+      }
+    }
+  ]
+}

@@ -8,47 +8,20 @@ import type {
 
 const tables = [
   {
-    name: "Products",
-    columns: [
-      { name: "product", type: "string" },
-      { name: "price", type: "float" },
-      { name: "img", type: "file[]", "file[]": { defaultPublicAccess: true } },
-      { name: "categorie", type: "string" },
-      { name: "discount", type: "float" },
-      { name: "description", type: "string" },
-      {
-        name: "niche",
-        type: "text",
-        notNull: true,
-        defaultValue: "⚠️ - Need to be filled",
-      },
-    ],
-  },
-  {
-    name: "Subcategories",
+    name: "Categories",
     columns: [
       { name: "name", type: "string" },
-      {
-        name: "niche",
-        type: "text",
-        notNull: true,
-        defaultValue: "⚠️ - Need to be filled",
-      },
-    ],
-  },
-  {
-    name: "Demande_P",
-    columns: [
-      { name: "nameP", type: "string" },
-      { name: "idP", type: "string" },
-      { name: "fullName", type: "string" },
-      { name: "num", type: "string" },
-      { name: "mail", type: "string" },
+      { name: "xataupdatedAt", type: "datetime" },
+      { name: "xataversion", type: "int" },
+      { name: "xatacreatedAt", type: "string" },
     ],
   },
   {
     name: "Contact",
     columns: [
+      { name: "xatacreatedAt", type: "string" },
+      { name: "xataupdatedAt", type: "string" },
+      { name: "xataversion", type: "int" },
       { name: "fullName", type: "string" },
       { name: "num", type: "string" },
       { name: "email", type: "email" },
@@ -56,53 +29,93 @@ const tables = [
     ],
   },
   {
-    name: "Reviews",
+    name: "Demande_P",
     columns: [
-      { name: "user", type: "string" },
-      { name: "img", type: "string" },
-      { name: "comment", type: "string" },
-      { name: "product", type: "string" },
-      { name: "rate", type: "int", notNull: true, defaultValue: "5" },
+      { name: "xatacreatedAt", type: "string" },
+      { name: "xataupdatedAt", type: "string" },
+      { name: "xataversion", type: "int" },
+      { name: "nameP", type: "string" },
+      { name: "idP", type: "string" },
+      { name: "fullName", type: "string" },
+      { name: "num", type: "string" },
+      { name: "mail", type: "email" },
     ],
   },
-  { name: "Categories", columns: [{ name: "name", type: "text" }] },
+  {
+    name: "Products",
+    columns: [
+      { name: "product", type: "text" },
+      { name: "price", type: "int" },
+      { name: "img", type: "multiple" },
+      { name: "categorie", type: "string" },
+      { name: "niche", type: "string" },
+      { name: "discount", type: "int" },
+      { name: "description", type: "text" },
+      { name: "xatacreatedAt", type: "string" },
+      { name: "xataupdatedAt", type: "string" },
+      { name: "xataversion", type: "int" },
+    ],
+  },
+  {
+    name: "Reviews",
+    columns: [
+      { name: "product", type: "string" },
+      { name: "img", type: "string" },
+      { name: "xatacreatedAt", type: "string" },
+      { name: "xataupdatedAt", type: "string" },
+      { name: "xataversion", type: "int" },
+      { name: "user", type: "string" },
+      { name: "comment", type: "text" },
+      { name: "rate", type: "int" },
+    ],
+  },
+  {
+    name: "Subcategories",
+    columns: [
+      { name: "niche", type: "string" },
+      { name: "xatacreatedAt", type: "string" },
+      { name: "xataupdatedAt", type: "string" },
+      { name: "xataversion", type: "int" },
+      { name: "name", type: "string" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
 
-export type Products = InferredTypes["Products"];
-export type ProductsRecord = Products & XataRecord;
-
-export type Subcategories = InferredTypes["Subcategories"];
-export type SubcategoriesRecord = Subcategories & XataRecord;
-
-export type DemandeP = InferredTypes["Demande_P"];
-export type DemandePRecord = DemandeP & XataRecord;
+export type Categories = InferredTypes["Categories"];
+export type CategoriesRecord = Categories & XataRecord;
 
 export type Contact = InferredTypes["Contact"];
 export type ContactRecord = Contact & XataRecord;
 
+export type DemandeP = InferredTypes["Demande_P"];
+export type DemandePRecord = DemandeP & XataRecord;
+
+export type Products = InferredTypes["Products"];
+export type ProductsRecord = Products & XataRecord;
+
 export type Reviews = InferredTypes["Reviews"];
 export type ReviewsRecord = Reviews & XataRecord;
 
-export type Categories = InferredTypes["Categories"];
-export type CategoriesRecord = Categories & XataRecord;
+export type Subcategories = InferredTypes["Subcategories"];
+export type SubcategoriesRecord = Subcategories & XataRecord;
 
 export type DatabaseSchema = {
-  Products: ProductsRecord;
-  Subcategories: SubcategoriesRecord;
-  Demande_P: DemandePRecord;
-  Contact: ContactRecord;
-  Reviews: ReviewsRecord;
   Categories: CategoriesRecord;
+  Contact: ContactRecord;
+  Demande_P: DemandePRecord;
+  Products: ProductsRecord;
+  Reviews: ReviewsRecord;
+  Subcategories: SubcategoriesRecord;
 };
 
 const DatabaseClient = buildClient();
 
 const defaultOptions = {
   databaseURL:
-    "https://Amine-Yc-s-workspace-dkaoiq.eu-central-1.xata.sh/db/OBS",
+    "https://labase-kz-s-workspace-6ue324.eu-central-1.xata.sh/db/KzLocation",
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {

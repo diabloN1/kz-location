@@ -1,5 +1,5 @@
 {
-  "databaseURL": "https://Amine-Yc-s-workspace-dkaoiq.eu-central-1.xata.sh/db/OBS",
+  "databaseURL": "https://labase-kz-s-workspace-6ue324.eu-central-1.xata.sh/db/KzLocation",
   "codegen": {
     "output": "lib/xata.ts"
   }

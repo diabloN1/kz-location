@@ -1,0 +1,84 @@
+{
+  "id": "mig_crsoqd2l040k6qpsh300",
+  "parentID": "mig_crsoq62l040k6qpsh2ug",
+  "checksum": "1:a8b8eb403592fe1ee540463bbc2f1847e1dcdf878581bbfdf7499779d5bd81a5",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xatacreatedAt",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataupdatedAt",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataversion",
+          "type": "int"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "nameP",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "idP",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "fullName",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "num",
+          "type": "string"
+        },
+        "table": "Demande_P"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "mail",
+          "type": "email"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

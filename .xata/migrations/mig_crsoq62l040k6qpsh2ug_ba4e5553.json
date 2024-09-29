@@ -1,0 +1,75 @@
+{
+  "id": "mig_crsoq62l040k6qpsh2ug",
+  "parentID": "mig_crsopqal040k6qpsh2t0",
+  "checksum": "1:ba4e5553d9e9897497e8bba705068a4863410124332cd20ae175e0ae6153f688",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xatacreatedAt",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataupdatedAt",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "xataversion",
+          "type": "int"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "fullName",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "num",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "email",
+          "type": "email"
+        },
+        "table": "Contact"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "message",
+          "type": "string"
+        },
+        "table": "Contact"
+      }
+    }
+  ]
+}
