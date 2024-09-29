@@ -110,20 +110,20 @@ export function ContactAiGen() {
                     <h3 className="font-medium animate-fadeIn">Whatsapp</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       <a
-                        href="https://wa.me/212708162668/"
+                        href="https://wa.me/212660631550/"
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0708162668
+                          0660631550
                       </a>
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       <a
-                        href="https://wa.me/212708014286/"
+                        href="https://wa.me/212660631550/"
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0708014286
+                          0660631550
                       </a>
                     </p>
                   </div>
@@ -149,12 +149,12 @@ export function ContactAiGen() {
                   <div>
                     <h3 className="font-medium animate-fadeIn">Adresse</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
-                      244 Q.I SIDI GHANEM BUREAU A GAUCHE ETAGE 1 MARRAKECH{" "}
+                    23 Rue Jean Jaurès, Casablanca 20060 {" "}
                     </p>
                   </div>
                 </div>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424.480347857438!2d-8.035219862402762!3d31.6655207544557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafec11f73d0d6d%3A0x76606247de304961!2sMX88%2B53W%2C%20Marrakech!5e0!3m2!1sfr!2sma!4v1714628652138!5m2!1sfr!2sma"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13294.38335217626!2d-7.6281325!3d33.5898415!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d30ea8203763%3A0xebc40a744d0a3cac!2sKz%20Loc!5e0!3m2!1sfr!2sma!4v1727631975398!5m2!1sfr!2sma"
                   className="w-full h-96 rounded-lg animate-fadeIn"
                   title="Location Map"
                 ></iframe>

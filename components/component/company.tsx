@@ -40,13 +40,10 @@ export function Company() {
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Notre SARL vise à prospérer en offrant des produits et services
-                de qualité répondant aux attentes de nos clients. Nous
-                favorisons la croissance de l'entreprise tout en maintenant un
-                environnement de travail positif. Le respect des normes légales
-                et éthiques est essentiel pour notre crédibilité. Notre objectif
-                est de devenir un leader de notre secteur tout en contribuant au
-                développement durable de notre communauté et de notre économie.
+              KZ Location Voiture est une entreprise spécialisée dans la location de véhicules, fondée avec la mission de rendre la mobilité accessible à tous.
+              Nous offrons une large gamme de voitures modernes et bien entretenues, adaptées à toutes les occasions : voyages d'affaires, vacances en famille, 
+              ou déplacements quotidiens. Notre priorité est de garantir un service de qualité, rapide et flexible, tout en maintenant des prix compétitifs. 
+              Chez KZ Location Voiture, nous plaçons la satisfaction de nos clients au cœur de nos valeurs, avec un service personnalisé qui répond à tous vos besoins.
               </p>
             </div>
           </div>
@@ -60,13 +57,12 @@ export function Company() {
                 Nos objectifs
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
-                Nos ambitions pour l'avenir
+               Chez KZ Location Voiture
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Nous avons pour objectif de devenir le leader de notre secteur
-                d'activité. Nous investissons dans la recherche et le
-                développement afin de toujours proposer des produits innovants
-                et de qualité à nos clients.
+              Notre objectif est de vous offrir une expérience de location fluide et sur-mesure. 
+              Nous mettons à votre disposition des véhicules de qualité à des prix attractifs, 
+              avec un service rapide et personnalisé,pour assurer votre confort et votre satisfaction à chaque trajet.
               </p>
             </div>
             <div className="space-y-2">
@@ -74,13 +70,11 @@ export function Company() {
                 Notre équipe
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
-                Des experts à votre service
+               L'équipe de KZ Location Voiture
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Notre équipe est composée d'experts dans leur domaine. Ils
-                travaillent en étroite collaboration pour vous offrir les
-                meilleures solutions possibles. Nous sommes fiers de notre
-                équipe et de leur engagement envers nos clients.
+              est composée de professionnels dévoués à vous offrir un service rapide, personnalisé et sans tracas. 
+              Nous sommes là pour répondre à vos besoins et garantir une expérience de location réussie.
               </p>
             </div>
           </div>

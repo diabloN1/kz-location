@@ -73,14 +73,14 @@ export default function page() {
     <div className="flex flex-col items-center">
       <header className="flex justify-between items-center w-full p-4">
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-6xl xl:text-6xl sm:text-xl xs:text-xl mx-4 md:mx-8 lg:mx-6 xl:mx-12 mt-4 lg:ml-10">
-          Products
+          Voitures 
         </h1>
         <div className="flex items-center gap-4">
           <div className="relative md:mt-10 ml-5 hidden md:block">
             <Search className="absolute right-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Chercher Produit..."
+              placeholder="Chercher Voiture..."
               className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
               onChange={(e) => setsearch(e.target.value)}
             />
@@ -188,7 +188,7 @@ export default function page() {
       <div className="block w-full md:hidden">
         <Input
           type="text"
-          placeholder="Chercher Produit..."
+          placeholder="Chercher voiture..."
           className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
           onChange={(e) => setsearch(e.target.value)}
         />
