@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Oriental Building Strategy",
+  name: "KZ LOC location Voiture ",
   description:
-    "Oriental Building Strategy is a construction company based in Morocco. We are a team of professionals with an high quality experience in the construction, negoce, import-export industries.",
+    "KZ LOC location Voiture  is a construction company based in Morocco. We are a team of professionals with an high quality experience in the construction, negoce, import-export industries.",
   mainNav: [
     {
       title: "Home",

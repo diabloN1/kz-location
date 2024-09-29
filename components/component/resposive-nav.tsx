@@ -99,7 +99,7 @@ export function ResponsiveNav() {
           <NavigationMenuLink asChild>
             <Link
               href="/"
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-yellow-400 dark:hover:text-gray-50 dark:focus:bg-yellow-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Accueil
             </Link>
@@ -107,7 +107,7 @@ export function ResponsiveNav() {
           <NavigationMenuLink asChild>
             <Link
               href="/company"
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-yellow-400 dark:hover:text-gray-50 dark:focus:bg-yellow-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Entreprise
             </Link>
@@ -115,7 +115,7 @@ export function ResponsiveNav() {
           <NavigationMenuLink asChild>
             {/* <Link
               href="/services"
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-yellow-400 dark:hover:text-gray-50 dark:focus:bg-yellow-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Services
             </Link> */}
@@ -123,7 +123,7 @@ export function ResponsiveNav() {
           <NavigationMenuLink asChild>
             <Link
               href="/products"
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-yellow-400 dark:hover:text-gray-50 dark:focus:bg-yellow-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Produits
             </Link>
@@ -131,7 +131,7 @@ export function ResponsiveNav() {
           <NavigationMenuLink asChild>
             <Link
               href="/contact"
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-900 hover:text-white focus:bg-amber-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-orange-400 dark:hover:text-gray-50 dark:focus:bg-orange-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-yellow-400 hover:text-white focus:bg-yellow-400 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-background dark:hover:bg-yellow-400 dark:hover:text-gray-50 dark:focus:bg-yellow-400 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             >
               Contact
             </Link>

@@ -11,9 +11,8 @@ import RotatingDotsLoader from "@/components/ui/loading"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
 
-const label = `Bienvenue chez notre SARL. Nous nous engageons à offrir des produits
-            de qualité tout en contribuant au développement durable de notre
-            communauté.`
+const label = `Chez Kz Location Voiture, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
+d'une flotte moderne pour voyager en toute sérénité.`
 
 export default function IndexPage() {
   const services = [
@@ -89,11 +88,11 @@ export default function IndexPage() {
       <section className="flex mt-[350px] sm:mt-10 ml-2 sm:ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex w-[100%] lg:w-2/3  flex-col">
           <h1 className="text-3xl font-bold leading-tight tracking-tighter sm:mt-10 md:text-7xl sm:text-4xl">
-            Oriental{" "}
-            <span className=" text-amber-900 dark:text-orange-400  ">
-              Building
+            KZ LOC{" "}
+            <span className=" text-yellow-400 dark:text-yellow-400  ">
+              Location voiture
             </span>{" "}
-            Strategy
+            -Louer l'Excellence
           </h1>
           <br />
           <TextGenerateEffect words={label} />

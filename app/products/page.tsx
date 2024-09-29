@@ -81,7 +81,7 @@ export default function page() {
             <Input
               type="text"
               placeholder="Chercher Produit..."
-              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+              className="pl-8 w-full sm:w-auto md:w-[300px] lg:w-[200px] xl:w-[300px] focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
               onChange={(e) => setsearch(e.target.value)}
             />
           </div>
@@ -160,14 +160,14 @@ export default function page() {
                       <Input
                         type="text"
                         placeholder="min"
-                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
                         onChange={(e) => setMin(e.target.value)}
                       />
                       <center>---</center>
                       <Input
                         type="text"
                         placeholder="max"
-                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+                        className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
                         onChange={(e) => setMax(e.target.value)}
                       />
                   </>
@@ -189,7 +189,7 @@ export default function page() {
         <Input
           type="text"
           placeholder="Chercher Produit..."
-          className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-amber-900 dark:focus:ring-orange-500"
+          className="pl-8 w-[80%] mx-auto focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 dark:focus:ring-orange-500"
           onChange={(e) => setsearch(e.target.value)}
         />
       </div>

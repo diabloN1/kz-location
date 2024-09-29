@@ -95,7 +95,7 @@ export function ContactAiGen() {
         <div className="container max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 animate-fadeInUp">
             <div className="space-y-6">
-              <h1 className="text-4xl font-bold animate-fadeIn text-amber-900 dark:text-orange-400">
+              <h1 className="text-4xl font-bold animate-fadeIn text-yellow-400 dark:text-yellow-400">
                 Contactez Nous
               </h1>
               <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
@@ -161,7 +161,7 @@ export function ContactAiGen() {
               </div>
             </div>
             <div className="bg-amber-100 dark:bg-black rounded-lg p-6 md:p-8 animate-fadeInUp">
-              <h2 className="text-2xl font-bold mb-4 animate-fadeIn text-amber-900 dark:text-orange-400">
+              <h2 className="text-2xl font-bold mb-4 animate-fadeIn text-yellow-400 dark:text-yellow-400">
                 Prenez contact avec nous
               </h2>
               <form

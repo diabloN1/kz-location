@@ -6,14 +6,14 @@ import { useTheme } from "next-themes"
 export default function Footer() {
   const { theme } = useTheme()
   return (
-    <footer className="bg-amber-100 dark:bg-black text-amber-900 dark:text-orange-400">
+    <footer className="bg-amber-100 dark:bg-black text-yellow-400 dark:text-yellow-400">
       <div className="container mx-auto px-4 py-4 md:px-8 lg:py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-start md:gap-8 lg:gap-12">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
             <Link href="#" className="flex items-center gap-2" prefetch={false}>
               <span className="text-base font-semibold md:text-lg">
-                Oriental Building Strategy{" "}
+                KZ LOC location Voiture {" "}
                 <span className="md:text-sm font-normal">SARL.</span>
               </span>
             </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Copyright Notice */}
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 md:mt-0">
-            &copy; 2024 Oriental Building Strategy. All rights reserved.
+            &copy; 2024 KZ LOC location Voiture . All rights reserved.
           </p>
         </div>
       </div>

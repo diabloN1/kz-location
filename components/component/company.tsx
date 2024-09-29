@@ -15,10 +15,10 @@ export function Company() {
               <TextGenerateEffect
                 className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
                 words="
-                Une SARL marocaine incarne l'excellence, l'innovation et le
-                service clientèle de qualité. Engagés envers la satisfaction de
-                nos clients, nous contribuons au dynamisme économique du Maroc
-                tout en représentant le savoir-faire local à l'international.
+                Chez KZ Location Voiture, nous sommes une équipe dédiée à offrir des solutions de mobilité fiables et accessibles. 
+                Forte d'une expérience dans le secteur, notre mission est de vous proposer des véhicules adaptés à tous vos besoins,
+                que ce soit pour un court trajet ou une longue aventure. Avec un engagement envers la qualité et la satisfaction de nos clients,
+                nous mettons tout en œuvre pour rendre votre expérience de location simple, rapide et agréable.
                 "
               />
             </div>
@@ -36,7 +36,7 @@ export function Company() {
               width="550"
             />
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-amber-900 dark:text-orange-400">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-yellow-400 dark:text-yellow-400">
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -56,7 +56,7 @@ export function Company() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-amber-900 dark:bg-orange-400">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400">
                 Nos objectifs
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
@@ -70,7 +70,7 @@ export function Company() {
               </p>
             </div>
             <div className="space-y-2">
-              <div className="inline-block rounded-lg  px-3 py-1 text-sm bg-amber-900 dark:bg-orange-400">
+              <div className="inline-block rounded-lg  px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400">
                 Notre équipe
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
@@ -88,7 +88,7 @@ export function Company() {
       </section>
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-amber-900 dark:text-orange-400 mb-10">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-yellow-400 dark:text-yellow-400 mb-10">
             Nos principes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

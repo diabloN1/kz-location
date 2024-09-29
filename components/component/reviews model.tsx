@@ -263,7 +263,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
           </div>
           <div className="grid gap-4 md:gap-10 items-start">
             <div className="grid gap-4">
-              <p className="text-orange-900 dark:text-orange-400">
+              <p className="text-orange-900 dark:text-yellow-400">
                 {product.categorie}
               </p>
               <h1 className="font-bold text-3xl lg:text-4xl">
