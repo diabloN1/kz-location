@@ -20,9 +20,10 @@ export function MainNav({ items }: MainNavProps) {
       <Link href="/" className="flex items-center space-x-2">
         <img
           src={
-            theme === "light"
-              ? "https://i.ibb.co/qDhjYrR/light.webp"
-              : "https://i.ibb.co/sbRPkVW/dark.webp"
+            theme === "light"? 
+              "https://i.ibb.co/C64zynF/lightlogo.png"
+              : 
+              "https://i.ibb.co/1JKpWdc/darklogo.png"
           }
           alt="Logo"
           width={100}

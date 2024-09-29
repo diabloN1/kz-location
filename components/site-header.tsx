@@ -28,8 +28,8 @@ export function SiteHeader() {
               <img
                 src={
                   theme === "light"
-                    ? "https://i.ibb.co/qDhjYrR/light.webp"
-                    : "https://i.ibb.co/sbRPkVW/dark.webp"
+                    ? "https://i.ibb.co/C64zynF/lightlogo.png"
+                : "https://i.ibb.co/1JKpWdc/darklogo.png"
                 }
                 alt="Logo"
                 width={100}
@@ -95,8 +95,8 @@ export function SiteHeader() {
           <img
             src={
               theme === "light"
-                ? "https://i.ibb.co/qDhjYrR/light.webp"
-                : "https://i.ibb.co/sbRPkVW/dark.webp"
+               ? "https://i.ibb.co/C64zynF/lightlogo.png"
+               : "https://i.ibb.co/1JKpWdc/darklogo.png"
             }
             alt="Logo"
             width={100}
