@@ -4,6 +4,16 @@ import { ReloadIcon } from "@radix-ui/react-icons"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -38,6 +48,10 @@ export function DialogDemo({ id, name }: DemandeProps) {
   const [nom, setNom] = useState("")
   const [email, setEmail] = useState("")
   const [addProductR, setaddProductR] = useState({})
+  const [pickupDate, setPickupDate] = useState("")
+  const [dropoffDate, setDropoffDate] = useState("")
+  const [pickupLoc, setPickupLoc] = useState("")
+  const [dropoffLoc, setDropoffLoc] = useState("")
 
   const notify = () =>
     toast.success(
@@ -89,12 +103,12 @@ export function DialogDemo({ id, name }: DemandeProps) {
   //check validity of form to make submit button clickable
   const [isFormValid, setIsFormValid] = useState(false)
   const checkFormValidity = () => {
-    const isValid = nom.trim() !== "" && num.length >= 13
+    const isValid = nom.trim() !== "" && num.length >= 13 && pickupDate != "" && dropoffDate != "" && pickupLoc != "" && dropoffLoc != ""
     setIsFormValid(isValid)
   }
   useEffect(() => {
     checkFormValidity()
-  }, [nom, num])
+  }, [nom, num, pickupDate, dropoffDate, pickupLoc, dropoffLoc])
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -113,7 +127,7 @@ export function DialogDemo({ id, name }: DemandeProps) {
       <DialogContent>
         <form className="grid gap-6" onSubmit={handleSubmit}>
           <DialogHeader>
-            <DialogTitle>Demande de Service</DialogTitle>
+            <DialogTitle>Louer la voiture</DialogTitle>
             <DialogDescription>
               Remplire ce formulaire avec les informations demandees.
             </DialogDescription>
@@ -148,6 +162,71 @@ export function DialogDemo({ id, name }: DemandeProps) {
               required
             />
           </div>
+          {/* ----------------Select Date------------- */}
+          <div className="flex grid-cols-2 w-[100%]">
+            <Label className="w-full content-center">Date de livraison</Label>
+            <Input
+              type="date"
+              onChange={(e)=>setPickupDate(e.target.value)}
+              className="rounded-md border w-auto w-full text-center"
+              required
+            />
+          </div>
+          <div className="flex grid-cols-2 w-[100%]">
+          <Label className="w-full content-center">Date de retour</Label>
+            <Input
+              type="date"
+              onChange={(e)=>setDropoffDate(e.target.value)}
+              className="rounded-md border w-full text-center"
+              required
+            />
+          </div>
+          {/* --------------Select Place--------------- */}
+          <div className="flex grid-cols-2 w-[100%]">
+            <Label className="w-full content-center">Lieu de livraison</Label>
+            <Select onValueChange={(e: string) => setPickupLoc(e)}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Lieu de livraison" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Lieu disponible</SelectLabel>
+                  <SelectItem value="Agence KZ">Casablanca - Agence KZloc.</SelectItem>
+                  <SelectItem value="Aéroport Mohammed V">Casablanca - Aéroport Mohammed V</SelectItem>
+                  <SelectItem value="Aéroport Casa Anfa">Casablanca - Aéroport Casa Anfa</SelectItem>
+                  <SelectItem value="Gare Casa Port">Casablanca - Gare Casa Port</SelectItem>
+                  <SelectItem value="Gare Casa Voyageurs">Casablanca - Gare Casa Voyageurs</SelectItem>
+                  <SelectItem value="Gare Casa Oasis">Casablanca - Gare Casa Oasis</SelectItem>
+                  <SelectItem value="Hotel">Casablanca - Hotel (spécifier l'hors du confirmation)</SelectItem>
+                  <SelectItem value="Autre">Casablanca - Autre (spécifier l'hors du confirmation)</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+
+          
+          <div className="flex grid-cols-2 w-[100%]">
+            <Label className="w-full content-center">Lieu de retour</Label>
+            <Select onValueChange={(e: string) => setDropoffLoc(e)}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Lieu de retour" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Lieu disponible</SelectLabel>
+                  <SelectItem value="Agence KZ">Casablanca - Agence KZloc.</SelectItem>
+                  <SelectItem value="Aéroport Mohammed V">Casablanca - Aéroport Mohammed V</SelectItem>
+                  <SelectItem value="Aéroport Casa Anfa">Casablanca - Aéroport Casa Anfa</SelectItem>
+                  <SelectItem value="Gare Casa Port">Casablanca - Gare Casa Port</SelectItem>
+                  <SelectItem value="Gare Casa Voyageurs">Casablanca - Gare Casa Voyageurs</SelectItem>
+                  <SelectItem value="Gare Casa Oasis">Casablanca - Gare Casa Oasis</SelectItem>
+                  <SelectItem value="Hotel">Casablanca - Hotel (spécifier l'hors du confirmation)</SelectItem>
+                  <SelectItem value="Autre">Casablanca - Autre (spécifier l'hors du confirmation)</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* ------------------------------------------ */}
           <div className="grid gap-2">
             <Label htmlFor="email">Adresse mail (optionnel)</Label>
             {user && user.nickname ? (
