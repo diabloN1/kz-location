@@ -110,20 +110,20 @@ export function ContactAiGen() {
                     <h3 className="font-medium animate-fadeIn">Whatsapp</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       <a
-                        href="https://wa.me/212660631550/"
+                        href="https://wa.me/212707616180/"
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0660631550
+                          0707616180
                       </a>
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       <a
-                        href="https://wa.me/212660631550/"
+                        href="https://wa.me/212661097898/"
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0660631550
+                          0661097898
                       </a>
                     </p>
                   </div>
@@ -136,8 +136,8 @@ export function ContactAiGen() {
                     <h3 className="font-medium animate-fadeIn">Email</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       {" "}
-                      <a href="mailto:orientalbuildingstrategy@gmail.com">
-                        orientalbuildingstrategy@gmail.com
+                      <a href="mailto:kzlabase@gmail.com">
+                      kzlabase@gmail.com
                       </a>{" "}
                     </p>
                   </div>

@@ -1,13 +1,11 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
 import { UserProvider } from "@auth0/nextjs-auth0/client"
-import { Toaster } from "sonner"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import Footer from "@/components/component/footerapp"
-import { ResponsiveNav } from "@/components/component/resposive-nav"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"

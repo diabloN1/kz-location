@@ -21,7 +21,7 @@ export function SiteHeader() {
   if (isLoading)
     return (
       <div>
-        <header className="bg-background sticky top-0 z-40 w-full border-b">
+        <header className="bg-background dark:bg-black sticky top-0 z-40 w-full border-b">
           <div className="container flex h-30 items-center space-x-4 sm:justify-between sm:space-x-0">
             {/* <MainNav items={siteConfig.mainNav} /> */}
             <Link href="/" className="flex items-center space-x-2">
@@ -42,7 +42,7 @@ export function SiteHeader() {
             <div className="flex flex-1 items-center justify-end space-x-4">
               <nav className="flex items-center space-x-1">
                 <Link
-                  href="https://wa.me/212708162668/"
+                  href="https://wa.me/212707616180/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -57,7 +57,7 @@ export function SiteHeader() {
                   </div>
                 </Link>
                 <Link
-                  href="mailto:orientalbuildingstrategy@gmail.com"
+                  href="mailto:kzlabase@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -88,7 +88,7 @@ export function SiteHeader() {
   if (error) return <div>{error.message}</div>
 
   return (
-    <header className="bg-background sticky top-0 z-40 w-full border-b">
+    <header className="bg-background dark:bg-black sticky top-0 z-40 w-full border-b">
       <div className="container flex h-30 items-center space-x-4 sm:justify-between sm:space-x-0">
         {/* <MainNav items={siteConfig.mainNav} /> */}
         <Link href="/" className="flex items-center space-x-2">
@@ -108,10 +108,10 @@ export function SiteHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            {user?.name === "amineamoune904@gmail.com" || user?.name === "orientalbuildingstrategy@gmail.com"? null : (
+            {user?.name === "amineamoune904@gmail.com" || user?.name === "kzlabase@gmail.com"? null : (
               <>
                 <Link
-                  href="https://wa.me/212708162668/"
+                  href="https://wa.me/212707616180/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -126,7 +126,7 @@ export function SiteHeader() {
                   </div>
                 </Link>
                 <Link
-                  href="mailto:orientalbuildingstrategy@gmail.com"
+                  href="mailto:kzlabase@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -152,7 +152,7 @@ export function SiteHeader() {
             {/* Dashoboard xata */}
             {/* pc vers */}
             <div className="hidden md:block">
-              {(user?.name === "amineamoune904@gmail.com"|| user?.name === "orientalbuildingstrategy@gmail.com") && (
+              {(user?.name === "amineamoune904@gmail.com"|| user?.name === "kzlabase@gmail.com") && (
                 <Link
                   href="https://app.xata.io/workspaces/Amine-Yc-s-workspace-dkaoiq/dbs/OBS:eu-central-1/"
                   className={buttonVariants({ variant: "outline" })}
@@ -168,21 +168,6 @@ export function SiteHeader() {
               )}
             </div>
             {/* Dashoboard xata End*/}
-
-            <div className="ml-5 mr-5">
-              {user ? (
-                <Link
-                  href="/api/auth/logout"
-                  className={buttonVariants({ variant: "outline" })}
-                >
-                  deconnection
-                </Link>
-              ) : (
-                <Link href="/api/auth/login" className={buttonVariants()}>
-                  Connexion
-                </Link>
-              )}
-            </div>
             <div className="hidden md:block mx-[-100px]">
               {user && user.picture && (
                 <div>
