@@ -1,0 +1,13 @@
+{
+  "id": "mig_crstioal040k6qpsh3s0",
+  "parentID": "mig_crstieal040k6qpsh3r0",
+  "checksum": "1:7256747901207a1d2fe1ace03387784f837b2413db13395034a629bf204f6a28",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "categorie",
+        "table": "Subcategories"
+      }
+    }
+  ]
+}

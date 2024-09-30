@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspm66asi7hh89bt8q0",
+  "parentID": "mig_crspln51l5rijlbpc4kg",
+  "checksum": "1:f6c536c63b04f2c278383fc9c9a09c5eec9173b848da5e96c81b325b45c8dcb0",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xatacreatedAt",
+        "table": "Subcategories"
+      }
+    }
+  ]
+}

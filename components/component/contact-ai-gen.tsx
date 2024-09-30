@@ -64,12 +64,15 @@ export function ContactAiGen() {
       message: message,
     })
     try {
-      const response = await axios.post("/api/xataPostContact", addContact)
-      console.log("Product created:", response.data)
-      // Update state or perform other actions as needed
+      const response = await axios.post('/api/xataPostContact', addContact, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      console.log('Response:', response.data);
     } catch (error) {
-      console.error("Error creating product:", error)
-      // Handle errors as needed
+      console.error('Error creating product:', error);
     } finally {
       setIsloading(false) // Set loading state to false after the comment is added or an error occurs
       setFullName("")
@@ -79,6 +82,8 @@ export function ContactAiGen() {
       notify()
     }
   }
+
+
   const [isFormValid, setIsFormValid] = useState(false)
   const checkFormValidity = () => {
     const isValid =

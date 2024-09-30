@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspk0d1l5rijlbpc4cg",
+  "parentID": "mig_crspjtl1l5rijlbpc4bg",
+  "checksum": "1:336489d83e8d0d653a47352d1909e09471cee0863d2c3520c0646c310545a0d8",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xatacreatedAt",
+        "table": "Contact"
+      }
+    }
+  ]
+}

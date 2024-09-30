@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspl0masi7hh89bt8lg",
+  "parentID": "mig_crspkrmasi7hh89bt8kg",
+  "checksum": "1:5fe9b0188faf1f3bd545362639d29cedf0f097b49ce1494bfa2bd67c58b28e5d",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xataupdatedAt",
+        "table": "Reviews"
+      }
+    }
+  ]
+}

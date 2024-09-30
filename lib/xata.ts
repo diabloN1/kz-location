@@ -7,38 +7,28 @@ import type {
 } from "@xata.io/client";
 
 const tables = [
-  {
-    name: "Categories",
-    columns: [
-      { name: "name", type: "string" },
-      { name: "xataupdatedAt", type: "datetime" },
-      { name: "xataversion", type: "int" },
-      { name: "xatacreatedAt", type: "string" },
-    ],
-  },
+  { name: "Categories", columns: [{ name: "name", type: "string" }] },
   {
     name: "Contact",
     columns: [
-      { name: "xatacreatedAt", type: "string" },
-      { name: "xataupdatedAt", type: "string" },
-      { name: "xataversion", type: "int" },
       { name: "fullName", type: "string" },
       { name: "num", type: "string" },
-      { name: "email", type: "email" },
       { name: "message", type: "string" },
+      { name: "email", type: "text" },
     ],
   },
   {
     name: "Demande_P",
     columns: [
-      { name: "xatacreatedAt", type: "string" },
-      { name: "xataupdatedAt", type: "string" },
-      { name: "xataversion", type: "int" },
       { name: "nameP", type: "string" },
       { name: "idP", type: "string" },
       { name: "fullName", type: "string" },
       { name: "num", type: "string" },
-      { name: "mail", type: "email" },
+      { name: "pickupDate", type: "text" },
+      { name: "dropoffDate", type: "text" },
+      { name: "pickupLoc", type: "text" },
+      { name: "dropoffLoc", type: "text" },
+      { name: "email", type: "text" },
     ],
   },
   {
@@ -46,14 +36,11 @@ const tables = [
     columns: [
       { name: "product", type: "text" },
       { name: "price", type: "int" },
-      { name: "img", type: "multiple" },
       { name: "categorie", type: "string" },
       { name: "niche", type: "string" },
       { name: "discount", type: "int" },
       { name: "description", type: "text" },
-      { name: "xatacreatedAt", type: "string" },
-      { name: "xataupdatedAt", type: "string" },
-      { name: "xataversion", type: "int" },
+      { name: "img", type: "file[]", "file[]": { defaultPublicAccess: true } },
     ],
   },
   {
@@ -61,9 +48,6 @@ const tables = [
     columns: [
       { name: "product", type: "string" },
       { name: "img", type: "string" },
-      { name: "xatacreatedAt", type: "string" },
-      { name: "xataupdatedAt", type: "string" },
-      { name: "xataversion", type: "int" },
       { name: "user", type: "string" },
       { name: "comment", type: "text" },
       { name: "rate", type: "int" },
@@ -73,9 +57,6 @@ const tables = [
     name: "Subcategories",
     columns: [
       { name: "niche", type: "string" },
-      { name: "xatacreatedAt", type: "string" },
-      { name: "xataupdatedAt", type: "string" },
-      { name: "xataversion", type: "int" },
       { name: "name", type: "string" },
     ],
   },

@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspkrmasi7hh89bt8kg",
+  "parentID": "mig_crspkp6asi7hh89bt8jg",
+  "checksum": "1:f9e0a4ad74b9364edb46a653a1fa2158d41daa0dc98f881d47be9aa92ed7163c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xatacreatedAt",
+        "table": "Products"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_crstdsal040k6qpsh3p0",
+  "parentID": "mig_crsq7n51l5rijlbpc4q0",
+  "checksum": "1:21e0342afb70dd4848839a6312608d17d89ebdc1959a4bc8bf471e2f7cfb4d0b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "pickupDate",
+          "type": "text"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

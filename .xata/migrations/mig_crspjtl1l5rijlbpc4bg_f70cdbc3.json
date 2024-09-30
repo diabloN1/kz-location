@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspjtl1l5rijlbpc4bg",
+  "parentID": "mig_crspjs51l5rijlbpc4ag",
+  "checksum": "1:f70cdbc3a10b79d467e3bb7cc61391e0f82c4d1839fd8bcc933c06c469e52ed9",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xataversion",
+        "table": "Contact"
+      }
+    }
+  ]
+}

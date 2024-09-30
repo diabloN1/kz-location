@@ -1,0 +1,18 @@
+{
+  "id": "mig_crstieal040k6qpsh3r0",
+  "parentID": "mig_crstec2l040k6qpsh3q0",
+  "checksum": "1:4ed8a1b3e32cd66d5be1961fcb57ccdd50a60430c017c1b05d5dca29d7b54efa",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "categorie",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "must be "
+        },
+        "table": "Subcategories"
+      }
+    }
+  ]
+}

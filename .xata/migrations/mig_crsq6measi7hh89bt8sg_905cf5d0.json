@@ -1,0 +1,16 @@
+{
+  "id": "mig_crsq6measi7hh89bt8sg",
+  "parentID": "mig_crsq5jt1l5rijlbpc4p0",
+  "checksum": "1:905cf5d0820758fe1ec05bd2950f01d8d6d81f9752faf781e5e945c24b523f33",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "img",
+          "type": "file[]"
+        },
+        "table": "Products"
+      }
+    }
+  ]
+}

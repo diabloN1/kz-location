@@ -1,0 +1,16 @@
+{
+  "id": "mig_crstec2l040k6qpsh3q0",
+  "parentID": "mig_crste8easi7hh89bt9mg",
+  "checksum": "1:5ce561f31e3698f6eeedb9aae9a14438d31fa86c64288f479c8da9489652b431",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "dropoffLoc",
+          "type": "text"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_crste8easi7hh89bt9mg",
+  "parentID": "mig_crste2masi7hh89bt9lg",
+  "checksum": "1:06528ecb851e8d48e4c51a92d0ea2eb286a95952181dd34190d158d212c627cd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "pickupLoc",
+          "type": "text"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

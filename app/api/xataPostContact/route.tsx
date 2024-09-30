@@ -8,10 +8,10 @@ export async function POST(req: Request) {
   const xata = getXataClient()
   try {
     // Parse the request body to get the product details
-    const { fullName,num,email,message, } = await req.json()
+    const { fullName, num, email, message } = await req.json()
 
     const record = await xata.db.Contact.create({
-      fullName:fullName,num:num,email:email,message:message,
+      fullName: fullName, num: num, email: email, message: message
     })
     return NextResponse.json(record)
   } catch (error) {

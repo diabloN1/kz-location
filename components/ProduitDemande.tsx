@@ -71,13 +71,17 @@ export function DialogDemo({ id, name }: DemandeProps) {
 
   useEffect(() => {
     setaddProductR({
-      nameP: nameP,
+      nameP: name,
       idP: id,
       mail: email,
       fullName: nom,
       num: num,
+      pickupDate: pickupDate,
+      dropoffDate: dropoffDate,
+      pickupLoc: pickupLoc,
+      dropoffLoc: dropoffLoc,
     })
-  }, [nameP, email, nom, num])
+  }, [nameP, email, nom, num, pickupDate, dropoffDate, pickupLoc, dropoffLoc])
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()

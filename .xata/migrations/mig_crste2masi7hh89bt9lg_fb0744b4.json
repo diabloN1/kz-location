@@ -1,0 +1,16 @@
+{
+  "id": "mig_crste2masi7hh89bt9lg",
+  "parentID": "mig_crstdsal040k6qpsh3p0",
+  "checksum": "1:fb0744b4db3944a14ff16303eac3b70fbf4331f258ee983edc1c904cd69b2734",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "dropoffDate",
+          "type": "text"
+        },
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

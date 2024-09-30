@@ -1,0 +1,13 @@
+{
+  "id": "mig_crspk851l5rijlbpc4dg",
+  "parentID": "mig_crspk0d1l5rijlbpc4cg",
+  "checksum": "1:cee441bb57a18ff6cef7233de00a081d70eaf603668d92bc429c6e9f2512f708",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "xataupdatedAt",
+        "table": "Demande_P"
+      }
+    }
+  ]
+}

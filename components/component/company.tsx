@@ -32,7 +32,7 @@ export function Company() {
               alt="Notre entreprise"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="https://www.lafrancequiose.fr/wp-content/uploads/2021/12/presentation-d-entreprise.jpg"
+              src="https://www.hertz.com/content/dam/hertz/global/blog-articles/resources/one-way-rental.jpg"
               width="550"
             />
             <div className="space-y-2">
@@ -93,7 +93,7 @@ export function Company() {
                 clients.
               </p>
             </div>
-            <hr/>
+            <hr className="sm:hidden"/>
             <div>
               <h3 className="text-3xl font-bold mb-4">Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -101,7 +101,7 @@ export function Company() {
                 changeants de nos clients.
               </p>
             </div>
-            <hr/>
+            <hr className="sm:hidden"/>
             <div>
               <h3 className="text-3xl font-bold mb-4">Durabilité</h3>
               <p className="text-gray-600 dark:text-gray-400">

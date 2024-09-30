@@ -1,0 +1,19 @@
+{
+  "id": "mig_crsq7n51l5rijlbpc4q0",
+  "parentID": "mig_crsq7jmasi7hh89bt8tg",
+  "checksum": "1:cfe71e63e08c700be30cada86a6204527734fda12bee58a21cde00b73a76478b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "img",
+          "type": "file[]",
+          "file[]": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "Products"
+      }
+    }
+  ]
+}
