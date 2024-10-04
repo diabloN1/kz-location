@@ -10,6 +10,8 @@ import { HoverEffect } from "@/components/ui/card-hover-effect"
 import RotatingDotsLoader from "@/components/ui/loading"
 
 import { TextGenerateEffect } from "../components/textgenerateeffect"
+import { InlineReviewSectionComponent } from "@/components/inline-review-section"
+import { WhyChooseUsComponent } from "@/components/why-choose-us"
 
 const label = `Chez Kz Location Voiture, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
 d'une flotte moderne pour voyager en toute sérénité.`
@@ -104,13 +106,15 @@ export default function IndexPage() {
         <div className="pr-10 lg:pr-40 h-[450px]">
           <HoverEffectCard items={data.slice(0, 4)} search={""} min="" max="" />
           <Link
-            className={`${buttonVariants({ variant: "outline" })} w-full`}
+            className={`${buttonVariants({ variant: "default" })} w-full`}
             href="/voitures"
           >
             More {">"}
           </Link>
         </div>
       </section>
+      <WhyChooseUsComponent/>
+      <InlineReviewSectionComponent/>
     </>
   )
 }
