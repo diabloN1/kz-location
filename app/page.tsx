@@ -46,7 +46,7 @@ export default function IndexPage() {
             className="absolute ml-4 left-0 h-[254px] animate-bounce"
             loading="lazy"
             alt=""
-            src="/model1.png"
+            src="/image-13@2x.png"
           />
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function IndexPage() {
           <img
             className="absolute left-0 h-[380px] animate-bounce"
             alt=""
-            src="/model1.png"
+            src="/image-13@2x.png"
           />
         </div>
       </section>
