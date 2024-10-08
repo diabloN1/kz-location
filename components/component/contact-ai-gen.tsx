@@ -119,7 +119,7 @@ export function ContactAiGen() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0707616180
+                          +212707616180
                       </a>
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
@@ -128,7 +128,7 @@ export function ContactAiGen() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                          0661097898
+                          +212661097898
                       </a>
                     </p>
                   </div>
@@ -141,8 +141,8 @@ export function ContactAiGen() {
                     <h3 className="font-medium animate-fadeIn">Email</h3>
                     <p className="text-gray-500 dark:text-gray-400 animate-fadeIn">
                       {" "}
-                      <a href="mailto:kzlabase@gmail.com">
-                      kzlabase@gmail.com
+                      <a href="mailto:Kzlocmaroc@gmail.com">
+                      Kzlocmaroc@gmail.com
                       </a>{" "}
                     </p>
                   </div>
