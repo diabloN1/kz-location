@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 md:text-sm">
-              Des solutions de qualité pour vos besoins quotidiens.
+              Des voitures de qualité pour vos besoins quotidiens.
             </p>
           </div>
 

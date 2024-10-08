@@ -11,32 +11,32 @@ export function WhyChooseUsComponent() {
 
   const features = [
     {
-      icon: <Car className="w-6 h-6" />,
+      icon: <Car className="w-6 h-6 text-black" />,
       title: "Extensive Fleet",
       description: "From compact cars to luxury SUVs, we have the perfect vehicle for every need and budget."
     },
     {
-      icon: <Zap className="w-6 h-6" />,
+      icon: <Zap className="w-6 h-6 text-black" />,
       title: "Réservation Instantanée",
       description: "Réservez votre voiture idéale en quelques secondes grâce à notre système en ligne simplifié et convivial."
     },
     {
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: <ShieldCheck className="w-6 h-6 text-black" />,
       title: "Assurance",
       description: "Conduisez en toute tranquillité, sachant que vous êtes protégé par nos options de couverture étendues."
     },
     {
-      icon: <Clock className="w-6 h-6" />,
+      icon: <Clock className="w-6 h-6 text-black" />,
       title: "Support 24/7",
       description: "Notre équipe dédiée est toujours disponible pour vous aider, assurant une expérience de location en douceur."
     },
     {
-      icon: <CreditCard className="w-6 h-6" />,
+      icon: <CreditCard className="w-6 h-6 text-black" />,
       title: "Prix transparents",
       description: "Profitez de tarifs compétitifs sans frais cachés, garantissant le meilleur rapport qualité-prix."
     },
     {
-      icon: <Headphones className="w-6 h-6" />,
+      icon: <Headphones className="w-6 h-6 text-black" />,
       title: "Service Premium",
       description: "Profitez d’un service client de premier ordre, de la réservation au retour, adapté à vos besoins."
     }

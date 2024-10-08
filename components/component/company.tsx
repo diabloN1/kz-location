@@ -53,7 +53,7 @@ export function Company() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400 text-black">
                 Nos objectifs
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
@@ -66,7 +66,7 @@ export function Company() {
               </p>
             </div>
             <div className="space-y-2">
-              <div className="inline-block rounded-lg  px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400">
+              <div className="inline-block rounded-lg px-3 py-1 text-sm bg-yellow-400 dark:bg-yellow-400 text-black">
                 Notre équipe
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
