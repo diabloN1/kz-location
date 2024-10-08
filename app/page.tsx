@@ -13,7 +13,7 @@ import { TextGenerateEffect } from "../components/textgenerateeffect"
 import { InlineReviewSectionComponent } from "@/components/inline-review-section"
 import { WhyChooseUsComponent } from "@/components/why-choose-us"
 
-const label = `Chez  Voiture, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
+const label = `Chez KZ LOC, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
 d'une flotte moderne pour voyager en toute sérénité.`
 
 export default function IndexPage() {

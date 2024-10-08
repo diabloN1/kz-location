@@ -15,7 +15,7 @@ export function Company() {
               <TextGenerateEffect
                 className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
                 words="
-                Chez KZ Loc Voiture, nous sommes une équipe dédiée à offrir des solutions de mobilité fiables et accessibles. 
+                Chez KZ Loc, nous sommes une équipe dédiée à offrir des solutions de mobilité fiables et accessibles. 
                 Forte d'une expérience dans le secteur, notre mission est de vous proposer des véhicules adaptés à tous vos besoins,
                 que ce soit pour un court trajet ou une longue aventure. Avec un engagement envers la qualité et la satisfaction de nos clients,
                 nous mettons tout en œuvre pour rendre votre expérience de location simple, rapide et agréable.
@@ -40,10 +40,10 @@ export function Company() {
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              KZ Loc Voiture est une entreprise spécialisée dans la location de véhicules, fondée avec la mission de rendre la mobilité accessible à tous.
+              KZ Loc est une entreprise spécialisée dans la location de véhicules, fondée avec la mission de rendre la mobilité accessible à tous.
               Nous offrons une large gamme de voitures modernes et bien entretenues, adaptées à toutes les occasions : voyages d'affaires, vacances en famille, 
               ou déplacements quotidiens. Notre priorité est de garantir un service de qualité, rapide et flexible, tout en maintenant des prix compétitifs. 
-              Chez KZ LocVoiture, nous plaçons la satisfaction de nos clients au cœur de nos valeurs, avec un service personnalisé qui répond à tous vos besoins.
+              Chez KZ LOC, nous plaçons la satisfaction de nos clients au cœur de nos valeurs, avec un service personnalisé qui répond à tous vos besoins.
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ export function Company() {
                 Nos objectifs
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
-               Chez KZ LocVoiture
+               Chez KZ LOC
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Notre objectif est de vous offrir une expérience de location fluide et sur-mesure. 
