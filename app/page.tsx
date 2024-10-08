@@ -13,7 +13,7 @@ import { TextGenerateEffect } from "../components/textgenerateeffect"
 import { InlineReviewSectionComponent } from "@/components/inline-review-section"
 import { WhyChooseUsComponent } from "@/components/why-choose-us"
 
-const label = `Chez KZ LocVoiture, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
+const label = `Chez  Voiture, trouvez le véhicule idéal pour tous vos deplacement. Profitez de tarifs compétitifs, d'un service rapide et 
 d'une flotte moderne pour voyager en toute sérénité.`
 
 export default function IndexPage() {
@@ -53,7 +53,7 @@ export default function IndexPage() {
       <section className="flex mt-[350px] sm:mt-10 ml-2 sm:ml-10 xl:ml-40 items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex w-[100%] lg:w-2/3  flex-col">
           <h1 className="text-3xl font-bold leading-tight tracking-tighter sm:mt-10 md:text-7xl sm:text-4xl">
-            KZ Location{" "}
+            KZ Loc{" "}
             <span className=" text-yellow-400 dark:text-yellow-400  ">
              <br/>Louer l'excellence
             </span>{" "}

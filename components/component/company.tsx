@@ -15,7 +15,7 @@ export function Company() {
               <TextGenerateEffect
                 className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
                 words="
-                Chez KZ LocVoiture, nous sommes une équipe dédiée à offrir des solutions de mobilité fiables et accessibles. 
+                Chez KZ Loc Voiture, nous sommes une équipe dédiée à offrir des solutions de mobilité fiables et accessibles. 
                 Forte d'une expérience dans le secteur, notre mission est de vous proposer des véhicules adaptés à tous vos besoins,
                 que ce soit pour un court trajet ou une longue aventure. Avec un engagement envers la qualité et la satisfaction de nos clients,
                 nous mettons tout en œuvre pour rendre votre expérience de location simple, rapide et agréable.
@@ -40,7 +40,7 @@ export function Company() {
                 Notre entreprise
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              KZ LocVoiture est une entreprise spécialisée dans la location de véhicules, fondée avec la mission de rendre la mobilité accessible à tous.
+              KZ Loc Voiture est une entreprise spécialisée dans la location de véhicules, fondée avec la mission de rendre la mobilité accessible à tous.
               Nous offrons une large gamme de voitures modernes et bien entretenues, adaptées à toutes les occasions : voyages d'affaires, vacances en famille, 
               ou déplacements quotidiens. Notre priorité est de garantir un service de qualité, rapide et flexible, tout en maintenant des prix compétitifs. 
               Chez KZ LocVoiture, nous plaçons la satisfaction de nos clients au cœur de nos valeurs, avec un service personnalisé qui répond à tous vos besoins.
@@ -70,7 +70,7 @@ export function Company() {
                 Notre équipe
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
-               L'équipe de KZ LocVoiture
+               L'équipe de KZ Loc 
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               est composée de professionnels dévoués à vous offrir un service rapide, personnalisé et sans tracas. 
