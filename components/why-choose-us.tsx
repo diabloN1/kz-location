@@ -17,28 +17,28 @@ export function WhyChooseUsComponent() {
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Instant Booking",
-      description: "Reserve your ideal car in seconds with our streamlined, user-friendly online system."
+      title: "Réservation Instantanée",
+      description: "Réservez votre voiture idéale en quelques secondes grâce à notre système en ligne simplifié et convivial."
     },
     {
       icon: <ShieldCheck className="w-6 h-6" />,
-      title: "Comprehensive Insurance",
-      description: "Drive with peace of mind, knowing you're protected by our extensive coverage options."
+      title: "Assurance",
+      description: "Conduisez en toute tranquillité, sachant que vous êtes protégé par nos options de couverture étendues."
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "24/7 Support",
-      description: "Our dedicated team is always available to assist you, ensuring a smooth rental experience."
+      title: "Support 24/7",
+      description: "Notre équipe dédiée est toujours disponible pour vous aider, assurant une expérience de location en douceur."
     },
     {
       icon: <CreditCard className="w-6 h-6" />,
-      title: "Transparent Pricing",
-      description: "Enjoy competitive rates with no hidden fees, guaranteeing the best value for your money."
+      title: "Prix transparents",
+      description: "Profitez de tarifs compétitifs sans frais cachés, garantissant le meilleur rapport qualité-prix."
     },
     {
       icon: <Headphones className="w-6 h-6" />,
-      title: "Premium Service",
-      description: "Experience top-notch customer care from reservation to return, tailored to your needs."
+      title: "Service Premium",
+      description: "Profitez d’un service client de premier ordre, de la réservation au retour, adapté à vos besoins."
     }
   ]
 
@@ -51,7 +51,7 @@ export function WhyChooseUsComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Why Choose Our Car Rental Service
+          Pourquoi choisir notre service 
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
@@ -87,7 +87,7 @@ export function WhyChooseUsComponent() {
         </div>
         <div className="mt-12 text-center">
           <Button size="lg" className="font-semibold">
-            Reserve Your Car Now
+            Reserve Maintenant
           </Button>
         </div>
       </div>

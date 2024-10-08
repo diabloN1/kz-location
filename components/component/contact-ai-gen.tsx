@@ -228,7 +228,7 @@ export function ContactAiGen() {
                     type="submit"
                     disabled={!isFormValid}
                   >
-                    Enovoyer Message
+                    Envoyer Message
                   </Button>
                 )}
               </form>
