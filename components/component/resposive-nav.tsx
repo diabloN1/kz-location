@@ -2,7 +2,6 @@
 
 import react, { useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/router"
 import { useUser } from "@auth0/nextjs-auth0/client"
 
 import { Button, buttonVariants } from "@/components/ui/button"
@@ -12,8 +11,6 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { MainNav } from "@/components/main-nav"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 export function ResponsiveNav() {
   const { user, error, isLoading } = useUser()
@@ -86,7 +83,6 @@ export function ResponsiveNav() {
                 Dashboard
               </Link>
             )}
-            <ThemeToggle />
           </div>
         </SheetContent>
       </Sheet>

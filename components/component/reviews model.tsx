@@ -26,6 +26,7 @@ import RotatingDotsLoader from "../ui/loading"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { Slider } from "@/components/ui/slider"
 import { ZoomIn, ZoomOut } from "lucide-react"
+import StockBadge from "../stock-badge"
 
 export function Reviewsmodel({ idItem }: { idItem: any }) {
   const [id, setId] = useState(idItem || window.location.pathname.split("/")[2])
@@ -305,6 +306,7 @@ export function Reviewsmodel({ idItem }: { idItem: any }) {
                   </>
                 )}
               </div>
+              <StockBadge inStock={product.isStock}/>
               <DialogDemo id={id} name={product.product} />
             </div>
 

@@ -75,7 +75,6 @@ export function SiteHeader() {
                     <span className="sr-only">Mail</span>
                   </div>
                 </Link>
-                <ThemeToggle />
                 <div className="block lg:hidden ">
                   <ResponsiveNav />
                 </div>
@@ -145,7 +144,6 @@ export function SiteHeader() {
                   </div>
                 </Link>
                 <div className="hidden md:block mx-[-100px]">
-                  <ThemeToggle />
                 </div>
               </>
             )}
